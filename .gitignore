@@ -1,0 +1,10 @@
+data/raw/empathetic_dialogues/**/*.tar.gz
+data/raw/empathetic_dialogues/empatheticdialogues/
+data/raw/kor_empathetic_dialogues/*.jsonl
+data/raw/aihub_empathy/**
+!data/raw/aihub_empathy/README.md
+data/raw/KoED/
+__pycache__/
+.venv/
+*.pyc
+.DS_Store

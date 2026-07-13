@@ -1,0 +1,52 @@
+# EN–KO Empathy LoRA — data inventory
+# Theory axes: A(Affect), C(Cognition), S(Strategy), R(Relation)
+
+project: en-ko-empathy-lora
+axes:
+  A_affect: "emotion / affective state"
+  C_cognition: "situation / cause understanding (proxy)"
+  S_strategy: "support strategy (main measurable)"
+  R_relation: "relation + honorific / stance"
+
+sources:
+  empathetic_dialogues:
+    role: "EN train / eval (Stage A)"
+    lang: en
+    access: public
+    hub: "facebook/empathetic_dialogues"
+    local: "data/raw/empathetic_dialogues"
+    labels: [emotion, situation]
+    axes: [A, C]
+
+  koed:
+    role: "EN–KO parallel eval + divergence atlas (held-out preferred)"
+    lang: [en, ko]
+    access: public
+    github: "https://github.com/KUNLP/KoED"
+    local: "data/raw/KoED"
+    labels: [emotion, multi-label, cultural concepts]
+    axes: [A, C]
+
+  kor_empathetic_dialogues:
+    role: "KO translation baseline (low cultural fidelity)"
+    lang: ko
+    access: public
+    hub: "passing2961/KorEmpatheticDialogues"
+    local: "data/raw/kor_empathetic_dialogues"
+    labels: [emotion, situation]
+    axes: [A]
+
+  aihub_empathy_dialogue:
+    role: "KO main adapt (strategy + relation)"
+    lang: ko
+    access: "AI Hub login + application required"
+    url: "https://www.aihub.or.kr/aihubdata/data/view.do?dataSetSn=71305"
+    local: "data/raw/aihub_empathy"
+    labels: [strategy: 조언/격려/위로/동조, relation]
+    axes: [S, R, A]
+    status: pending_manual_download
+
+splits_policy:
+  koed: evaluation_only_recommended
+  aihub: train_dev_test
+  ed: train_valid_test
