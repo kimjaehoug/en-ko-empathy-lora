@@ -1,0 +1,22 @@
+# Backbone + system naming
+# Comparison-tier peers: Llama-3.1-8B, EXAONE-3.0-7.8B, Mistral-7B, Qwen2-7B (KoED)
+# Closest Qwen3.5 dense size: 9B (~10B card); optional light: 4B
+
+backbone:
+  primary: Qwen/Qwen3.5-9B
+  light: Qwen/Qwen3.5-4B
+  prototype_legacy: gpt2
+
+system:
+  code_name: SELENE
+  full_name: "SELENE — Selective Empathy LoRA with EN–KO factor gatEs"
+  method_tag: Factor-LoRA SELECT
+  description: >
+    Qwen3.5-9B frozen backbone + divergence-gated factor LoRAs (A/C/S/R)
+    trained Stage1→Stage2→Stage3 for English–Korean empathetic transfer.
+
+baselines_on_same_backbone:
+  - untouched_ko          # KO-scratch LoRA on Qwen3.5-9B
+  - en_only               # Stage1 EN LoRA zero-shot on KO
+  - blind_share           # EN→KO copy without gates
+  - select_selene         # our gated system (SELENE)

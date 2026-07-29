@@ -1,0 +1,22 @@
+# Stage2: divergence / probe gates (gpt2 backbone kept)
+model_name: gpt2
+stage1_dir: outputs/stage1_en
+output_dir: outputs/stage2_gates
+
+en_file: data/processed/ed_train.jsonl
+ko_file: data/processed/aihub_train.jsonl
+koed_file: data/processed/koed_test.jsonl
+
+max_en_samples: 128
+max_ko_samples: 128
+max_koed_samples: 64
+max_history: 6
+max_length: 256
+batch_size: 2
+probe_steps: 200
+
+share_threshold: 0.35
+suppress_threshold: 0.12
+
+device: auto
+seed: 42

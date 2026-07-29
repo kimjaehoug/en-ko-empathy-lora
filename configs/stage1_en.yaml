@@ -1,0 +1,24 @@
+# EN Stage1 prototype: LoRA empathy LM + affect head
+model_name: gpt2
+output_dir: outputs/stage1_en
+
+train_file: data/processed/ed_train.jsonl
+valid_file: data/processed/ed_valid.jsonl
+
+max_length: 384
+max_history: 8
+batch_size: 2
+grad_accum: 4
+lr: 2.0e-4
+weight_decay: 0.01
+num_epochs: 1
+max_steps: 50          # prototype smoke; set null for full epoch
+eval_every: 25
+emotion_loss_weight: 0.2
+
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+
+seed: 42
+device: auto           # auto | cpu | mps | cuda

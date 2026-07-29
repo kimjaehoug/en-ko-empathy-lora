@@ -1,0 +1,760 @@
+{
+  "files": {
+    "aihub_train": {
+      "n_dialogues": 25456,
+      "n_utterances": 378563,
+      "n_listener_turns": 181802,
+      "langs": {
+        "ko": 25456
+      },
+      "coverage": {
+        "A_affect": 1.0,
+        "S_strategy": 1.0,
+        "R_relation": 1.0
+      },
+      "avg_dialogue_turns": 14.87,
+      "avg_utt_chars": 74.46,
+      "top_A": [
+        [
+          "분노",
+          5133
+        ],
+        [
+          "기쁨",
+          5005
+        ],
+        [
+          "불안",
+          3849
+        ],
+        [
+          "슬픔",
+          3848
+        ],
+        [
+          "당황",
+          3828
+        ],
+        [
+          "상처",
+          3793
+        ]
+      ],
+      "top_S": [
+        [
+          "동조",
+          24105
+        ],
+        [
+          "격려",
+          21598
+        ],
+        [
+          "위로",
+          20379
+        ],
+        [
+          "조언",
+          20341
+        ]
+      ],
+      "top_R": [
+        [
+          "친구",
+          3851
+        ],
+        [
+          "연인",
+          3646
+        ],
+        [
+          "형제/자매",
+          3626
+        ],
+        [
+          "직장 동료",
+          3609
+        ],
+        [
+          "부모자녀/조손",
+          3586
+        ],
+        [
+          "부부",
+          3574
+        ],
+        [
+          "지인",
+          3564
+        ]
+      ]
+    },
+    "aihub_valid": {
+      "n_dialogues": 3182,
+      "n_utterances": 46804,
+      "n_listener_turns": 22554,
+      "langs": {
+        "ko": 3182
+      },
+      "coverage": {
+        "A_affect": 1.0,
+        "S_strategy": 1.0,
+        "R_relation": 1.0
+      },
+      "avg_dialogue_turns": 14.71,
+      "avg_utt_chars": 81.83,
+      "top_A": [
+        [
+          "분노",
+          639
+        ],
+        [
+          "기쁨",
+          624
+        ],
+        [
+          "불안",
+          493
+        ],
+        [
+          "슬픔",
+          479
+        ],
+        [
+          "당황",
+          476
+        ],
+        [
+          "상처",
+          471
+        ]
+      ],
+      "top_S": [
+        [
+          "동조",
+          3089
+        ],
+        [
+          "격려",
+          2734
+        ],
+        [
+          "조언",
+          2664
+        ],
+        [
+          "위로",
+          2468
+        ]
+      ],
+      "top_R": [
+        [
+          "친구",
+          493
+        ],
+        [
+          "연인",
+          454
+        ],
+        [
+          "형제/자매",
+          451
+        ],
+        [
+          "직장 동료",
+          448
+        ],
+        [
+          "부모자녀/조손",
+          446
+        ],
+        [
+          "부부",
+          446
+        ],
+        [
+          "지인",
+          444
+        ]
+      ]
+    },
+    "ed_test": {
+      "n_dialogues": 2542,
+      "n_utterances": 10943,
+      "n_listener_turns": 5242,
+      "langs": {
+        "en": 2542
+      },
+      "coverage": {
+        "A_affect": 1.0,
+        "S_strategy": 0.0,
+        "R_relation": 0.0
+      },
+      "avg_dialogue_turns": 4.3,
+      "avg_utt_chars": 86.94,
+      "top_A": [
+        [
+          "surprised",
+          127
+        ],
+        [
+          "proud",
+          96
+        ],
+        [
+          "grateful",
+          95
+        ],
+        [
+          "excited",
+          91
+        ],
+        [
+          "annoyed",
+          91
+        ],
+        [
+          "sentimental",
+          91
+        ],
+        [
+          "sad",
+          88
+        ],
+        [
+          "disgusted",
+          86
+        ],
+        [
+          "angry",
+          84
+        ],
+        [
+          "joyful",
+          83
+        ],
+        [
+          "disappointed",
+          81
+        ],
+        [
+          "impressed",
+          81
+        ]
+      ],
+      "top_S": [],
+      "top_R": []
+    },
+    "ed_train": {
+      "n_dialogues": 17844,
+      "n_utterances": 76673,
+      "n_listener_turns": 36657,
+      "langs": {
+        "en": 17844
+      },
+      "coverage": {
+        "A_affect": 1.0,
+        "S_strategy": 0.0,
+        "R_relation": 0.0
+      },
+      "avg_dialogue_turns": 4.3,
+      "avg_utt_chars": 86.18,
+      "top_A": [
+        [
+          "surprised",
+          925
+        ],
+        [
+          "excited",
+          686
+        ],
+        [
+          "proud",
+          638
+        ],
+        [
+          "angry",
+          637
+        ],
+        [
+          "annoyed",
+          615
+        ],
+        [
+          "sad",
+          609
+        ],
+        [
+          "afraid",
+          587
+        ],
+        [
+          "grateful",
+          587
+        ],
+        [
+          "lonely",
+          586
+        ],
+        [
+          "terrified",
+          579
+        ],
+        [
+          "guilty",
+          573
+        ],
+        [
+          "anxious",
+          572
+        ]
+      ],
+      "top_S": [],
+      "top_R": []
+    },
+    "ed_valid": {
+      "n_dialogues": 2763,
+      "n_utterances": 12030,
+      "n_listener_turns": 5712,
+      "langs": {
+        "en": 2763
+      },
+      "coverage": {
+        "A_affect": 1.0,
+        "S_strategy": 0.0,
+        "R_relation": 0.0
+      },
+      "avg_dialogue_turns": 4.35,
+      "avg_utt_chars": 86.21,
+      "top_A": [
+        [
+          "surprised",
+          148
+        ],
+        [
+          "annoyed",
+          118
+        ],
+        [
+          "impressed",
+          103
+        ],
+        [
+          "sad",
+          101
+        ],
+        [
+          "excited",
+          97
+        ],
+        [
+          "prepared",
+          97
+        ],
+        [
+          "embarrassed",
+          96
+        ],
+        [
+          "lonely",
+          95
+        ],
+        [
+          "confident",
+          94
+        ],
+        [
+          "disappointed",
+          91
+        ],
+        [
+          "afraid",
+          90
+        ],
+        [
+          "jealous",
+          89
+        ]
+      ],
+      "top_S": [],
+      "top_R": []
+    },
+    "koed_test": {
+      "n_dialogues": 1360,
+      "n_utterances": 7820,
+      "n_listener_turns": 3849,
+      "langs": {
+        "ko": 1360
+      },
+      "coverage": {
+        "A_affect": 1.9412,
+        "S_strategy": 0.0,
+        "R_relation": 0.0
+      },
+      "avg_dialogue_turns": 5.75,
+      "avg_utt_chars": 41.67,
+      "top_A": [
+        [
+          "anxious",
+          172
+        ],
+        [
+          "disappointed",
+          131
+        ],
+        [
+          "excited",
+          120
+        ],
+        [
+          "joyful",
+          116
+        ],
+        [
+          "grateful",
+          115
+        ],
+        [
+          "hopeful",
+          115
+        ],
+        [
+          "sad",
+          112
+        ],
+        [
+          "proud",
+          110
+        ],
+        [
+          "apprehensive",
+          106
+        ],
+        [
+          "nostalgic",
+          106
+        ],
+        [
+          "anticipating",
+          103
+        ],
+        [
+          "caring",
+          99
+        ]
+      ],
+      "top_S": [],
+      "top_R": []
+    },
+    "kor_ed_test": {
+      "n_dialogues": 2547,
+      "n_utterances": 10518,
+      "n_listener_turns": 5259,
+      "langs": {
+        "ko": 2547
+      },
+      "coverage": {
+        "A_affect": 1.0,
+        "S_strategy": 0.0,
+        "R_relation": 0.0
+      },
+      "avg_dialogue_turns": 4.13,
+      "avg_utt_chars": 38.49,
+      "top_A": [
+        [
+          "surprised",
+          127
+        ],
+        [
+          "proud",
+          96
+        ],
+        [
+          "grateful",
+          95
+        ],
+        [
+          "excited",
+          91
+        ],
+        [
+          "annoyed",
+          91
+        ],
+        [
+          "sentimental",
+          91
+        ],
+        [
+          "sad",
+          88
+        ],
+        [
+          "disgusted",
+          86
+        ],
+        [
+          "angry",
+          84
+        ],
+        [
+          "joyful",
+          83
+        ],
+        [
+          "jealous",
+          82
+        ],
+        [
+          "hopeful",
+          81
+        ]
+      ],
+      "top_S": [],
+      "top_R": []
+    },
+    "kor_ed_train": {
+      "n_dialogues": 19531,
+      "n_utterances": 80508,
+      "n_listener_turns": 40254,
+      "langs": {
+        "ko": 19531
+      },
+      "coverage": {
+        "A_affect": 1.0,
+        "S_strategy": 0.0,
+        "R_relation": 0.0
+      },
+      "avg_dialogue_turns": 4.12,
+      "avg_utt_chars": 33.54,
+      "top_A": [
+        [
+          "surprised",
+          1004
+        ],
+        [
+          "excited",
+          750
+        ],
+        [
+          "angry",
+          695
+        ],
+        [
+          "proud",
+          686
+        ],
+        [
+          "sad",
+          667
+        ],
+        [
+          "annoyed",
+          667
+        ],
+        [
+          "grateful",
+          645
+        ],
+        [
+          "lonely",
+          641
+        ],
+        [
+          "afraid",
+          634
+        ],
+        [
+          "terrified",
+          628
+        ],
+        [
+          "guilty",
+          622
+        ],
+        [
+          "impressed",
+          621
+        ]
+      ],
+      "top_S": [],
+      "top_R": []
+    },
+    "kor_ed_valid": {
+      "n_dialogues": 2769,
+      "n_utterances": 11476,
+      "n_listener_turns": 5738,
+      "langs": {
+        "ko": 2769
+      },
+      "coverage": {
+        "A_affect": 1.0,
+        "S_strategy": 0.0,
+        "R_relation": 0.0
+      },
+      "avg_dialogue_turns": 4.14,
+      "avg_utt_chars": 36.07,
+      "top_A": [
+        [
+          "surprised",
+          148
+        ],
+        [
+          "annoyed",
+          118
+        ],
+        [
+          "impressed",
+          103
+        ],
+        [
+          "sad",
+          102
+        ],
+        [
+          "excited",
+          97
+        ],
+        [
+          "prepared",
+          97
+        ],
+        [
+          "embarrassed",
+          96
+        ],
+        [
+          "lonely",
+          95
+        ],
+        [
+          "confident",
+          94
+        ],
+        [
+          "disappointed",
+          91
+        ],
+        [
+          "afraid",
+          90
+        ],
+        [
+          "jealous",
+          90
+        ]
+      ],
+      "top_S": [],
+      "top_R": []
+    }
+  },
+  "by_source_split": {
+    "aihub": {
+      "train": {
+        "n_dialogues": 25456,
+        "coverage": {
+          "A_affect": 1.0,
+          "S_strategy": 1.0,
+          "R_relation": 1.0
+        }
+      },
+      "valid": {
+        "n_dialogues": 3182,
+        "coverage": {
+          "A_affect": 1.0,
+          "S_strategy": 1.0,
+          "R_relation": 1.0
+        }
+      }
+    },
+    "ed": {
+      "test": {
+        "n_dialogues": 2542,
+        "coverage": {
+          "A_affect": 1.0,
+          "S_strategy": 0.0,
+          "R_relation": 0.0
+        }
+      },
+      "train": {
+        "n_dialogues": 17844,
+        "coverage": {
+          "A_affect": 1.0,
+          "S_strategy": 0.0,
+          "R_relation": 0.0
+        }
+      },
+      "valid": {
+        "n_dialogues": 2763,
+        "coverage": {
+          "A_affect": 1.0,
+          "S_strategy": 0.0,
+          "R_relation": 0.0
+        }
+      }
+    },
+    "koed": {
+      "test": {
+        "n_dialogues": 1360,
+        "coverage": {
+          "A_affect": 1.9412,
+          "S_strategy": 0.0,
+          "R_relation": 0.0
+        }
+      }
+    },
+    "kor_ed": {
+      "test": {
+        "n_dialogues": 2547,
+        "coverage": {
+          "A_affect": 1.0,
+          "S_strategy": 0.0,
+          "R_relation": 0.0
+        }
+      },
+      "train": {
+        "n_dialogues": 19531,
+        "coverage": {
+          "A_affect": 1.0,
+          "S_strategy": 0.0,
+          "R_relation": 0.0
+        }
+      },
+      "valid": {
+        "n_dialogues": 2769,
+        "coverage": {
+          "A_affect": 1.0,
+          "S_strategy": 0.0,
+          "R_relation": 0.0
+        }
+      }
+    }
+  },
+  "stage_views": {
+    "stage1_en": {
+      "train": "ed_train.jsonl",
+      "valid": "ed_valid.jsonl",
+      "test": "ed_test.jsonl",
+      "supervised_axes": [
+        "A_affect",
+        "C_cognition"
+      ],
+      "n_train": 17844,
+      "n_valid": 2763
+    },
+    "stage3_ko_adapt": {
+      "train": "aihub_train.jsonl",
+      "valid": "aihub_valid.jsonl",
+      "eval_cultural": "koed_test.jsonl",
+      "baseline_translated": "kor_ed_train.jsonl",
+      "supervised_axes": [
+        "A_affect",
+        "S_strategy",
+        "R_relation",
+        "C_cognition"
+      ],
+      "n_train": 25456,
+      "n_valid": 3182
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "axes": [
+    "A_affect",
+    "C_cognition",
+    "S_strategy",
+    "R_relation"
+  ],
+  "files": {
+    "ed_train": 17844,
+    "ed_valid": 2763,
+    "ed_test": 2542,
+    "kor_ed_train": 19531,
+    "kor_ed_valid": 2769,
+    "kor_ed_test": 2547,
+    "koed_test": 1360,
+    "aihub_train": 25456,
+    "aihub_valid": 3182
+  }
+}

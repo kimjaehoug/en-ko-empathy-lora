@@ -1,0 +1,70 @@
+# Stage-wise ablation matrix for SELENE / Factor-LoRA SELECT
+# Report Direction I (A/S/R Acc) and Direction II (Δ Acc vs Stage1) for every row.
+# A1 ≈ baseline_ko_scratch, A2 ≈ baseline_blind_share, A0 ≈ stage3_ko (SELECT).
+
+backbone: gpt2  # swap to Qwen/Qwen3.5-9B for submission runs
+max_steps: 50   # prototype; use full epochs for paper numbers
+
+ablations:
+  A0_full_select:
+    stage1: true
+    stage2_gates: true   # from outputs/stage2_gates/gates.json
+    stage3_heads: true
+    init_mode: auto      # respect gates
+    output_dir: outputs/ablation/A0_full_select
+
+  A1_wo_stage1:
+    stage1: false
+    stage2_gates: false
+    stage3_heads: true
+    init_mode: relearn   # KO from scratch
+    output_dir: outputs/ablation/A1_wo_stage1
+
+  A2_wo_stage2:
+    stage1: true
+    stage2_gates: false
+    stage3_heads: true
+    init_mode: share     # blind share
+    output_dir: outputs/ablation/A2_wo_stage2
+
+  A3_wo_stage3_heads:
+    stage1: true
+    stage2_gates: true
+    stage3_heads: false  # LM-only KO adapt
+    init_mode: auto
+    output_dir: outputs/ablation/A3_wo_stage3_heads
+
+  A4_stage1_only:
+    stage1: true
+    stage2_gates: false
+    stage3_train: false  # eval EN LoRA on KO prompts only
+    output_dir: outputs/ablation/A4_stage1_only
+
+  A5_all_relearn:
+    stage1: true
+    stage2_gates: force_relearn
+    stage3_heads: true
+    init_mode: relearn
+    output_dir: outputs/ablation/A5_all_relearn
+
+  A6_all_suppress:
+    stage1: true
+    stage2_gates: force_suppress
+    stage3_heads: true
+    init_mode: suppress
+    output_dir: outputs/ablation/A6_all_suppress
+
+  A7_gate_A_only:
+    stage1: true
+    stage2_gates: A_only  # S/R fixed relearn
+    stage3_heads: true
+    init_mode: auto
+    output_dir: outputs/ablation/A7_gate_A_only
+
+  A8_compose_alpha:
+    stage1: true
+    stage2_gates: true
+    stage3_heads: true
+    init_mode: auto
+    compose_alpha: [0.0, 0.25, 0.5, 0.75, 1.0]  # Dir II sweep
+    output_dir: outputs/ablation/A8_compose_alpha

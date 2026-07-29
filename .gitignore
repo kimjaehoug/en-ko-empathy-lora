@@ -1,10 +1,23 @@
+# Large raw dumps (rebuild via scripts / AI Hub portal)
 data/raw/empathetic_dialogues/**/*.tar.gz
 data/raw/empathetic_dialogues/empatheticdialogues/
-data/raw/kor_empathetic_dialogues/*.jsonl
+data/raw/kor_empathetic_dialogues/
 data/raw/aihub_empathy/**
 !data/raw/aihub_empathy/README.md
 data/raw/KoED/
+
+# Train artifacts
+outputs/
 __pycache__/
 .venv/
 *.pyc
 .DS_Store
+
+# Editor / agent local
+.cursor/
+.vscode/
+
+# LaTeX build junk
+Computer_Society_LaTeX_template/*.aux
+Computer_Society_LaTeX_template/*.log
+Computer_Society_LaTeX_template/missfont.log

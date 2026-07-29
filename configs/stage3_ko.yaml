@@ -1,0 +1,31 @@
+# KO Stage3: gated LoRA adaptation on AI Hub (gpt2 backbone kept)
+model_name: gpt2
+stage1_lora_dir: outputs/stage1_en/lora
+gates_file: outputs/stage2_gates/gates.json
+output_dir: outputs/stage3_ko
+
+train_file: data/processed/aihub_train.jsonl
+valid_file: data/processed/aihub_valid.jsonl
+
+max_length: 384
+max_history: 8
+batch_size: 2
+grad_accum: 4
+lr: 2.0e-4
+share_lr_scale: 0.5
+weight_decay: 0.01
+num_epochs: 1
+max_steps: 50
+eval_every: 25
+max_eval_batches: 30
+
+emotion_loss_weight: 0.2
+strategy_loss_weight: 0.3
+relation_loss_weight: 0.2
+
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+
+seed: 42
+device: auto

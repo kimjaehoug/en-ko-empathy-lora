@@ -6,32 +6,63 @@
       "ok": true,
       "n_dialogues": 1360,
       "path": "data/raw/KoED/data/KoED.json",
-      "fields": ["conv_id", "ko_situation", "situation", "emotion", "dialogue"],
+      "fields": [
+        "conv_id",
+        "ko_situation",
+        "situation",
+        "emotion",
+        "dialogue"
+      ],
       "role": "EN-KO parallel eval / divergence"
     },
     "EmpatheticDialogues": {
       "ok": true,
-      "utterance_rows": {"train": 84169, "valid": 12078, "test": 10973},
+      "utterance_rows": {
+        "train": 84169,
+        "valid": 12078,
+        "test": 10973
+      },
       "path": "data/raw/empathetic_dialogues/empatheticdialogues/",
       "role": "EN train"
     },
     "KorEmpatheticDialogues": {
       "ok": true,
-      "n_dialogues": {"train": 19531, "validation": 2769, "test": 2547},
+      "n_dialogues": {
+        "train": 19531,
+        "validation": 2769,
+        "test": 2547
+      },
       "path": "data/raw/kor_empathetic_dialogues/",
       "role": "KO translation baseline"
     },
     "AIHub_empathy": {
-      "ok": false,
-      "path": "data/raw/aihub_empathy/",
-      "role": "KO main adapt (S/R labels)",
-      "action": "manual download from AI Hub datasetSn=71305"
+      "ok": true,
+      "path": "data/raw/aihub_empathy/046.공감형 대화/",
+      "n_label_sessions": 28638,
+      "role": "KO main adapt (S/R/A labels)",
+      "fields": [
+        "speaker_emotion",
+        "relation",
+        "listener_behavior",
+        "listener_empathy",
+        "utterances"
+      ],
+      "axes": [
+        "A",
+        "S",
+        "R"
+      ]
     }
   },
-  "axes": ["A_affect", "C_cognition", "S_strategy", "R_relation"],
+  "axes": [
+    "A_affect",
+    "C_cognition",
+    "S_strategy",
+    "R_relation"
+  ],
   "next": [
-    "Inspect ED/KoED/KorED schemas into unified records",
-    "User downloads AI Hub empathy dialogue",
-    "Build processed EN/KO jsonl with axis fields"
+    "Build processed unified jsonl (ED/KoED/KorED/AIHub) with A/C/S/R fields",
+    "Honorific proxy labeling for R axis",
+    "Train/dev/test splits for AI Hub"
   ]
 }

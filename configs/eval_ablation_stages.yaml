@@ -1,0 +1,38 @@
+# Stage-wise ablation smoke eval (gpt2)
+model_name: gpt2
+stage1_dir: outputs/stage1_en
+ko_valid_file: data/processed/aihub_valid.jsonl
+en_valid_file: data/processed/ed_valid.jsonl
+output_dir: outputs/eval_ablation_stages
+
+batch_size: 2
+max_length: 384
+max_history: 8
+max_batches: 30
+device: auto
+
+# Direction I: Stage3-style checkpoints
+ko_checkpoints:
+  A0_full_select: outputs/ablation/A0_full_select
+  A1_wo_stage1: outputs/ablation/A1_wo_stage1
+  A2_wo_stage2: outputs/ablation/A2_wo_stage2
+  A3_wo_stage3_heads: outputs/ablation/A3_wo_stage3_heads
+  A4_stage1_only: outputs/ablation/A4_stage1_only
+  A5_all_relearn: outputs/ablation/A5_all_relearn
+  A6_all_suppress: outputs/ablation/A6_all_suppress
+  A7_gate_A_only: outputs/ablation/A7_gate_A_only
+  A8_compose_alpha: outputs/ablation/A8_compose_alpha
+
+# Direction II: LoRA + Stage1 EN emotion head
+en_lora_variants:
+  en_before_ko: outputs/stage1_en/lora
+  A0_after_select: outputs/ablation/A0_full_select/lora
+  A1_after_ko_scratch: outputs/ablation/A1_wo_stage1/lora
+  A2_after_blind_share: outputs/ablation/A2_wo_stage2/lora
+  A3_after_lm_only: outputs/ablation/A3_wo_stage3_heads/lora
+  A4_stage1_only: outputs/ablation/A4_stage1_only/lora
+  A5_after_all_relearn: outputs/ablation/A5_all_relearn/lora
+  A6_after_all_suppress: outputs/ablation/A6_all_suppress/lora
+  A7_after_gate_A: outputs/ablation/A7_gate_A_only/lora
+  # A8: compose α not yet mixing adapters; same as A0 (α=1.0 stub)
+  A8_compose_alpha_1_0: outputs/ablation/A8_compose_alpha/lora
