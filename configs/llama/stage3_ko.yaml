@@ -1,0 +1,35 @@
+# Llama-3.1-8B SELENE configs
+model_name: meta-llama/Llama-3.1-8B
+dtype: bf16
+stage1_lora_dir: outputs/llama31_8b/stage1_en/lora
+gates_file: outputs/llama31_8b/stage2_gates/gates.json
+output_dir: outputs/llama31_8b/stage3_ko
+
+train_file: data/processed/aihub_train.jsonl
+valid_file: data/processed/aihub_valid.jsonl
+
+max_length: 512
+max_history: 8
+batch_size: 2
+grad_accum: 8
+lr: 2.0e-4
+share_lr_scale: 0.5
+weight_decay: 0.01
+num_epochs: 1
+max_steps: null
+eval_every: 200
+max_eval_batches: 100
+log_every: 10
+gradient_checkpointing: false
+
+emotion_loss_weight: 0.2
+strategy_loss_weight: 0.3
+relation_loss_weight: 0.2
+
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_include_mlp: false
+
+seed: 42
+device: cuda

@@ -18,12 +18,12 @@ import torch
 import yaml
 from peft import PeftModel
 from torch.utils.data import DataLoader
-from transformers import AutoModelForCausalLM
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from src.data.empathy_data import EmpathyCollator, EmpathyJsonlDataset
+from src.models.backbone import load_base_causal_lm
 from src.models.encoding import pick_device
 from src.models.stage1 import Stage1EmpathyModel, build_tokenizer
 from src.models.stage3 import Stage3EmpathyModel
@@ -39,21 +39,27 @@ def eval_stage3(model, loader, device, max_batches: int | None) -> dict:
     model.eval()
     totals = {k: 0.0 for k in ["loss", "lm_loss", "emotion_loss", "strategy_loss", "relation_loss"]}
     counts = {k: 0 for k in totals}
-    correct = {k: 0 for k in ["emotion", "strategy", "relation"]}
+    correct = {k: 0 for k in ["emotion", "relation"]}
     counted = {k: 0 for k in correct}
+    s_tp = s_fp = s_fn = s_correct_bits = s_total_bits = 0
+    s_exact = s_n = 0
+    s_single_correct = s_single_n = 0
+    n_examples = 0
+    n_batches_run = 0
 
     for i, batch in enumerate(loader):
         if max_batches is not None and i >= max_batches:
             break
         batch = {k: v.to(device) for k, v in batch.items()}
         out = model(**batch)
+        n_batches_run += 1
+        n_examples += int(batch["input_ids"].size(0))
         for k in totals:
             if out.get(k) is not None:
                 totals[k] += float(out[k].detach())
                 counts[k] += 1
         for name, logits_key, ids_key in [
             ("emotion", "emotion_logits", "emotion_ids"),
-            ("strategy", "strategy_logits", "strategy_ids"),
             ("relation", "relation_logits", "relation_ids"),
         ]:
             ids = batch[ids_key]
@@ -63,12 +69,49 @@ def eval_stage3(model, loader, device, max_batches: int | None) -> dict:
                 correct[name] += int((pred == ids[valid]).sum().item())
                 counted[name] += int(valid.sum().item())
 
+        if "strategy_multihot" in batch:
+            target = batch["strategy_multihot"]
+            pred = (out["strategy_logits"].sigmoid() >= 0.5).float()
+            row_has = target.sum(dim=-1) > 0
+            if row_has.any():
+                t = target[row_has]
+                p = pred[row_has]
+                s_tp += int(((p == 1) & (t == 1)).sum().item())
+                s_fp += int(((p == 1) & (t == 0)).sum().item())
+                s_fn += int(((p == 0) & (t == 1)).sum().item())
+                s_correct_bits += int((p == t).sum().item())
+                s_total_bits += int(t.numel())
+                s_exact += int((p == t).all(dim=-1).sum().item())
+                s_n += int(row_has.sum().item())
+        else:
+            ids = batch["strategy_ids"]
+            valid = ids >= 0
+            if valid.any():
+                pred = out["strategy_logits"][valid].argmax(dim=-1)
+                s_single_correct += int((pred == ids[valid]).sum().item())
+                s_single_n += int(valid.sum().item())
+
     metrics = {k: (totals[k] / counts[k] if counts[k] else None) for k in totals}
     for name in correct:
         metrics[f"{name}_acc"] = (
             correct[name] / counted[name] if counted[name] else None
         )
-    metrics["n_batches"] = min(len(loader), max_batches or len(loader))
+    if s_total_bits > 0:
+        prec = s_tp / max(s_tp + s_fp, 1)
+        rec = s_tp / max(s_tp + s_fn, 1)
+        f1 = 2 * prec * rec / max(prec + rec, 1e-8)
+        metrics["strategy_acc"] = f1
+        metrics["strategy_micro_f1"] = f1
+        metrics["strategy_precision"] = prec
+        metrics["strategy_recall"] = rec
+        metrics["strategy_hamming_acc"] = s_correct_bits / s_total_bits
+        metrics["strategy_exact_match"] = s_exact / max(s_n, 1)
+    elif s_single_n > 0:
+        metrics["strategy_acc"] = s_single_correct / s_single_n
+    else:
+        metrics["strategy_acc"] = None
+    metrics["n_batches"] = n_batches_run
+    metrics["n_examples"] = n_examples
     return metrics
 
 
@@ -79,6 +122,8 @@ def eval_stage1(model, loader, device, max_batches: int | None) -> dict:
     counts = {k: 0 for k in totals}
     correct = 0
     counted = 0
+    n_examples = 0
+    n_batches_run = 0
 
     for i, batch in enumerate(loader):
         if max_batches is not None and i >= max_batches:
@@ -89,6 +134,8 @@ def eval_stage1(model, loader, device, max_batches: int | None) -> dict:
             if k in {"input_ids", "attention_mask", "labels", "emotion_ids"}
         }
         out = model(**batch)
+        n_batches_run += 1
+        n_examples += int(batch["input_ids"].size(0))
         for k in totals:
             if out.get(k) is not None:
                 totals[k] += float(out[k].detach())
@@ -102,22 +149,30 @@ def eval_stage1(model, loader, device, max_batches: int | None) -> dict:
 
     metrics = {k: (totals[k] / counts[k] if counts[k] else None) for k in totals}
     metrics["emotion_acc"] = correct / counted if counted else None
-    metrics["n_batches"] = min(len(loader), max_batches or len(loader))
+    metrics["n_batches"] = n_batches_run
+    metrics["n_examples"] = n_examples
     return metrics
 
 
 def load_stage3_bundle(cfg: dict, ckpt_dir: Path, device: torch.device) -> Stage3EmpathyModel:
     labels = json.loads((ckpt_dir / "labels.json").read_text(encoding="utf-8"))
     tok = build_tokenizer(cfg["model_name"])
-    base = AutoModelForCausalLM.from_pretrained(cfg["model_name"])
+    base = load_base_causal_lm(cfg["model_name"], dtype=cfg.get("dtype", "bf16"))
     lm = PeftModel.from_pretrained(base, str(ckpt_dir / "lora"))
+    heads = torch.load(ckpt_dir / "heads.pt", map_location="cpu", weights_only=False)
+    multilabel = bool(
+        labels.get("strategy_multilabel", heads.get("strategy_multilabel", False))
+    )
+    # Detect deep strategy head from checkpoint tensor keys
+    deep = any(k.startswith("0.") or k.startswith("3.") for k in heads["strategy_head"])
     model = Stage3EmpathyModel(
         lm,
         n_emotions=len(labels["emotion"]),
         n_strategies=len(labels["strategy"]),
         n_relations=len(labels["relation"]),
+        strategy_multilabel=multilabel,
+        deep_strategy_head=deep,
     )
-    heads = torch.load(ckpt_dir / "heads.pt", map_location="cpu")
     model.emotion_head.load_state_dict(heads["emotion_head"])
     model.strategy_head.load_state_dict(heads["strategy_head"])
     model.relation_head.load_state_dict(heads["relation_head"])
@@ -135,7 +190,7 @@ def load_stage1_for_en(
     """EN evaluation: given LoRA (stage1 or post-KO) + Stage1 emotion head (32-class ED)."""
     emotion_labels = json.loads((stage1_dir / "emotion_labels.json").read_text())
     tok = build_tokenizer(cfg["model_name"])
-    base = AutoModelForCausalLM.from_pretrained(cfg["model_name"])
+    base = load_base_causal_lm(cfg["model_name"], dtype=cfg.get("dtype", "bf16"))
     lm = PeftModel.from_pretrained(base, str(lora_dir))
     model = Stage1EmpathyModel(lm, n_emotions=len(emotion_labels))
     state = torch.load(stage1_dir / "emotion_head.pt", map_location="cpu")
@@ -158,8 +213,16 @@ def make_loader(path: Path, tok, cfg: dict, *, lang_hint=None, labels=None, emot
         )
     if lang_hint == "ko" or (labels and labels.get("strategy")):
         kwargs["multitask"] = True
+        kwargs["strategy_scope"] = labels.get("strategy_scope") or cfg.get(
+            "strategy_scope", "utterance"
+        )
     ds = EmpathyJsonlDataset(path, **kwargs)
-    collator = EmpathyCollator(tok, max_length=int(cfg.get("max_length", 384)))
+    n_s = len(labels["strategy"]) if labels and labels.get("strategy") else None
+    collator = EmpathyCollator(
+        tok,
+        max_length=int(cfg.get("max_length", 384)),
+        n_strategies=n_s,
+    )
     return DataLoader(
         ds,
         batch_size=int(cfg.get("batch_size", 2)),
@@ -172,10 +235,21 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default=str(ROOT / "configs" / "eval_direction_i_ii.yaml"))
     parser.add_argument("--max_batches", type=int, default=None)
+    parser.add_argument(
+        "--full",
+        action="store_true",
+        help="Evaluate full valid split (ignore config max_batches).",
+    )
     args = parser.parse_args()
     cfg = load_config(Path(args.config))
     device = pick_device(str(cfg.get("device", "auto")))
-    max_batches = args.max_batches if args.max_batches is not None else cfg.get("max_batches", 50)
+    if args.full:
+        max_batches = None
+    elif args.max_batches is not None:
+        max_batches = args.max_batches
+    else:
+        # YAML null → full split; omit → legacy default 50
+        max_batches = cfg["max_batches"] if "max_batches" in cfg else 50
 
     stage1_dir = ROOT / cfg["stage1_dir"]
     report = {
@@ -188,12 +262,21 @@ def main() -> None:
             },
             "note": "EN Stage1 / Direction II use these files; A=32 ED emotions.",
         },
+        "eval_protocol": {
+            "max_batches": max_batches,
+            "full_split": max_batches is None,
+            "batch_size": int(cfg.get("batch_size", 2)),
+        },
         "direction_i_ko": {},
         "direction_ii_en": {},
     }
 
     # ---- Direction I: KO affective accuracy ----
-    print("=== Direction I: KO (AI Hub) ===")
+    print(
+        f"=== Direction I: KO (AI Hub) max_batches={max_batches} "
+        f"(None=full) ===",
+        flush=True,
+    )
     for name, rel in cfg.get("ko_checkpoints", {}).items():
         ckpt = ROOT / rel
         if not (ckpt / "lora").exists():
@@ -211,16 +294,36 @@ def main() -> None:
         metrics = eval_stage3(model, loader, device, max_batches)
         report["direction_i_ko"][name] = {
             "checkpoint": str(ckpt),
-            "n_eval": len(ds),
+            "n_dataset": len(ds),
+            "n_eval": metrics.get("n_examples"),
+            "n_batches": metrics.get("n_batches"),
             "metrics": metrics,
         }
-        print(name, {k: metrics[k] for k in ["emotion_acc", "strategy_acc", "relation_acc", "lm_loss"]})
+        print(
+            name,
+            {
+                k: metrics[k]
+                for k in [
+                    "emotion_acc",
+                    "strategy_acc",
+                    "relation_acc",
+                    "lm_loss",
+                    "n_examples",
+                ]
+            },
+            flush=True,
+        )
         del model
-        if device.type == "mps":
+        if device.type == "cuda":
+            torch.cuda.empty_cache()
+        elif device.type == "mps":
             torch.mps.empty_cache()
 
     # ---- Direction II: return to EN ----
-    print("=== Direction II: EN (EmpatheticDialogues) ===")
+    print(
+        f"=== Direction II: EN (EmpatheticDialogues) max_batches={max_batches} ===",
+        flush=True,
+    )
     for name, rel in cfg.get("en_lora_variants", {}).items():
         lora_path = ROOT / rel
         if not lora_path.exists():
@@ -239,13 +342,21 @@ def main() -> None:
         report["direction_ii_en"][name] = {
             "lora": str(lora_path),
             "emotion_head": str(stage1_dir / "emotion_head.pt"),
-            "n_eval": len(ds),
+            "n_dataset": len(ds),
+            "n_eval": metrics.get("n_examples"),
+            "n_batches": metrics.get("n_batches"),
             "n_emotions": len(emo_labels),
             "metrics": metrics,
         }
-        print(name, {k: metrics[k] for k in ["emotion_acc", "lm_loss", "loss"]})
+        print(
+            name,
+            {k: metrics[k] for k in ["emotion_acc", "lm_loss", "loss", "n_examples"]},
+            flush=True,
+        )
         del model
-        if device.type == "mps":
+        if device.type == "cuda":
+            torch.cuda.empty_cache()
+        elif device.type == "mps":
             torch.mps.empty_cache()
 
     # deltas vs EN-before if present
@@ -266,7 +377,7 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / "report.json"
     out_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"wrote {out_path}")
+    print(f"wrote {out_path}", flush=True)
 
 
 if __name__ == "__main__":

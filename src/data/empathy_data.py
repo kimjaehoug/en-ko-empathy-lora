@@ -93,11 +93,13 @@ class EmpathyJsonlDataset(Dataset):
         relation_labels: list[str] | None = None,
         multitask: bool = False,
         lang_hint: str | None = None,
+        strategy_scope: str = "utterance",
     ) -> None:
         self.path = Path(path)
         self.max_history = max_history
         self.multitask = multitask
         self.lang_hint = lang_hint
+        self.strategy_scope = strategy_scope if strategy_scope in {"utterance", "session"} else "utterance"
         rows = load_jsonl(self.path)
 
         self.emotion_labels = emotion_labels or _infer_labels(rows, "A_affect")
@@ -118,16 +120,27 @@ class EmpathyJsonlDataset(Dataset):
             a = _first_or_none((row.get("axes") or {}).get("A_affect"))
             emotion_id = self.emotion2id.get(a, -1) if a is not None else -1
 
+            # S_strategy is multi-label (e.g. [격려, 동조]).
+            # strategy_scope=session: axes.S_strategy; utterance: last listener turn tags.
             strategies = (row.get("axes") or {}).get("S_strategy") or []
-            # multi-label -> primary = first annotated strategy on last listener, else first
-            primary_s = strategies[0] if strategies else None
-            for u in reversed(row.get("dialogue") or []):
-                if u.get("role") == "listener" and u.get("strategies"):
-                    primary_s = u["strategies"][0]
-                    break
-            strategy_id = (
-                self.strategy2id.get(str(primary_s), -1) if primary_s is not None else -1
-            )
+            if not isinstance(strategies, list):
+                strategies = [strategies] if strategies is not None else []
+            if getattr(self, "strategy_scope", "utterance") == "utterance":
+                for u in reversed(row.get("dialogue") or []):
+                    if u.get("role") == "listener" and u.get("strategies"):
+                        strategies = u["strategies"]
+                        break
+            strategy_ids_multi = []
+            for s in strategies:
+                sid = self.strategy2id.get(str(s), -1)
+                if sid >= 0:
+                    strategy_ids_multi.append(sid)
+            # primary: rarest class among positives (reduces majority collapse vs always first)
+            if strategy_ids_multi:
+                # frequency proxy from label order is unavailable here; use last as response-facing
+                primary_s_id = strategy_ids_multi[0]
+            else:
+                primary_s_id = -1
 
             r = (row.get("axes") or {}).get("R_relation")
             relation_id = self.relation2id.get(str(r), -1) if r is not None else -1
@@ -138,7 +151,8 @@ class EmpathyJsonlDataset(Dataset):
                     "prompt": prompt,
                     "target": target,
                     "emotion_id": emotion_id,
-                    "strategy_id": strategy_id,
+                    "strategy_id": primary_s_id,
+                    "strategy_ids_multi": strategy_ids_multi,
                     "relation_id": relation_id,
                     "axes": row.get("axes") or {},
                     "source": row.get("source"),
@@ -162,10 +176,12 @@ class EmpathyCollator:
         *,
         max_length: int = 512,
         response_prefix: str = " ",
+        n_strategies: int | None = None,
     ) -> None:
         self.tokenizer = tokenizer
         self.max_length = max_length
         self.response_prefix = response_prefix
+        self.n_strategies = n_strategies
         if self.tokenizer.pad_token is None:
             self.tokenizer.pad_token = self.tokenizer.eos_token
 
@@ -220,7 +236,7 @@ class EmpathyCollator:
             padded_labels.append(lab + [-100] * pad_n)
             attn.append([1] * len(ids) + [0] * pad_n)
 
-        return {
+        out: dict[str, torch.Tensor] = {
             "input_ids": torch.tensor(padded_ids, dtype=torch.long),
             "attention_mask": torch.tensor(attn, dtype=torch.long),
             "labels": torch.tensor(padded_labels, dtype=torch.long),
@@ -234,3 +250,22 @@ class EmpathyCollator:
                 [f.get("relation_id", -1) for f in features], dtype=torch.long
             ),
         }
+        # Multi-label strategy targets [B, C] when n_strategies known
+        n_s = self.n_strategies
+        if n_s is None:
+            # infer from any multi list present
+            for f in features:
+                multi = f.get("strategy_ids_multi")
+                if multi:
+                    n_s = max(n_s or 0, max(multi) + 1)
+        if n_s is not None and n_s > 0:
+            multihot = torch.zeros(len(features), n_s, dtype=torch.float32)
+            for i, f in enumerate(features):
+                multi = f.get("strategy_ids_multi") or []
+                if not multi and f.get("strategy_id", -1) >= 0:
+                    multi = [int(f["strategy_id"])]
+                for sid in multi:
+                    if 0 <= int(sid) < n_s:
+                        multihot[i, int(sid)] = 1.0
+            out["strategy_multihot"] = multihot
+        return out

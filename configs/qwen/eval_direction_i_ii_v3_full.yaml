@@ -1,0 +1,25 @@
+# Re-eval v3 checkpoints on FULL valid (protocol fix)
+model_name: Qwen/Qwen3.5-9B
+dtype: bf16
+device: cuda
+batch_size: 2
+max_length: 512
+max_history: 8
+max_batches: null
+strategy_scope: utterance
+
+stage1_dir: outputs/qwen35_9b/stage1_en
+en_valid_file: data/processed/ed_valid.jsonl
+ko_valid_file: data/processed/aihub_valid.jsonl
+output_dir: outputs/qwen35_9b_v3/eval_direction_i_ii_full
+
+ko_checkpoints:
+  select: outputs/qwen35_9b_v3/stage3_ko
+  ko_scratch: outputs/qwen35_9b_v3/baseline_ko_scratch
+  blind_share: outputs/qwen35_9b_v3/baseline_blind_share
+
+en_lora_variants:
+  en_before_ko: outputs/qwen35_9b/stage1_en/lora
+  after_select: outputs/qwen35_9b_v3/stage3_ko/lora
+  after_ko_scratch: outputs/qwen35_9b_v3/baseline_ko_scratch/lora
+  after_blind_share: outputs/qwen35_9b_v3/baseline_blind_share/lora

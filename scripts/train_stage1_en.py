@@ -17,7 +17,13 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from src.data.empathy_data import EmpathyCollator, EmpathyJsonlDataset
+from src.models.backbone import cuda_mem_gb, git_commit_hash
 from src.models.stage1 import Stage1EmpathyModel, build_lora_lm, build_tokenizer
+from src.utils.train_log import (
+    TrainLogger,
+    batch_accuracy,
+    estimate_total_steps,
+)
 
 
 def set_seed(seed: int) -> None:
@@ -45,7 +51,7 @@ def load_config(path: Path) -> dict:
 
 
 @torch.no_grad()
-def evaluate(model, loader, device) -> dict:
+def evaluate(model, loader, device, max_batches: int | None = None) -> dict:
     model.eval()
     total_loss = 0.0
     total_lm = 0.0
@@ -53,7 +59,9 @@ def evaluate(model, loader, device) -> dict:
     n = 0
     correct = 0
     counted = 0
-    for batch in loader:
+    for i, batch in enumerate(loader):
+        if max_batches is not None and i >= max_batches:
+            break
         batch = {k: v.to(device) for k, v in batch.items()}
         out = model(**batch)
         total_loss += float(out["loss"])
@@ -93,7 +101,12 @@ def main() -> None:
 
     set_seed(int(cfg.get("seed", 42)))
     device = pick_device(str(cfg.get("device", "auto")))
+    if device.type == "cuda":
+        torch.cuda.reset_peak_memory_stats()
+        torch.cuda.empty_cache()
     print(f"device={device}")
+    if device.type == "cuda":
+        print(f"cuda_device={torch.cuda.get_device_name(0)}")
 
     train_path = ROOT / cfg["train_file"]
     valid_path = ROOT / cfg["valid_file"]
@@ -128,7 +141,14 @@ def main() -> None:
         lora_r=int(cfg.get("lora_r", 8)),
         lora_alpha=int(cfg.get("lora_alpha", 16)),
         lora_dropout=float(cfg.get("lora_dropout", 0.05)),
+        dtype=cfg.get("dtype", "bf16"),
+        include_mlp=bool(cfg.get("lora_include_mlp", False)),
+        target_modules=cfg.get("lora_target_modules"),
     )
+    if bool(cfg.get("gradient_checkpointing", False)):
+        lm.gradient_checkpointing_enable()
+        if hasattr(lm, "enable_input_require_grads"):
+            lm.enable_input_require_grads()
     model = Stage1EmpathyModel(
         lm,
         n_emotions=len(train_ds.emotion_labels),
@@ -154,8 +174,30 @@ def main() -> None:
 
     max_steps = cfg.get("max_steps")
     eval_every = int(cfg.get("eval_every", 50))
+    log_every = int(cfg.get("log_every", 10))
+    max_eval_batches = cfg.get("max_eval_batches", 100)
+    if max_eval_batches is not None:
+        max_eval_batches = int(max_eval_batches)
     grad_accum = int(cfg.get("grad_accum", 1))
     num_epochs = int(cfg.get("num_epochs", 1))
+    total_steps = estimate_total_steps(
+        n_train=len(train_ds),
+        batch_size=int(cfg.get("batch_size", 2)),
+        grad_accum=grad_accum,
+        num_epochs=num_epochs,
+        max_steps=int(max_steps) if max_steps is not None else None,
+    )
+
+    logger = TrainLogger(
+        stage="Stage1-EN",
+        out_dir=out_dir,
+        total_steps=total_steps,
+        log_every=log_every,
+    )
+    logger.banner(
+        f"model={cfg['model_name']} train={len(train_ds)} valid={len(valid_ds)} "
+        f"steps≈{total_steps} eval_every={eval_every}"
+    )
 
     global_step = 0
     optim.zero_grad(set_to_none=True)
@@ -174,21 +216,38 @@ def main() -> None:
                 optim.zero_grad(set_to_none=True)
                 global_step += 1
 
-                if global_step % 5 == 0 or global_step == 1:
-                    msg = {
+                train_acc = batch_accuracy(
+                    out["emotion_logits"], batch.get("emotion_ids"), name="emotion"
+                )
+                logger.log_train(
+                    global_step,
+                    loss=float(out["loss"].detach()),
+                    lm_loss=float(out["lm_loss"].detach()),
+                    extra_losses={
+                        "emotion_loss": None
+                        if out["emotion_loss"] is None
+                        else float(out["emotion_loss"].detach()),
+                    },
+                    train_acc=train_acc,
+                    force=(global_step == 1),
+                )
+                history.append(
+                    {
                         "step": global_step,
                         "loss": float(out["loss"].detach()),
                         "lm_loss": float(out["lm_loss"].detach()),
                         "emotion_loss": None
                         if out["emotion_loss"] is None
                         else float(out["emotion_loss"].detach()),
+                        **train_acc,
                     }
-                    history.append(msg)
-                    print(msg)
+                )
 
                 if global_step % eval_every == 0:
-                    metrics = evaluate(model, valid_loader, device)
-                    print({"eval": metrics})
+                    metrics = evaluate(
+                        model, valid_loader, device, max_batches=max_eval_batches
+                    )
+                    logger.log_eval(global_step, metrics)
                     history.append({"step": global_step, "eval": metrics})
 
                 if max_steps is not None and global_step >= int(max_steps):
@@ -197,8 +256,15 @@ def main() -> None:
             break
 
     # final eval + save
-    metrics = evaluate(model, valid_loader, device)
-    print({"final_eval": metrics})
+    metrics = evaluate(model, valid_loader, device, max_batches=max_eval_batches)
+    logger.log_final(
+        metrics,
+        extra={
+            "saved_to": str(out_dir),
+            "vram_peak_gb": cuda_mem_gb().get("peak_allocated_gb"),
+            "steps": global_step,
+        },
+    )
     history.append({"final_eval": metrics})
 
     # save peft adapters + emotion head
@@ -210,16 +276,22 @@ def main() -> None:
     )
     meta = {
         "model_name": cfg["model_name"],
+        "dtype": cfg.get("dtype", "bf16"),
         "n_emotions": len(train_ds.emotion_labels),
         "trainable_params": trainable,
         "total_params": total,
         "final_eval": metrics,
         "steps": global_step,
+        "device": str(device),
+        "cuda_device_name": torch.cuda.get_device_name(0) if device.type == "cuda" else None,
+        "vram": cuda_mem_gb(),
+        "git_commit": git_commit_hash(ROOT),
+        "seed": int(cfg.get("seed", 42)),
     }
     (out_dir / "run_meta.json").write_text(
         json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    print(f"saved -> {out_dir}")
+    print(f"[Stage1-EN] progress -> {out_dir / 'progress.json'}", flush=True)
 
 
 if __name__ == "__main__":

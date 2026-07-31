@@ -1,0 +1,30 @@
+# Llama-3.1-8B SELENE configs
+model_name: meta-llama/Llama-3.1-8B
+dtype: bf16
+output_dir: outputs/llama31_8b/stage1_en
+
+train_file: data/processed/ed_train.jsonl
+valid_file: data/processed/ed_valid.jsonl
+
+max_length: 512
+max_history: 8
+batch_size: 2
+grad_accum: 8
+lr: 2.0e-4
+weight_decay: 0.01
+num_epochs: 1
+max_steps: null          # full epoch; override with --max_steps for smoke
+eval_every: 200
+max_eval_batches: 100
+log_every: 10
+emotion_loss_weight: 0.2
+gradient_checkpointing: false
+
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_include_mlp: false
+# default targets inferred: q_proj,k_proj,v_proj,o_proj
+
+seed: 42
+device: cuda

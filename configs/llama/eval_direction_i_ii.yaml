@@ -1,0 +1,24 @@
+# Llama-3.1-8B SELENE configs
+model_name: meta-llama/Llama-3.1-8B
+dtype: bf16
+device: cuda
+batch_size: 2
+max_length: 512
+max_history: 8
+max_batches: 100
+
+stage1_dir: outputs/llama31_8b/stage1_en
+en_valid_file: data/processed/ed_valid.jsonl
+ko_valid_file: data/processed/aihub_valid.jsonl
+output_dir: outputs/llama31_8b/eval_direction_i_ii
+
+ko_checkpoints:
+  select: outputs/llama31_8b/stage3_ko
+  ko_scratch: outputs/llama31_8b/baseline_ko_scratch
+  blind_share: outputs/llama31_8b/baseline_blind_share
+
+en_lora_variants:
+  en_before_ko: outputs/llama31_8b/stage1_en/lora
+  after_select: outputs/llama31_8b/stage3_ko/lora
+  after_ko_scratch: outputs/llama31_8b/baseline_ko_scratch/lora
+  after_blind_share: outputs/llama31_8b/baseline_blind_share/lora

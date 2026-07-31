@@ -1,0 +1,26 @@
+# Llama-3.1-8B SELENE configs
+model_name: meta-llama/Llama-3.1-8B
+dtype: bf16
+stage1_dir: outputs/llama31_8b/stage1_en
+output_dir: outputs/llama31_8b/stage2_gates
+
+en_file: data/processed/ed_train.jsonl
+ko_file: data/processed/aihub_train.jsonl
+koed_file: data/processed/koed_test.jsonl
+
+max_en_samples: 4096
+max_ko_samples: 4096
+max_koed_samples: 1360
+max_history: 6
+max_length: 512
+batch_size: 2
+probe_steps: 400
+
+# Affect can share around mid probe+domain score; S/R need stronger evidence
+share_threshold: 0.55
+suppress_threshold: 0.15
+sr_share_threshold: 0.75
+force_sr_relearn: true   # paper prior: S/R relearn unless probe clears sr_share_threshold
+
+device: cuda
+seed: 42

@@ -2,15 +2,19 @@ from __future__ import annotations
 
 import torch
 import torch.nn as nn
-from transformers import AutoModelForCausalLM, AutoTokenizer
 from peft import LoraConfig, TaskType, get_peft_model
 
+from .backbone import (
+    build_tokenizer,
+    infer_lora_targets,
+    load_base_causal_lm,
+)
 
-def build_tokenizer(model_name: str):
-    tok = AutoTokenizer.from_pretrained(model_name, use_fast=True)
-    if tok.pad_token is None:
-        tok.pad_token = tok.eos_token
-    return tok
+__all__ = [
+    "Stage1EmpathyModel",
+    "build_lora_lm",
+    "build_tokenizer",
+]
 
 
 def build_lora_lm(
@@ -20,22 +24,25 @@ def build_lora_lm(
     lora_alpha: int = 16,
     lora_dropout: float = 0.05,
     target_modules: list[str] | None = None,
+    dtype: str | torch.dtype | None = "bf16",
+    include_mlp: bool = False,
+    device_map: str | dict | None = None,
 ):
-    model = AutoModelForCausalLM.from_pretrained(model_name)
-    if target_modules is None:
-        # gpt2-style
-        target_modules = ["c_attn", "c_proj"]
-        # fallback for llama/qwen-like if those modules absent
-        module_names = {n.split(".")[-1] for n, _ in model.named_modules()}
-        if "q_proj" in module_names:
-            target_modules = ["q_proj", "v_proj", "k_proj", "o_proj"]
-
+    """Build PEFT LoRA causal LM (bf16 on CUDA; no 4-bit / QLoRA)."""
+    model = load_base_causal_lm(
+        model_name,
+        dtype=dtype,
+        device_map=device_map,
+    )
+    targets = infer_lora_targets(
+        model, target_modules=target_modules, include_mlp=include_mlp
+    )
     cfg = LoraConfig(
         task_type=TaskType.CAUSAL_LM,
         r=lora_r,
         lora_alpha=lora_alpha,
         lora_dropout=lora_dropout,
-        target_modules=target_modules,
+        target_modules=targets,
         bias="none",
     )
     model = get_peft_model(model, cfg)
@@ -83,7 +90,7 @@ class Stage1EmpathyModel(nn.Module):
         hidden = outputs.hidden_states[-1]
         # Pool prompt tokens: positions supervised as -100 and not padding
         prompt_mask = (labels == -100) & (attention_mask == 1)
-        pooled = self._masked_mean(hidden, prompt_mask)
+        pooled = self._masked_mean(hidden, prompt_mask).float()
         logits = self.emotion_head(pooled)
 
         loss = lm_loss
