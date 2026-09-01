@@ -1,0 +1,33 @@
+# TAFFC extended eval — v6 matrix + baselines (paths updated as runs finish)
+model_name: Qwen/Qwen3.5-9B
+dtype: bf16
+device: cuda
+stage1_dir: outputs/qwen35_9b/stage1_en
+stage1_lora_dir: outputs/qwen35_9b/stage1_en/lora
+ko_valid_file: data/processed/aihub_valid.jsonl
+en_valid_file: data/processed/ed_valid.jsonl
+koed_file: data/processed/koed_test.jsonl
+max_length: 512
+max_history: 8
+batch_size: 2
+max_batches: null
+output_dir: outputs/taffc/eval
+
+ko_checkpoints:
+  F16: outputs/qwen35_9b_v6/F16
+  F32: outputs/qwen35_9b_v6/F32
+  B16: outputs/qwen35_9b_v6/B16
+  B32: outputs/qwen35_9b_v6/B32
+  S16: outputs/qwen35_9b_v6/S16
+  MADX: outputs/taffc/qwen/MADX/s42
+  KED: outputs/taffc/qwen/KED/s42
+
+en_lora_variants:
+  en_before_ko: outputs/qwen35_9b/stage1_en/lora
+  after_F16: outputs/qwen35_9b_v6/F16/lora
+  after_F32: outputs/qwen35_9b_v6/F32/lora
+  after_B16: outputs/qwen35_9b_v6/B16/lora
+  after_B32: outputs/qwen35_9b_v6/B32/lora
+  after_S16: outputs/qwen35_9b_v6/S16/lora
+  after_MADX: outputs/taffc/qwen/MADX/s42/lora
+  after_KED: outputs/taffc/qwen/KED/s42/lora

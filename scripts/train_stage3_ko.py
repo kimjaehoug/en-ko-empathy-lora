@@ -199,9 +199,20 @@ def main() -> None:
     parser.add_argument("--max_steps", type=int, default=None)
     parser.add_argument(
         "--init_mode",
-        choices=["auto", "share", "relearn", "suppress", "affect_priority", "soft_share", "select"],
+        choices=[
+            "auto",
+            "share",
+            "relearn",
+            "suppress",
+            "affect_priority",
+            "soft_share",
+            "select",
+            "select_dual",
+            "select_bank",
+            "madx",
+        ],
         default=None,
-        help="Override LoRA init (select=EN share, no suppress; soft_share=EN+optional suppress)",
+        help="Override LoRA init (select_bank=Factor bank EN-merge+KO LoRA; select=freeze heads-only)",
     )
     parser.add_argument("--output_dir", type=str, default=None)
     parser.add_argument("--gates_file", type=str, default=None)
@@ -212,6 +223,23 @@ def main() -> None:
     )
     parser.add_argument("--en_replay_every", type=int, default=None)
     parser.add_argument("--lora_anchor_weight", type=float, default=None)
+    parser.add_argument("--lora_r", type=int, default=None)
+    parser.add_argument("--lora_alpha", type=int, default=None)
+    parser.add_argument(
+        "--lora_include_mlp",
+        action="store_true",
+        help="Include MLP modules in LoRA targets (capacity↑).",
+    )
+    parser.add_argument(
+        "--two_pass_affect",
+        action="store_true",
+        help="Compute A head from adapter-disabled (EN-share) path; S/R/LM use KO LoRA.",
+    )
+    parser.add_argument(
+        "--no_two_pass_affect",
+        action="store_true",
+        help="Disable two_pass_affect even for select_bank configs.",
+    )
     parser.add_argument(
         "--gate_conditioned_losses",
         action="store_true",
@@ -243,6 +271,7 @@ def main() -> None:
         default=None,
         help="Strategy label source: utterance (last listener) or session axes.",
     )
+    parser.add_argument("--seed", type=int, default=None, help="Override config seed.")
     args = parser.parse_args()
     cfg = load_config(Path(args.config))
     if args.max_steps is not None:
@@ -257,6 +286,16 @@ def main() -> None:
         cfg["en_replay_every"] = args.en_replay_every
     if args.lora_anchor_weight is not None:
         cfg["lora_anchor_weight"] = args.lora_anchor_weight
+    if args.lora_r is not None:
+        cfg["lora_r"] = args.lora_r
+    if args.lora_alpha is not None:
+        cfg["lora_alpha"] = args.lora_alpha
+    if args.lora_include_mlp:
+        cfg["lora_include_mlp"] = True
+    if args.two_pass_affect:
+        cfg["two_pass_affect"] = True
+    if args.no_two_pass_affect:
+        cfg["two_pass_affect"] = False
     if args.gate_conditioned_losses:
         cfg["gate_conditioned_losses"] = True
     if args.no_gate_conditioned_losses:
@@ -269,6 +308,13 @@ def main() -> None:
         cfg["freeze_lora"] = True
     if args.strategy_scope is not None:
         cfg["strategy_scope"] = args.strategy_scope
+    if args.seed is not None:
+        cfg["seed"] = args.seed
+    # Factor bank defaults: two-pass A + gate losses unless explicitly disabled
+    if str(cfg.get("force_init", "")).lower() == "select_bank":
+        cfg.setdefault("two_pass_affect", True)
+        cfg.setdefault("gate_conditioned_losses", True)
+        cfg.setdefault("select_curriculum", True)
     if args.lm_only:
         cfg["emotion_loss_weight"] = 0.0
         cfg["strategy_loss_weight"] = 0.0
@@ -419,15 +465,19 @@ def main() -> None:
         relation_loss_weight=loss_w["relation"],
         strategy_multilabel=bool(cfg.get("strategy_multilabel", True)),
         deep_strategy_head=bool(cfg.get("deep_strategy_head", True)),
+        two_pass_affect=bool(cfg.get("two_pass_affect", False)),
         emotion_class_weights=emo_w if cfg.get("use_class_weights", True) else None,
         strategy_pos_weight=s_pos_w if cfg.get("use_class_weights", True) else None,
         relation_class_weights=rel_w if cfg.get("use_class_weights", True) else None,
     ).to(device)
+    print(f"two_pass_affect={bool(cfg.get('two_pass_affect', False))}", flush=True)
 
     # SELECT with frozen EN LoRA: no LoRA anchor (nothing trainable in LoRA)
     anchor_w = float(cfg.get("lora_anchor_weight", 0.0))
     lora_snap = None
-    if anchor_w > 0 and "share" in init_mode and not freeze_lora:
+    if anchor_w > 0 and not freeze_lora and (
+        "share" in init_mode or "select_dual" in init_mode or "select_bank" in init_mode
+    ):
         lora_snap = snapshot_lora_params(model.lm)
         print(f"LoRA anchor enabled weight={anchor_w} n_params={len(lora_snap)}", flush=True)
 
@@ -490,6 +540,14 @@ def main() -> None:
                 "relation": train_ds.relation_labels,
                 "strategy_multilabel": bool(cfg.get("strategy_multilabel", True)),
                 "strategy_scope": strategy_scope,
+                "select_dual": (
+                    "select_dual" in str(init_mode) or "select_bank" in str(init_mode)
+                ),
+                "select_bank": "select_bank" in str(init_mode),
+                "madx": "madx" in str(init_mode),
+                "two_pass_affect": bool(cfg.get("two_pass_affect", False)),
+                "lora_r": int(cfg.get("lora_r", 16)),
+                "stage1_lora_dir": str(cfg.get("stage1_lora_dir", "")),
             },
             ensure_ascii=False,
             indent=2,
@@ -677,7 +735,13 @@ def main() -> None:
     )
     history.append({"final_eval": metrics})
 
-    model.lm.save_pretrained(out_dir / "lora")
+    if "madx" in str(init_mode):
+        try:
+            model.lm.save_pretrained(out_dir / "lora", selected_adapters=["task"])
+        except TypeError:
+            model.lm.save_pretrained(out_dir / "lora")
+    else:
+        model.lm.save_pretrained(out_dir / "lora")
     tok.save_pretrained(out_dir / "tokenizer")
     torch.save(
         {
@@ -713,6 +777,10 @@ def main() -> None:
                     ),
                     "select_curriculum": bool(cfg.get("select_curriculum", False)),
                     "freeze_lora": freeze_lora,
+                    "two_pass_affect": bool(cfg.get("two_pass_affect", False)),
+                    "select_bank": "select_bank" in str(init_mode),
+                    "lora_r": int(cfg.get("lora_r", 16)),
+                    "lora_include_mlp": bool(cfg.get("lora_include_mlp", False)),
                     "loss_weights": loss_w,
                 },
                 "device": str(device),

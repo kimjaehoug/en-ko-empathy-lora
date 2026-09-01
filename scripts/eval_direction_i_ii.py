@@ -158,7 +158,22 @@ def load_stage3_bundle(cfg: dict, ckpt_dir: Path, device: torch.device) -> Stage
     labels = json.loads((ckpt_dir / "labels.json").read_text(encoding="utf-8"))
     tok = build_tokenizer(cfg["model_name"])
     base = load_base_causal_lm(cfg["model_name"], dtype=cfg.get("dtype", "bf16"))
-    lm = PeftModel.from_pretrained(base, str(ckpt_dir / "lora"))
+    # select_dual checkpoints: KO LoRA was trained on EN-merged base
+    if labels.get("select_dual") or labels.get("select_bank"):
+        en_dir = labels.get("stage1_lora_dir") or cfg.get("stage1_lora_dir")
+        if not en_dir:
+            en_dir = str(Path(cfg["stage1_dir"]) / "lora") if cfg.get("stage1_dir") else None
+        if en_dir:
+            en_path = ROOT / en_dir if not Path(en_dir).is_absolute() else Path(en_dir)
+            base = PeftModel.from_pretrained(base, str(en_path)).merge_and_unload()
+    if labels.get("madx"):
+        en_dir = labels.get("stage1_lora_dir") or cfg.get("stage1_lora_dir")
+        en_path = ROOT / en_dir if en_dir and not Path(en_dir).is_absolute() else Path(en_dir or ".")
+        lm = PeftModel.from_pretrained(base, str(en_path), adapter_name="language")
+        lm.load_adapter(str(ckpt_dir / "lora"), adapter_name="task")
+        lm.set_adapter(["language", "task"])
+    else:
+        lm = PeftModel.from_pretrained(base, str(ckpt_dir / "lora"))
     heads = torch.load(ckpt_dir / "heads.pt", map_location="cpu", weights_only=False)
     multilabel = bool(
         labels.get("strategy_multilabel", heads.get("strategy_multilabel", False))
@@ -172,6 +187,7 @@ def load_stage3_bundle(cfg: dict, ckpt_dir: Path, device: torch.device) -> Stage
         n_relations=len(labels["relation"]),
         strategy_multilabel=multilabel,
         deep_strategy_head=deep,
+        two_pass_affect=bool(labels.get("two_pass_affect", False)),
     )
     model.emotion_head.load_state_dict(heads["emotion_head"])
     model.strategy_head.load_state_dict(heads["strategy_head"])
@@ -191,6 +207,14 @@ def load_stage1_for_en(
     emotion_labels = json.loads((stage1_dir / "emotion_labels.json").read_text())
     tok = build_tokenizer(cfg["model_name"])
     base = load_base_causal_lm(cfg["model_name"], dtype=cfg.get("dtype", "bf16"))
+    # If this LoRA came from select_dual/select_bank Stage3, bake Stage1 EN first then stack KO LoRA.
+    labels_path = Path(lora_dir).parent / "labels.json"
+    if labels_path.exists():
+        meta = json.loads(labels_path.read_text(encoding="utf-8"))
+        if meta.get("select_dual") or meta.get("select_bank"):
+            en_rel = meta.get("stage1_lora_dir") or str(stage1_dir / "lora")
+            en_path = ROOT / en_rel if not Path(en_rel).is_absolute() else Path(en_rel)
+            base = PeftModel.from_pretrained(base, str(en_path)).merge_and_unload()
     lm = PeftModel.from_pretrained(base, str(lora_dir))
     model = Stage1EmpathyModel(lm, n_emotions=len(emotion_labels))
     state = torch.load(stage1_dir / "emotion_head.pt", map_location="cpu")

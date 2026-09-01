@@ -1,0 +1,78 @@
+# TAFFC ablation matrix — each entry is one train run (Qwen3.5-9B, utterance S, 1 epoch)
+# Reference: F16 full Factor-Bank (v6)
+base_config: configs/qwen/stage3_ko_v6_bank.yaml
+gates_file: outputs/qwen35_9b_v3/stage2_gates/gates.json
+seeds: [42, 123, 456]
+
+# Main systems (multi-seed)
+main_runs:
+  - id: F16
+    output: outputs/taffc/qwen/F16/s{seed}
+    args: [--init_mode, select_bank, --lora_r, "16", --two_pass_affect, --gate_conditioned_losses, --select_curriculum, --en_replay_every, "4", --lora_anchor_weight, "0.04"]
+  - id: B16
+    output: outputs/taffc/qwen/B16/s{seed}
+    args: [--init_mode, share, --lora_r, "16", --no_gate_conditioned_losses, --no_select_curriculum, --en_replay_every, "0", --lora_anchor_weight, "0.0"]
+  - id: S16
+    output: outputs/taffc/qwen/S16/s{seed}
+    args: [--init_mode, relearn, --lora_r, "16", --no_gate_conditioned_losses, --no_select_curriculum, --en_replay_every, "0", --lora_anchor_weight, "0.0"]
+  - id: MADX
+    output: outputs/taffc/qwen/MADX/s{seed}
+    args: [--init_mode, madx, --lora_r, "16", --no_gate_conditioned_losses, --no_select_curriculum, --en_replay_every, "0", --lora_anchor_weight, "0.0"]
+  - id: KED
+    output: outputs/taffc/qwen/KED/s{seed}
+    train_file: data/processed/kor_ed_train.jsonl
+    valid_file: data/processed/kor_ed_valid.jsonl
+    args: [--init_mode, relearn, --lora_r, "16", --no_gate_conditioned_losses, --no_select_curriculum, --en_replay_every, "0", --lora_anchor_weight, "0.0"]
+
+# Component ablations (seed 42 only unless noted)
+ablation_runs:
+  - id: A0_v3_soft_share
+    output: outputs/taffc/qwen/ablation/A0_v3_soft/s42
+    args: [--init_mode, soft_share, --lora_r, "16", --gate_conditioned_losses, --select_curriculum, --en_replay_every, "4", --lora_anchor_weight, "0.04"]
+    note: "v3-style soft-share (single LoRA, no EN merge)"
+  - id: A1_F16_full
+    output: outputs/qwen35_9b_v6/F16
+    skip_if_exists: true
+    note: "Reference — reuse v6 F16"
+  - id: A2_no_two_pass
+    output: outputs/taffc/qwen/ablation/A2_no_two_pass/s42
+    args: [--init_mode, select_bank, --lora_r, "16", --no_two_pass_affect, --gate_conditioned_losses, --select_curriculum, --en_replay_every, "4", --lora_anchor_weight, "0.04"]
+  - id: A3_no_gate_loss
+    output: outputs/taffc/qwen/ablation/A3_no_gate/s42
+    args: [--init_mode, select_bank, --lora_r, "16", --two_pass_affect, --no_gate_conditioned_losses, --no_select_curriculum, --en_replay_every, "4", --lora_anchor_weight, "0.04"]
+  - id: A4_no_curriculum
+    output: outputs/taffc/qwen/ablation/A4_no_curr/s42
+    args: [--init_mode, select_bank, --lora_r, "16", --two_pass_affect, --gate_conditioned_losses, --no_select_curriculum, --en_replay_every, "4", --lora_anchor_weight, "0.04"]
+  - id: A5_no_en_replay
+    output: outputs/taffc/qwen/ablation/A5_no_replay/s42
+    args: [--init_mode, select_bank, --lora_r, "16", --two_pass_affect, --gate_conditioned_losses, --select_curriculum, --en_replay_every, "0", --lora_anchor_weight, "0.04"]
+  - id: A6_no_anchor
+    output: outputs/taffc/qwen/ablation/A6_no_anchor/s42
+    args: [--init_mode, select_bank, --lora_r, "16", --two_pass_affect, --gate_conditioned_losses, --select_curriculum, --en_replay_every, "4", --lora_anchor_weight, "0.0"]
+  - id: A7_no_en_merge
+    output: outputs/taffc/qwen/ablation/A7_soft_not_bank/s42
+    args: [--init_mode, soft_share, --lora_r, "16", --two_pass_affect, --gate_conditioned_losses, --select_curriculum, --en_replay_every, "4", --lora_anchor_weight, "0.04"]
+    note: "soft_share + two_pass (impossible combo — two_pass needs select_bank); uses soft_share only"
+  - id: A8_freeze_lora
+    output: outputs/taffc/qwen/ablation/A8_freeze/s42
+    args: [--init_mode, select, --lora_r, "16", --freeze_lora, --gate_conditioned_losses, --select_curriculum, --en_replay_every, "4"]
+  - id: A9_lm_only
+    output: outputs/taffc/qwen/ablation/A9_lm_only/s42
+    args: [--init_mode, select_bank, --lora_r, "16", --two_pass_affect, --lm_only]
+  - id: A10_F32_mlp
+    output: outputs/qwen35_9b_v6/F32
+    skip_if_exists: true
+    note: "Capacity-up bank — reuse v6 F32"
+  - id: A11_B32_mlp
+    output: outputs/qwen35_9b_v6/B32
+    skip_if_exists: true
+
+llama_runs:
+  - id: F16
+    base_config: configs/llama/stage3_ko_taffc.yaml
+    output: outputs/taffc/llama/F16/s{seed}
+    args: [--init_mode, select_bank, --lora_r, "16", --two_pass_affect, --gate_conditioned_losses, --select_curriculum, --en_replay_every, "4", --lora_anchor_weight, "0.04"]
+  - id: B16
+    base_config: configs/llama/stage3_ko_taffc.yaml
+    output: outputs/taffc/llama/B16/s{seed}
+    args: [--init_mode, share, --lora_r, "16", --no_gate_conditioned_losses, --no_select_curriculum]

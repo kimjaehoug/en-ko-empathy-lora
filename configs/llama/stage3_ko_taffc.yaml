@@ -1,0 +1,49 @@
+# Llama-3.1-8B TAFFC Factor-Bank (matches Qwen v6 protocol)
+model_name: meta-llama/Llama-3.1-8B
+dtype: bf16
+stage1_lora_dir: outputs/llama31_8b/stage1_en/lora
+gates_file: outputs/llama31_8b/stage2_gates/gates.json
+output_dir: outputs/taffc/llama/F16/s42
+
+train_file: data/processed/aihub_train.jsonl
+valid_file: data/processed/aihub_valid.jsonl
+en_replay_file: data/processed/ed_train.jsonl
+
+max_length: 512
+max_history: 8
+batch_size: 2
+grad_accum: 8
+lr: 1.5e-4
+head_lr: 1.5e-4
+share_lr_scale: 0.5
+weight_decay: 0.01
+num_epochs: 1
+eval_every: 400
+max_eval_batches: 100
+log_every: 10
+gradient_checkpointing: true
+
+emotion_loss_weight: 0.35
+strategy_loss_weight: 1.8
+relation_loss_weight: 0.45
+strategy_multilabel: true
+strategy_scope: utterance
+deep_strategy_head: true
+use_class_weights: true
+
+force_init: select_bank
+two_pass_affect: true
+gate_conditioned_losses: true
+select_curriculum: true
+en_replay_every: 4
+lora_anchor_weight: 0.04
+gate_share_loss_scale: 0.7
+gate_relearn_loss_scale: 1.75
+gate_suppress_loss_scale: 0.8
+
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_include_mlp: false
+seed: 42
+device: cuda

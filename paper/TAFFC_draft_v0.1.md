@@ -1,8 +1,8 @@
 # Factor-LoRA SELECT: Divergence-Gated Adapter Transfer for English–Korean Empathetic Response Generation
 
 **Target venue:** IEEE Transactions on Affective Computing (TAFFC)  
-**Status:** Working draft (prototype experiments; gpt2 backbone)  
-**Version:** 0.1 — 2026-07-13
+**Status:** Working draft (Qwen3.5-9B L40S results; see RESULTS_QWEN35.md + factor_lora_select.tex)  
+**Version:** 0.2 — 2026-08-27
 
 ---
 

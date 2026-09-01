@@ -29,6 +29,10 @@ class Stage3EmpathyModel(nn.Module):
 
     Strategy uses multi-label BCE when ``strategy_multihot`` is provided
     (AI Hub S_strategy is a set of empathy strategies, not a single class).
+
+    When ``two_pass_affect`` is True, emotion logits are computed from a
+    second forward with LoRA adapters disabled (EN-merged / share path),
+    while LM/S/R use the active KO relearn LoRA path.
     """
 
     def __init__(
@@ -44,6 +48,7 @@ class Stage3EmpathyModel(nn.Module):
         compose_alpha: float = 1.0,
         strategy_multilabel: bool = True,
         deep_strategy_head: bool = True,
+        two_pass_affect: bool = False,
         emotion_class_weights: torch.Tensor | None = None,
         strategy_pos_weight: torch.Tensor | None = None,
         relation_class_weights: torch.Tensor | None = None,
@@ -62,9 +67,14 @@ class Stage3EmpathyModel(nn.Module):
         self.relation_loss_weight = relation_loss_weight
         self.compose_alpha = compose_alpha
         self.strategy_multilabel = strategy_multilabel
+        self.two_pass_affect = two_pass_affect
         self.emotion_class_weights = emotion_class_weights
         self.strategy_pos_weight = strategy_pos_weight
         self.relation_class_weights = relation_class_weights
+
+    def _pool(self, hidden: torch.Tensor, labels: torch.Tensor, attention_mask: torch.Tensor) -> torch.Tensor:
+        prompt_mask = (labels == -100) & (attention_mask == 1)
+        return self._masked_mean(hidden, prompt_mask).float()
 
     def forward(
         self,
@@ -89,10 +99,21 @@ class Stage3EmpathyModel(nn.Module):
         else:
             lm_loss = outputs.loss
 
-        prompt_mask = (labels == -100) & (attention_mask == 1)
-        pooled = self._masked_mean(hidden, prompt_mask).float()
+        pooled = self._pool(hidden, labels, attention_mask)
 
-        emotion_logits = self.emotion_head(pooled)
+        # Factor-bank: A from share path (adapters off = EN-merged base only)
+        if self.two_pass_affect and hasattr(self.lm, "disable_adapter"):
+            with self.lm.disable_adapter():
+                out_a = self.lm(
+                    input_ids=input_ids,
+                    attention_mask=attention_mask,
+                    output_hidden_states=True,
+                )
+            pooled_a = self._pool(out_a.hidden_states[-1], labels, attention_mask)
+            emotion_logits = self.emotion_head(pooled_a)
+        else:
+            emotion_logits = self.emotion_head(pooled)
+
         strategy_logits = self.strategy_head(pooled)
         relation_logits = self.relation_head(pooled)
 
@@ -119,7 +140,6 @@ class Stage3EmpathyModel(nn.Module):
         # ---- Strategy (multi-label BCE preferred) ----
         if self.strategy_multilabel and strategy_multihot is not None:
             target = strategy_multihot.float()
-            # rows with no positive labels are ignored
             row_has = target.sum(dim=-1) > 0
             if row_has.any():
                 pw = self.strategy_pos_weight
@@ -224,9 +244,12 @@ def build_stage3_lm(
     """Create KO LoRA from EN adapter with share/relearn/suppress/soft_share policy.
 
     force_init:
-      share | relearn | suppress | affect_priority | soft_share | select | auto
+      share | relearn | suppress | affect_priority | soft_share | select | select_dual | select_bank | auto
     soft_share: always init from EN LoRA (Dir II retention), gates only scale LR/suppress.
     select: EN LoRA init, never suppress-scale; intended with freeze_shared_lora / head-only adapt.
+    select_dual / select_bank: merge EN LoRA into base (share Affect), then train a fresh KO LoRA
+      (relearn S/R + LM). select_bank is the Factor-LoRA Bank entrypoint (same init; training
+      enables two_pass_affect / stronger S·R weights in the trainer).
     """
     base = load_base_causal_lm(model_name, dtype=dtype, device_map=device_map)
     decisions = [v.get("decision") for v in gates.values()]
@@ -239,6 +262,45 @@ def build_stage3_lm(
     )
 
     mode = (force_init or "auto").lower()
+    if mode == "madx":
+        # MAD-X-style: frozen EN language adapter + trainable task adapter (Pfeiffer et al. 2020).
+        lm = PeftModel.from_pretrained(base, stage1_lora_dir, adapter_name="language")
+        for n, p in lm.named_parameters():
+            if "language" in n and "lora_" in n:
+                p.requires_grad = False
+        task_cfg = LoraConfig(
+            task_type=TaskType.CAUSAL_LM,
+            r=lora_r,
+            lora_alpha=lora_alpha,
+            lora_dropout=lora_dropout,
+            target_modules=targets,
+            bias="none",
+        )
+        lm.add_adapter("task", task_cfg)
+        lm.set_adapter(["language", "task"])
+        lm.train()
+        for n, p in lm.named_parameters():
+            if "task" in n and "lora_" in n:
+                p.requires_grad = True
+        return lm, f"madx_lang_frozen_task_r{lora_r}"
+
+    if mode in {"select_dual", "select_bank"}:
+        # Bake EN adapter into weights, then attach trainable KO LoRA (factor-modular).
+        en_wrapped = PeftModel.from_pretrained(base, stage1_lora_dir)
+        merged = en_wrapped.merge_and_unload()
+        cfg = LoraConfig(
+            task_type=TaskType.CAUSAL_LM,
+            r=lora_r,
+            lora_alpha=lora_alpha,
+            lora_dropout=lora_dropout,
+            target_modules=targets,
+            bias="none",
+        )
+        lm = get_peft_model(merged, cfg)
+        lm.train()
+        tag = "select_bank_en_merged" if mode == "select_bank" else "select_dual_en_merged"
+        return lm, f"{tag}_r{lora_r}"
+
     if mode == "affect_priority":
         use_share = affect_decision == "share"
     elif mode in {"soft_share", "select"}:

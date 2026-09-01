@@ -1,0 +1,30 @@
+# Full-valid eval for Factor-Bank matrix (v6)
+model_name: Qwen/Qwen3.5-9B
+dtype: bf16
+device: cuda
+batch_size: 2
+max_length: 512
+max_history: 8
+max_batches: null
+strategy_scope: utterance
+stage1_lora_dir: outputs/qwen35_9b/stage1_en/lora
+
+stage1_dir: outputs/qwen35_9b/stage1_en
+en_valid_file: data/processed/ed_valid.jsonl
+ko_valid_file: data/processed/aihub_valid.jsonl
+output_dir: outputs/qwen35_9b_v6/eval_direction_i_ii
+
+ko_checkpoints:
+  F16: outputs/qwen35_9b_v6/F16
+  F32: outputs/qwen35_9b_v6/F32
+  B16: outputs/qwen35_9b_v6/B16
+  B32: outputs/qwen35_9b_v6/B32
+  S16: outputs/qwen35_9b_v6/S16
+
+en_lora_variants:
+  en_before_ko: outputs/qwen35_9b/stage1_en/lora
+  after_F16: outputs/qwen35_9b_v6/F16/lora
+  after_F32: outputs/qwen35_9b_v6/F32/lora
+  after_B16: outputs/qwen35_9b_v6/B16/lora
+  after_B32: outputs/qwen35_9b_v6/B32/lora
+  after_S16: outputs/qwen35_9b_v6/S16/lora
