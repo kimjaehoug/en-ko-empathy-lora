@@ -1,0 +1,83 @@
+{
+  "model_name": "Qwen/Qwen3.5-9B",
+  "stage1_dir": "/A.I_DATA/jbnu/jaehong/MBTI_jaehong/en-ko-empathy-lora/outputs/qwen35_9b/stage1_en",
+  "thresholds": {
+    "share": 0.55,
+    "suppress": 0.15,
+    "sr_share": 0.75,
+    "force_sr_relearn": true,
+    "affect_probe_weight": 0.9,
+    "rebuilt_from": "outputs/qwen35_9b/stage2_gates/gates.json"
+  },
+  "metrics": {
+    "domain_cosine": 0.00805274024605751,
+    "affect_probe": {
+      "train_acc": 1.0,
+      "valid_acc": 0.6878048777580261,
+      "n_classes": 6
+    },
+    "strategy_probe": {
+      "train_acc": 0.5488400459289551,
+      "valid_acc": 0.45975610613822937,
+      "n_classes": 4
+    },
+    "relation_probe": {
+      "train_acc": 1.0,
+      "valid_acc": 0.23780487477779388,
+      "n_classes": 7
+    },
+    "koed_parallel_cosine": 0.019626399502158165
+  },
+  "gates": {
+    "affect": {
+      "score": 0.6198296640068293,
+      "decision": "share",
+      "note": "probe=0.6878 domain=0.0081 w=0.9"
+    },
+    "strategy": {
+      "score": 0.45975610613822937,
+      "decision": "relearn",
+      "prior": "en_missing_sr_labels"
+    },
+    "relation": {
+      "score": 0.23780487477779388,
+      "decision": "relearn",
+      "prior": "en_missing_sr_labels"
+    },
+    "culture": {
+      "score": 0.019626399502158165,
+      "decision": "suppress"
+    }
+  },
+  "label_spaces": {
+    "ko_emotion": [
+      "기쁨",
+      "당황",
+      "분노",
+      "불안",
+      "상처",
+      "슬픔"
+    ],
+    "ko_strategy": [
+      "격려",
+      "동조",
+      "위로",
+      "조언"
+    ],
+    "ko_relation": [
+      "부모자녀/조손",
+      "부부",
+      "연인",
+      "지인",
+      "직장 동료",
+      "친구",
+      "형제/자매"
+    ]
+  },
+  "policy": {
+    "share": "init KO LoRA from EN LoRA; small LR",
+    "relearn": "re-init KO LoRA; normal LR",
+    "suppress": "re-init KO LoRA + EN-style hard-negative / lower share weight"
+  },
+  "policy_note": "v3: affect uses probe-heavy score; S/R forced relearn under EN-missing prior"
+}

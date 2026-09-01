@@ -1,0 +1,24 @@
+{
+  "model_name": "Qwen/Qwen3.5-9B",
+  "dtype": "bf16",
+  "n_emotions": 32,
+  "trainable_params": 4063264,
+  "total_params": 8957866528,
+  "final_eval": {
+    "loss": 2.5267883598804475,
+    "lm_loss": 2.3138600504398346,
+    "emotion_loss": 1.0646415489446373,
+    "emotion_acc": 0.66,
+    "n_batches": 100
+  },
+  "steps": 1111,
+  "device": "cuda",
+  "cuda_device_name": "NVIDIA L40S",
+  "vram": {
+    "allocated_gb": 18.104,
+    "reserved_gb": 33.341,
+    "peak_allocated_gb": 27.217
+  },
+  "git_commit": "0c442d3f6b87c47ef317d60ae0354335173a9748",
+  "seed": 42
+}

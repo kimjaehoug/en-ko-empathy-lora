@@ -6,8 +6,19 @@ data/raw/aihub_empathy/**
 !data/raw/aihub_empathy/README.md
 data/raw/KoED/
 
-# Train artifacts
-outputs/
+# Train artifacts (use outputs/* so negated bootstrap paths can be tracked)
+outputs/*
+!outputs/qwen35_9b/
+outputs/qwen35_9b/*
+!outputs/qwen35_9b/stage1_en/
+outputs/qwen35_9b/stage1_en/*
+!outputs/qwen35_9b/stage1_en/lora/
+!outputs/qwen35_9b/stage1_en/lora/**
+!outputs/qwen35_9b/stage1_en/run_meta.json
+!outputs/qwen35_9b_v3/
+outputs/qwen35_9b_v3/*
+!outputs/qwen35_9b_v3/stage2_gates/
+!outputs/qwen35_9b_v3/stage2_gates/gates.json
 __pycache__/
 .venv/
 *.pyc
