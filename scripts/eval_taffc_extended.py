@@ -248,8 +248,11 @@ def main() -> None:
             report["direction_i_ko"][name] = {"error": f"missing {ckpt}"}
             continue
         model, tok, labels = load_stage3_bundle(cfg, ckpt, device)
+        valid_rel = (
+            cfg.get("ko_checkpoint_valid_files", {}).get(name) or cfg["ko_valid_file"]
+        )
         loader, ds = make_loader(
-            ROOT / cfg["ko_valid_file"], tok, cfg, lang_hint="ko", labels=labels
+            ROOT / valid_rel, tok, cfg, lang_hint="ko", labels=labels
         )
         metrics = eval_stage3(model, loader, device, max_batches)
         emo_labels = labels["emotion"]
@@ -264,7 +267,11 @@ def main() -> None:
                 else {}
             )
             rel = collected[name]["relation"]
-            rel_pc = per_class_report(rel["gold"], rel["pred"], labels["relation"])
+            rel_pc = (
+                per_class_report(rel["gold"], rel["pred"], labels["relation"])
+                if labels.get("relation") and rel["gold"]
+                else {}
+            )
             detail = {
                 "emotion": {
                     "per_class": pc["per_class"],
@@ -273,12 +280,14 @@ def main() -> None:
                     "accuracy": pc["accuracy"],
                     "error_buckets": error_buckets(emo["gold"], emo["pred"], emo_labels),
                 },
-                "relation": {
+            }
+            if rel_pc:
+                detail["relation"] = {
                     "per_class": rel_pc["per_class"],
                     "confusion_matrix": rel_pc["confusion_matrix"],
-                },
-                "strategy": strat_m,
-            }
+                }
+            if strat_m:
+                detail["strategy"] = strat_m
             (pred_dir / f"{name}_analysis.json").write_text(
                 json.dumps(detail, ensure_ascii=False, indent=2), encoding="utf-8"
             )

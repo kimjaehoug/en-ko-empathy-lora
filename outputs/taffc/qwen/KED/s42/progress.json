@@ -1,0 +1,43 @@
+{
+  "stage": "Stage3-KO(relearn_fresh)",
+  "started_at": "2026-09-01T13:29:41",
+  "total_steps": 1220,
+  "global_step": 1220,
+  "status": "done",
+  "updated_at": "2026-09-01T14:35:14",
+  "elapsed_sec": 3933.6,
+  "banner": "model=Qwen/Qwen3.5-9B train=19530 valid=2769 init=relearn_fresh steps≈1220 S=multilabel gates={'affect': 'share', 'strategy': 'relearn', 'relation': 'relearn', 'culture': 'suppress'}",
+  "train": {
+    "loss": 2.7493679523468018,
+    "lm_loss": 2.3710663318634033,
+    "strategy_loss": null,
+    "relation_loss": null,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  "eval_valid": {
+    "loss": 2.6981250166893007,
+    "lm_loss": 2.308389130830765,
+    "emotion_loss": 1.1135311243776231,
+    "strategy_loss": null,
+    "relation_loss": null,
+    "emotion_acc": 0.655,
+    "relation_acc": null,
+    "strategy_acc": null
+  },
+  "final_eval": {
+    "loss": 2.7161862659454346,
+    "lm_loss": 2.30241694688797,
+    "emotion_loss": 1.1821980739943683,
+    "strategy_loss": null,
+    "relation_loss": null,
+    "emotion_acc": 0.61,
+    "relation_acc": null,
+    "strategy_acc": null
+  },
+  "saved_to": "/home/jbnu/jaehong/en-ko-empathy-lora/outputs/taffc/qwen/KED/s42",
+  "init_mode": "relearn_fresh",
+  "vram_peak_gb": 36.789,
+  "steps": 1220
+}

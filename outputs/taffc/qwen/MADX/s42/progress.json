@@ -1,0 +1,53 @@
+{
+  "stage": "Stage3-KO(madx_lang_frozen_task_r16)",
+  "started_at": "2026-09-01T10:54:31",
+  "total_steps": 1591,
+  "global_step": 1591,
+  "status": "done",
+  "updated_at": "2026-09-01T13:28:52",
+  "elapsed_sec": 9261.6,
+  "banner": "model=Qwen/Qwen3.5-9B train=25456 valid=3182 init=madx_lang_frozen_task_r16 steps≈1591 S=multilabel gates={'affect': 'share', 'strategy': 'relearn', 'relation': 'relearn', 'culture': 'suppress'}",
+  "train": {
+    "loss": 5.748074054718018,
+    "lm_loss": 3.2199811935424805,
+    "strategy_loss": 0.8568968772888184,
+    "relation_loss": 0.7613205909729004,
+    "train_emotion_acc": 0.0,
+    "train_strategy_f1": 0.3333333432674408,
+    "train_relation_acc": 0.5
+  },
+  "eval_valid": {
+    "loss": 3.749352695941925,
+    "lm_loss": 2.1720423591136933,
+    "emotion_loss": 0.6156814229488373,
+    "strategy_loss": 0.7205124562978744,
+    "relation_loss": 0.1442210155324426,
+    "emotion_acc": 0.795,
+    "relation_acc": 0.97,
+    "strategy_acc": 0.6771300448430494,
+    "strategy_micro_f1": 0.6771300448430494,
+    "strategy_precision": 0.5261324041811847,
+    "strategy_recall": 0.949685534591195,
+    "strategy_hamming_acc": 0.64,
+    "strategy_exact_match": 0.035
+  },
+  "final_eval": {
+    "loss": 3.6558607411384583,
+    "lm_loss": 2.148863075971603,
+    "emotion_loss": 0.5447623273730278,
+    "strategy_loss": 0.7044717207551002,
+    "relation_loss": 0.10729287133880462,
+    "emotion_acc": 0.795,
+    "relation_acc": 0.98,
+    "strategy_acc": 0.6904176904176904,
+    "strategy_micro_f1": 0.6904176904176904,
+    "strategy_precision": 0.5665322580645161,
+    "strategy_recall": 0.8836477987421384,
+    "strategy_hamming_acc": 0.685,
+    "strategy_exact_match": 0.13
+  },
+  "saved_to": "/home/jbnu/jaehong/en-ko-empathy-lora/outputs/taffc/qwen/MADX/s42",
+  "init_mode": "madx_lang_frozen_task_r16",
+  "vram_peak_gb": 37.809,
+  "steps": 1591
+}

@@ -10,9 +10,22 @@ __all__ = [
     "Stage3EmpathyModel",
     "build_stage3_lm",
     "build_tokenizer",
+    "set_active_adapters",
     "snapshot_lora_params",
     "lora_anchor_loss",
 ]
+
+
+def set_active_adapters(lm: PeftModel, adapter_names: str | list[str]) -> None:
+    """Activate one or more LoRA adapters.
+
+    PeftModel.set_adapter() accepts a single str (peft>=0.19); multi-adapter
+    activation (MAD-X language+task) goes through base_model.set_adapter().
+    """
+    if isinstance(adapter_names, str):
+        lm.set_adapter(adapter_names)
+    else:
+        lm.base_model.set_adapter(adapter_names)
 
 
 def _mlp_head(hidden: int, n_out: int, *, dropout: float = 0.1) -> nn.Module:
@@ -138,7 +151,11 @@ class Stage3EmpathyModel(nn.Module):
             losses["emotion_loss"] = None
 
         # ---- Strategy (multi-label BCE preferred) ----
-        if self.strategy_multilabel and strategy_multihot is not None:
+        if (
+            self.strategy_multilabel
+            and strategy_multihot is not None
+            and strategy_logits.size(-1) > 0
+        ):
             target = strategy_multihot.float()
             row_has = target.sum(dim=-1) > 0
             if row_has.any():
@@ -168,7 +185,7 @@ class Stage3EmpathyModel(nn.Module):
             losses["strategy_loss"] = None
 
         # ---- Relation (single-label CE) ----
-        if relation_ids is not None:
+        if relation_ids is not None and relation_logits.size(-1) > 0:
             valid = relation_ids >= 0
             if valid.any():
                 w = self.relation_class_weights
@@ -277,7 +294,7 @@ def build_stage3_lm(
             bias="none",
         )
         lm.add_adapter("task", task_cfg)
-        lm.set_adapter(["language", "task"])
+        set_active_adapters(lm, ["language", "task"])
         lm.train()
         for n, p in lm.named_parameters():
             if "task" in n and "lora_" in n:

@@ -26,7 +26,15 @@ from src.data.empathy_data import EmpathyCollator, EmpathyJsonlDataset
 from src.models.backbone import load_base_causal_lm
 from src.models.encoding import pick_device
 from src.models.stage1 import Stage1EmpathyModel, build_tokenizer
-from src.models.stage3 import Stage3EmpathyModel
+from src.models.stage3 import Stage3EmpathyModel, set_active_adapters
+
+
+def resolve_stage3_lora_dir(ckpt_dir: Path) -> Path:
+    """Return LoRA dir for Stage3 checkpoints (MAD-X stores task adapter under lora/task/)."""
+    task = ckpt_dir / "lora" / "task"
+    if (task / "adapter_model.safetensors").exists() or (task / "adapter_config.json").exists():
+        return task
+    return ckpt_dir / "lora"
 
 
 def load_config(path: Path) -> dict:
@@ -170,8 +178,8 @@ def load_stage3_bundle(cfg: dict, ckpt_dir: Path, device: torch.device) -> Stage
         en_dir = labels.get("stage1_lora_dir") or cfg.get("stage1_lora_dir")
         en_path = ROOT / en_dir if en_dir and not Path(en_dir).is_absolute() else Path(en_dir or ".")
         lm = PeftModel.from_pretrained(base, str(en_path), adapter_name="language")
-        lm.load_adapter(str(ckpt_dir / "lora"), adapter_name="task")
-        lm.set_adapter(["language", "task"])
+        lm.load_adapter(str(resolve_stage3_lora_dir(ckpt_dir)), adapter_name="task")
+        set_active_adapters(lm, ["language", "task"])
     else:
         lm = PeftModel.from_pretrained(base, str(ckpt_dir / "lora"))
     heads = torch.load(ckpt_dir / "heads.pt", map_location="cpu", weights_only=False)
@@ -215,6 +223,8 @@ def load_stage1_for_en(
             en_rel = meta.get("stage1_lora_dir") or str(stage1_dir / "lora")
             en_path = ROOT / en_rel if not Path(en_rel).is_absolute() else Path(en_rel)
             base = PeftModel.from_pretrained(base, str(en_path)).merge_and_unload()
+        elif meta.get("madx"):
+            lora_dir = resolve_stage3_lora_dir(labels_path.parent)
     lm = PeftModel.from_pretrained(base, str(lora_dir))
     model = Stage1EmpathyModel(lm, n_emotions=len(emotion_labels))
     state = torch.load(stage1_dir / "emotion_head.pt", map_location="cpu")
@@ -232,10 +242,12 @@ def make_loader(path: Path, tok, cfg: dict, *, lang_hint=None, labels=None, emot
     if labels is not None:
         kwargs.update(
             emotion_labels=labels.get("emotion"),
-            strategy_labels=labels.get("strategy"),
-            relation_labels=labels.get("relation"),
+            strategy_labels=labels.get("strategy") or None,
+            relation_labels=labels.get("relation") or None,
         )
-    if lang_hint == "ko" or (labels and labels.get("strategy")):
+    has_strategy = bool(labels and labels.get("strategy"))
+    has_relation = bool(labels and labels.get("relation"))
+    if has_strategy or has_relation:
         kwargs["multitask"] = True
         kwargs["strategy_scope"] = labels.get("strategy_scope") or cfg.get(
             "strategy_scope", "utterance"

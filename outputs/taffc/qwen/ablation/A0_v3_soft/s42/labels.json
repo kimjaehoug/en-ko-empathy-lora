@@ -1,0 +1,33 @@
+{
+  "emotion": [
+    "기쁨",
+    "당황",
+    "분노",
+    "불안",
+    "상처",
+    "슬픔"
+  ],
+  "strategy": [
+    "격려",
+    "동조",
+    "위로",
+    "조언"
+  ],
+  "relation": [
+    "부모자녀/조손",
+    "부부",
+    "연인",
+    "지인",
+    "직장 동료",
+    "친구",
+    "형제/자매"
+  ],
+  "strategy_multilabel": true,
+  "strategy_scope": "utterance",
+  "select_dual": false,
+  "select_bank": false,
+  "madx": false,
+  "two_pass_affect": true,
+  "lora_r": 16,
+  "stage1_lora_dir": "outputs/qwen35_9b/stage1_en/lora"
+}

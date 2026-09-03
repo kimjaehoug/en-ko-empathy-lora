@@ -13,6 +13,10 @@ batch_size: 2
 max_batches: null
 output_dir: outputs/taffc/eval
 
+# Per-checkpoint KO valid overrides (KED uses KorED, not AI Hub)
+ko_checkpoint_valid_files:
+  KED: data/processed/kor_ed_valid.jsonl
+
 ko_checkpoints:
   F16: outputs/qwen35_9b_v6/F16
   F32: outputs/qwen35_9b_v6/F32
@@ -29,5 +33,5 @@ en_lora_variants:
   after_B16: outputs/qwen35_9b_v6/B16/lora
   after_B32: outputs/qwen35_9b_v6/B32/lora
   after_S16: outputs/qwen35_9b_v6/S16/lora
-  after_MADX: outputs/taffc/qwen/MADX/s42/lora
+  after_MADX: outputs/taffc/qwen/MADX/s42/lora/task
   after_KED: outputs/taffc/qwen/KED/s42/lora

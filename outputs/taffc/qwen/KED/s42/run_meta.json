@@ -1,0 +1,67 @@
+{
+  "model_name": "Qwen/Qwen3.5-9B",
+  "dtype": "bf16",
+  "init_mode": "relearn_fresh",
+  "gates": {
+    "affect": {
+      "score": 0.6198296640068293,
+      "decision": "share",
+      "note": "probe=0.6878 domain=0.0081 w=0.9"
+    },
+    "strategy": {
+      "score": 0.45975610613822937,
+      "decision": "relearn",
+      "prior": "en_missing_sr_labels"
+    },
+    "relation": {
+      "score": 0.23780487477779388,
+      "decision": "relearn",
+      "prior": "en_missing_sr_labels"
+    },
+    "culture": {
+      "score": 0.019626399502158165,
+      "decision": "suppress"
+    }
+  },
+  "lr": 0.00015,
+  "trainable_params": 20844576,
+  "final_eval": {
+    "loss": 2.7161862659454346,
+    "lm_loss": 2.30241694688797,
+    "emotion_loss": 1.1821980739943683,
+    "strategy_loss": null,
+    "relation_loss": null,
+    "emotion_acc": 0.61,
+    "relation_acc": null,
+    "strategy_acc": null
+  },
+  "steps": 1220,
+  "upgrades": {
+    "strategy_multilabel": true,
+    "strategy_scope": "utterance",
+    "en_replay_every": 0,
+    "lora_anchor_weight": 0.0,
+    "deep_strategy_head": true,
+    "gate_conditioned_losses": false,
+    "select_curriculum": false,
+    "freeze_lora": false,
+    "two_pass_affect": false,
+    "select_bank": false,
+    "lora_r": 16,
+    "lora_include_mlp": false,
+    "loss_weights": {
+      "emotion": 0.35,
+      "strategy": 1.8,
+      "relation": 0.45
+    }
+  },
+  "device": "cuda",
+  "cuda_device_name": "NVIDIA L40S",
+  "vram": {
+    "allocated_gb": 18.058,
+    "reserved_gb": 40.492,
+    "peak_allocated_gb": 36.789
+  },
+  "git_commit": "9a55b734831f7008cce56d1d714daaa171e4fcc2",
+  "seed": 42
+}

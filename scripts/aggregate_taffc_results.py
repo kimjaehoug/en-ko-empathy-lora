@@ -4,11 +4,13 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 from src.eval.metrics import aggregate_seeds, paired_ttest  # noqa: E402
 
 
@@ -41,8 +43,14 @@ def collect_seed_metrics(base: Path, run_id: str, seeds: list[int]) -> dict:
             m = (meta or {}).get("final_eval") or {}
         if m.get("emotion_acc") is not None:
             out["A"].append(100 * m["emotion_acc"])
-            out["S"].append(100 * m.get("strategy_acc") or m.get("strategy_micro_f1", 0))
-            out["R"].append(100 * m["relation_acc"])
+            s = m.get("strategy_acc")
+            if s is None:
+                s = m.get("strategy_micro_f1")
+            if s is not None:
+                out["S"].append(100 * s)
+            r = m.get("relation_acc")
+            if r is not None:
+                out["R"].append(100 * r)
             avg = dir_i_avg(m)
             if avg is not None:
                 out["Avg"].append(avg)

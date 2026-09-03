@@ -1,0 +1,8593 @@
+[
+  {
+    "step": 1,
+    "loss": 5.0468854904174805,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 2,
+    "loss": 3.908756732940674,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 3,
+    "loss": 4.221287727355957,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 4,
+    "loss": 4.95842981338501,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 5,
+    "loss": 4.449379920959473,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 6,
+    "loss": 3.0267043113708496,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 7,
+    "loss": 3.732105255126953,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 8,
+    "loss": 4.2079362869262695,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 9,
+    "loss": 4.049495220184326,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 10,
+    "loss": 2.9750521183013916,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 11,
+    "loss": 3.60756778717041,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 12,
+    "loss": 3.476869821548462,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 13,
+    "loss": 3.815410614013672,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 14,
+    "loss": 3.564105749130249,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 15,
+    "loss": 3.9050211906433105,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 16,
+    "loss": 3.6850175857543945,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 17,
+    "loss": 4.514393329620361,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 18,
+    "loss": 3.579505443572998,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 19,
+    "loss": 3.5734775066375732,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 20,
+    "loss": 3.491854190826416,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 21,
+    "loss": 3.84114933013916,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 22,
+    "loss": 3.5627152919769287,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 23,
+    "loss": 3.371096611022949,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 24,
+    "loss": 4.005003452301025,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 25,
+    "loss": 3.613478183746338,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 26,
+    "loss": 3.4669697284698486,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 27,
+    "loss": 3.5514259338378906,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 28,
+    "loss": 3.397740602493286,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 29,
+    "loss": 3.164376735687256,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 30,
+    "loss": 3.270390033721924,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 31,
+    "loss": 2.244541645050049,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 32,
+    "loss": 4.056757926940918,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 33,
+    "loss": 3.765184164047241,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 34,
+    "loss": 3.520538806915283,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 35,
+    "loss": 4.194698333740234,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 36,
+    "loss": 3.3376240730285645,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 37,
+    "loss": 3.5500831604003906,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 38,
+    "loss": 3.231020450592041,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 39,
+    "loss": 3.5069499015808105,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 40,
+    "loss": 3.7927932739257812,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 41,
+    "loss": 3.7805745601654053,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 42,
+    "loss": 3.242138624191284,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 43,
+    "loss": 3.239708185195923,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 44,
+    "loss": 2.8181376457214355,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 45,
+    "loss": 3.6062378883361816,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 46,
+    "loss": 3.2978672981262207,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 47,
+    "loss": 4.232078552246094,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 48,
+    "loss": 4.24440336227417,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 49,
+    "loss": 3.8209502696990967,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 50,
+    "loss": 3.944978952407837,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 51,
+    "loss": 3.7575063705444336,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 52,
+    "loss": 3.531080722808838,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 53,
+    "loss": 4.387838840484619,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 54,
+    "loss": 4.000837326049805,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 55,
+    "loss": 3.7727580070495605,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 56,
+    "loss": 4.092580318450928,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 57,
+    "loss": 3.2170255184173584,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 58,
+    "loss": 3.504983425140381,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 59,
+    "loss": 3.6809778213500977,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 60,
+    "loss": 3.0551979541778564,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 61,
+    "loss": 3.8213882446289062,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 62,
+    "loss": 3.2107462882995605,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 63,
+    "loss": 3.63491153717041,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 64,
+    "loss": 3.044804334640503,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 65,
+    "loss": 3.927124500274658,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 66,
+    "loss": 3.3960201740264893,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 67,
+    "loss": 4.209837913513184,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 68,
+    "loss": 2.9614429473876953,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 69,
+    "loss": 3.463909387588501,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 70,
+    "loss": 2.7749781608581543,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 71,
+    "loss": 3.28790545463562,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 72,
+    "loss": 3.4135048389434814,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 73,
+    "loss": 3.5647213459014893,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 74,
+    "loss": 2.7892236709594727,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 75,
+    "loss": 2.9679524898529053,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 76,
+    "loss": 3.8500313758850098,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 77,
+    "loss": 2.9175353050231934,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 78,
+    "loss": 2.7032084465026855,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 79,
+    "loss": 3.108431816101074,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 80,
+    "loss": 3.0106091499328613,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 81,
+    "loss": 3.4677388668060303,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 82,
+    "loss": 3.3040413856506348,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 83,
+    "loss": 3.851990222930908,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 84,
+    "loss": 3.5673320293426514,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 85,
+    "loss": 3.7613179683685303,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 86,
+    "loss": 2.421032667160034,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 87,
+    "loss": 3.5254416465759277,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 88,
+    "loss": 3.0262157917022705,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 89,
+    "loss": 3.0381288528442383,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 90,
+    "loss": 3.625931978225708,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 91,
+    "loss": 2.429931640625,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 92,
+    "loss": 3.2650058269500732,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 93,
+    "loss": 3.1310365200042725,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 94,
+    "loss": 3.339956283569336,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 95,
+    "loss": 3.8674888610839844,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 96,
+    "loss": 2.471930980682373,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 97,
+    "loss": 4.498289108276367,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 98,
+    "loss": 3.9304757118225098,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 99,
+    "loss": 3.3219969272613525,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 100,
+    "loss": 3.189342975616455,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 101,
+    "loss": 2.7686219215393066,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 102,
+    "loss": 3.8330676555633545,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 103,
+    "loss": 2.576225519180298,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 104,
+    "loss": 3.111023426055908,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 105,
+    "loss": 3.5626790523529053,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 106,
+    "loss": 3.023320198059082,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 107,
+    "loss": 2.9565629959106445,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 108,
+    "loss": 3.806274652481079,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 109,
+    "loss": 3.6589457988739014,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 110,
+    "loss": 2.4364233016967773,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 111,
+    "loss": 3.305908203125,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 112,
+    "loss": 3.557612419128418,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 113,
+    "loss": 2.8267998695373535,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 114,
+    "loss": 2.917902946472168,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 115,
+    "loss": 2.1882309913635254,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 116,
+    "loss": 2.8544259071350098,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 117,
+    "loss": 2.84618878364563,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 118,
+    "loss": 3.56088924407959,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 119,
+    "loss": 2.556100606918335,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 120,
+    "loss": 3.2283973693847656,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 121,
+    "loss": 3.6009461879730225,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 122,
+    "loss": 3.309279441833496,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 123,
+    "loss": 2.3570380210876465,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 124,
+    "loss": 3.753966808319092,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 125,
+    "loss": 2.579669713973999,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 126,
+    "loss": 1.8262813091278076,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 127,
+    "loss": 2.949946880340576,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 128,
+    "loss": 2.9465949535369873,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 129,
+    "loss": 3.986367702484131,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 130,
+    "loss": 3.3025176525115967,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 131,
+    "loss": 3.015493631362915,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 132,
+    "loss": 2.723872184753418,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 133,
+    "loss": 3.2343571186065674,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 134,
+    "loss": 2.7882840633392334,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 135,
+    "loss": 2.558746814727783,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 136,
+    "loss": 3.318384885787964,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 137,
+    "loss": 2.7372355461120605,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 138,
+    "loss": 3.6262617111206055,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 139,
+    "loss": 3.025264263153076,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 140,
+    "loss": 3.086695432662964,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 141,
+    "loss": 3.155930995941162,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 142,
+    "loss": 2.8380775451660156,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 143,
+    "loss": 3.187126398086548,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 144,
+    "loss": 2.32717227935791,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 145,
+    "loss": 3.1795763969421387,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 146,
+    "loss": 4.343525409698486,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 147,
+    "loss": 2.913684606552124,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 148,
+    "loss": 3.404895544052124,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 149,
+    "loss": 3.0038559436798096,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 150,
+    "loss": 3.785161018371582,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 151,
+    "loss": 2.8809823989868164,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 152,
+    "loss": 2.5176620483398438,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 153,
+    "loss": 2.687838315963745,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 154,
+    "loss": 3.7016658782958984,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 155,
+    "loss": 3.532033681869507,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 156,
+    "loss": 2.2317488193511963,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 157,
+    "loss": 3.452022075653076,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 158,
+    "loss": 2.6614222526550293,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 159,
+    "loss": 2.841719150543213,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 160,
+    "loss": 2.9288899898529053,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 161,
+    "loss": 2.6158864498138428,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 162,
+    "loss": 2.8180503845214844,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 163,
+    "loss": 3.470442533493042,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 164,
+    "loss": 3.202622890472412,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 165,
+    "loss": 2.825338840484619,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 166,
+    "loss": 3.5637025833129883,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 167,
+    "loss": 3.4251885414123535,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 168,
+    "loss": 3.583794593811035,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 169,
+    "loss": 2.7023653984069824,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 170,
+    "loss": 2.757129192352295,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 171,
+    "loss": 3.3603408336639404,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 172,
+    "loss": 2.6632604598999023,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 173,
+    "loss": 2.4187378883361816,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 174,
+    "loss": 2.719428300857544,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 175,
+    "loss": 3.7958459854125977,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 176,
+    "loss": 3.306741237640381,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 177,
+    "loss": 2.900768995285034,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 178,
+    "loss": 2.3981361389160156,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 179,
+    "loss": 1.9232558012008667,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 180,
+    "loss": 2.4485690593719482,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 181,
+    "loss": 2.502293109893799,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 182,
+    "loss": 2.6858034133911133,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 183,
+    "loss": 3.3021128177642822,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 184,
+    "loss": 3.2318437099456787,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 185,
+    "loss": 3.674328565597534,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 186,
+    "loss": 3.6835110187530518,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 187,
+    "loss": 1.922250509262085,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 188,
+    "loss": 2.546586275100708,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 189,
+    "loss": 2.3580162525177,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 190,
+    "loss": 2.860640048980713,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 191,
+    "loss": 3.1074368953704834,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 192,
+    "loss": 3.923664093017578,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 193,
+    "loss": 3.2240867614746094,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 194,
+    "loss": 2.319211721420288,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 195,
+    "loss": 3.474954605102539,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 196,
+    "loss": 2.792844295501709,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 197,
+    "loss": 3.017163038253784,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 198,
+    "loss": 2.969538450241089,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 199,
+    "loss": 3.0552427768707275,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 200,
+    "loss": 3.2540171146392822,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 201,
+    "loss": 2.9419443607330322,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 202,
+    "loss": 3.1726491451263428,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 203,
+    "loss": 3.0661847591400146,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 204,
+    "loss": 2.9946553707122803,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 205,
+    "loss": 3.1348836421966553,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 206,
+    "loss": 1.8001391887664795,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 207,
+    "loss": 2.418156862258911,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 208,
+    "loss": 5.05980920791626,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 209,
+    "loss": 2.372682809829712,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 210,
+    "loss": 2.7495250701904297,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 211,
+    "loss": 4.283303737640381,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 212,
+    "loss": 2.574145793914795,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 213,
+    "loss": 3.3738934993743896,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 214,
+    "loss": 2.4669582843780518,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 215,
+    "loss": 3.017256736755371,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 216,
+    "loss": 2.5411245822906494,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 217,
+    "loss": 3.206272840499878,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 218,
+    "loss": 2.8709897994995117,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 219,
+    "loss": 2.033618450164795,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 220,
+    "loss": 2.381965160369873,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 221,
+    "loss": 3.17818284034729,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 222,
+    "loss": 2.8070483207702637,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 223,
+    "loss": 3.1024162769317627,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 224,
+    "loss": 3.1740026473999023,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 225,
+    "loss": 3.038302183151245,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 226,
+    "loss": 2.218280792236328,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 227,
+    "loss": 2.1484150886535645,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 228,
+    "loss": 2.1345057487487793,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 229,
+    "loss": 2.7546937465667725,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 230,
+    "loss": 2.5736191272735596,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 231,
+    "loss": 2.43272066116333,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 232,
+    "loss": 3.3411779403686523,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 233,
+    "loss": 2.94999623298645,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 234,
+    "loss": 2.3818321228027344,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 235,
+    "loss": 2.0006353855133057,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 236,
+    "loss": 3.2939648628234863,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 237,
+    "loss": 2.9636824131011963,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 238,
+    "loss": 3.0569379329681396,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 239,
+    "loss": 3.7484564781188965,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 240,
+    "loss": 2.5576953887939453,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 241,
+    "loss": 3.3303771018981934,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 242,
+    "loss": 2.9277708530426025,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 243,
+    "loss": 2.498030662536621,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 244,
+    "loss": 2.6309289932250977,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 245,
+    "loss": 3.725733757019043,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 246,
+    "loss": 2.334838628768921,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 247,
+    "loss": 3.0152554512023926,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 248,
+    "loss": 2.9073803424835205,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 249,
+    "loss": 2.8293662071228027,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 250,
+    "loss": 3.692488431930542,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 251,
+    "loss": 1.9768399000167847,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 252,
+    "loss": 2.503972053527832,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 253,
+    "loss": 3.1626482009887695,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 254,
+    "loss": 2.096924304962158,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 255,
+    "loss": 2.4407291412353516,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 256,
+    "loss": 2.743079423904419,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 257,
+    "loss": 2.8609578609466553,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 258,
+    "loss": 2.579026937484741,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 259,
+    "loss": 2.5549514293670654,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 260,
+    "loss": 2.3269102573394775,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 261,
+    "loss": 4.591180801391602,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 262,
+    "loss": 3.3098363876342773,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 263,
+    "loss": 2.6923115253448486,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 264,
+    "loss": 3.2539355754852295,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 265,
+    "loss": 2.1450424194335938,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 266,
+    "loss": 2.8546924591064453,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 267,
+    "loss": 2.250096082687378,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 268,
+    "loss": 3.7646470069885254,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 269,
+    "loss": 3.1928350925445557,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 270,
+    "loss": 3.4065284729003906,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 271,
+    "loss": 3.7356009483337402,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 272,
+    "loss": 3.1652915477752686,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 273,
+    "loss": 2.7118682861328125,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 274,
+    "loss": 2.4883980751037598,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 275,
+    "loss": 2.381442070007324,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 276,
+    "loss": 3.411322832107544,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 277,
+    "loss": 1.9984240531921387,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 278,
+    "loss": 2.3246028423309326,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 279,
+    "loss": 1.845214605331421,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 280,
+    "loss": 2.9722790718078613,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 281,
+    "loss": 2.6731719970703125,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 282,
+    "loss": 3.0270144939422607,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 283,
+    "loss": 2.520014762878418,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 284,
+    "loss": 3.0411176681518555,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 285,
+    "loss": 3.6344966888427734,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 286,
+    "loss": 2.481631278991699,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 287,
+    "loss": 2.6204185485839844,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 288,
+    "loss": 2.4547905921936035,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 289,
+    "loss": 3.228600025177002,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 290,
+    "loss": 2.9666082859039307,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 291,
+    "loss": 2.1684482097625732,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 292,
+    "loss": 2.0679783821105957,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 293,
+    "loss": 1.8712118864059448,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 294,
+    "loss": 2.601444959640503,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 295,
+    "loss": 2.5453341007232666,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 296,
+    "loss": 2.8548104763031006,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 297,
+    "loss": 1.53456711769104,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 298,
+    "loss": 2.108940601348877,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 299,
+    "loss": 3.387441873550415,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 300,
+    "loss": 4.101728439331055,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 301,
+    "loss": 3.365386486053467,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 302,
+    "loss": 2.514280080795288,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 303,
+    "loss": 3.125436305999756,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 304,
+    "loss": 2.6188724040985107,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 305,
+    "loss": 1.3564565181732178,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 306,
+    "loss": 2.976353645324707,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 307,
+    "loss": 2.511789321899414,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 308,
+    "loss": 3.8069539070129395,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 309,
+    "loss": 3.6511785984039307,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 310,
+    "loss": 2.5631723403930664,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 311,
+    "loss": 3.3810806274414062,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 312,
+    "loss": 2.6655943393707275,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 313,
+    "loss": 2.5089166164398193,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 314,
+    "loss": 2.7793993949890137,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 315,
+    "loss": 3.616868495941162,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 316,
+    "loss": 3.042526960372925,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 317,
+    "loss": 2.5834851264953613,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 318,
+    "loss": 2.9711835384368896,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 319,
+    "loss": 2.898651123046875,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 320,
+    "loss": 2.15132999420166,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 321,
+    "loss": 4.324126243591309,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 322,
+    "loss": 2.9601523876190186,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 323,
+    "loss": 4.4634222984313965,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 324,
+    "loss": 2.3696322441101074,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 325,
+    "loss": 4.173526287078857,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 326,
+    "loss": 3.01122784614563,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 327,
+    "loss": 2.5719480514526367,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 328,
+    "loss": 3.1555700302124023,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 329,
+    "loss": 2.003890037536621,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 330,
+    "loss": 2.6420156955718994,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 331,
+    "loss": 2.240952253341675,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 332,
+    "loss": 2.120753765106201,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 333,
+    "loss": 3.2808942794799805,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 334,
+    "loss": 2.5697507858276367,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 335,
+    "loss": 3.1224279403686523,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 336,
+    "loss": 1.7737624645233154,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 337,
+    "loss": 2.770634889602661,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 338,
+    "loss": 1.68050217628479,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 339,
+    "loss": 2.1274068355560303,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 340,
+    "loss": 2.5648841857910156,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 341,
+    "loss": 2.46476411819458,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 342,
+    "loss": 2.731323480606079,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 343,
+    "loss": 1.9410320520401,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 344,
+    "loss": 2.1073856353759766,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 345,
+    "loss": 3.491163730621338,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 346,
+    "loss": 1.8554774522781372,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 347,
+    "loss": 2.3743975162506104,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 348,
+    "loss": 2.38586688041687,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 349,
+    "loss": 1.8187251091003418,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 350,
+    "loss": 1.9522615671157837,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 351,
+    "loss": 2.733736276626587,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 352,
+    "loss": 2.516049385070801,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 353,
+    "loss": 2.2194974422454834,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 354,
+    "loss": 2.229621171951294,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 355,
+    "loss": 2.218524694442749,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 356,
+    "loss": 3.062819480895996,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 357,
+    "loss": 2.7514171600341797,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 358,
+    "loss": 2.0375564098358154,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 359,
+    "loss": 2.90286922454834,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 360,
+    "loss": 3.8947975635528564,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 361,
+    "loss": 2.786679744720459,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 362,
+    "loss": 2.0039684772491455,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 363,
+    "loss": 2.431938886642456,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 364,
+    "loss": 3.84472918510437,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 365,
+    "loss": 2.7209153175354004,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 366,
+    "loss": 2.7010881900787354,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 367,
+    "loss": 3.8333606719970703,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 368,
+    "loss": 2.6175730228424072,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 369,
+    "loss": 2.233039617538452,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 370,
+    "loss": 1.566838026046753,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 371,
+    "loss": 4.023741722106934,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 372,
+    "loss": 2.487177610397339,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 373,
+    "loss": 2.496965169906616,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 374,
+    "loss": 2.4286015033721924,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 375,
+    "loss": 3.049833297729492,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 376,
+    "loss": 3.556300163269043,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 377,
+    "loss": 1.7464107275009155,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 378,
+    "loss": 3.5278749465942383,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 379,
+    "loss": 2.633626937866211,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 380,
+    "loss": 3.2807271480560303,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 381,
+    "loss": 3.5226528644561768,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 382,
+    "loss": 3.1898012161254883,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 383,
+    "loss": 3.0855376720428467,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 384,
+    "loss": 1.5413562059402466,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 385,
+    "loss": 2.716035842895508,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 386,
+    "loss": 2.086132526397705,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 387,
+    "loss": 3.4179019927978516,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 388,
+    "loss": 2.747710704803467,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 389,
+    "loss": 3.306001663208008,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 390,
+    "loss": 3.4842660427093506,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 391,
+    "loss": 3.3653597831726074,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 392,
+    "loss": 2.4806506633758545,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 393,
+    "loss": 2.263065814971924,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 394,
+    "loss": 1.7488080263137817,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 395,
+    "loss": 3.269195795059204,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 396,
+    "loss": 3.0008952617645264,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 397,
+    "loss": 2.023526191711426,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 398,
+    "loss": 3.4469966888427734,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 399,
+    "loss": 2.332270622253418,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 400,
+    "loss": 3.1869547367095947,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 400,
+    "eval": {
+      "loss": 2.820047460794449,
+      "lm_loss": 2.369152878522873,
+      "emotion_loss": 1.2882702769339085,
+      "strategy_loss": null,
+      "relation_loss": null,
+      "emotion_acc": 0.575,
+      "relation_acc": null,
+      "strategy_acc": null
+    }
+  },
+  {
+    "step": 401,
+    "loss": 1.9971024990081787,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 402,
+    "loss": 3.2213079929351807,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 403,
+    "loss": 2.332465171813965,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 404,
+    "loss": 2.637310743331909,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 405,
+    "loss": 3.0245213508605957,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 406,
+    "loss": 3.704277753829956,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 407,
+    "loss": 2.481959104537964,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 408,
+    "loss": 2.787552833557129,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 409,
+    "loss": 2.619727849960327,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 410,
+    "loss": 2.734600067138672,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 411,
+    "loss": 2.2568132877349854,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 412,
+    "loss": 3.836827516555786,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 413,
+    "loss": 2.8134639263153076,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 414,
+    "loss": 2.2682933807373047,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 415,
+    "loss": 2.754356861114502,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 416,
+    "loss": 2.39684796333313,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 417,
+    "loss": 3.3891806602478027,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 418,
+    "loss": 2.984822988510132,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 419,
+    "loss": 2.6935200691223145,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 420,
+    "loss": 2.754566192626953,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 421,
+    "loss": 2.6783692836761475,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 422,
+    "loss": 3.8224806785583496,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 423,
+    "loss": 2.2997217178344727,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 424,
+    "loss": 2.2981104850769043,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 425,
+    "loss": 2.975800037384033,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 426,
+    "loss": 2.038562774658203,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 427,
+    "loss": 2.514948606491089,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 428,
+    "loss": 3.605241298675537,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 429,
+    "loss": 2.0573949813842773,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 430,
+    "loss": 2.8822617530822754,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 431,
+    "loss": 2.0859265327453613,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 432,
+    "loss": 2.7413861751556396,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 433,
+    "loss": 2.3482580184936523,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 434,
+    "loss": 2.9163944721221924,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 435,
+    "loss": 2.6175150871276855,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 436,
+    "loss": 2.8411951065063477,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 437,
+    "loss": 2.8474836349487305,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 438,
+    "loss": 3.92285418510437,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 439,
+    "loss": 2.5768516063690186,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 440,
+    "loss": 3.1223533153533936,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 441,
+    "loss": 2.404068946838379,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 442,
+    "loss": 2.1650984287261963,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 443,
+    "loss": 2.834958791732788,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 444,
+    "loss": 2.222730875015259,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 445,
+    "loss": 2.094757318496704,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 446,
+    "loss": 3.8240041732788086,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 447,
+    "loss": 2.900514602661133,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 448,
+    "loss": 2.3976244926452637,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 449,
+    "loss": 2.289658308029175,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 450,
+    "loss": 2.7320823669433594,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 451,
+    "loss": 2.969902992248535,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 452,
+    "loss": 3.0007057189941406,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 453,
+    "loss": 2.5714449882507324,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 454,
+    "loss": 1.8206181526184082,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 455,
+    "loss": 3.8913660049438477,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 456,
+    "loss": 2.997706890106201,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 457,
+    "loss": 2.2065601348876953,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 458,
+    "loss": 2.7593250274658203,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 459,
+    "loss": 2.5434820652008057,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 460,
+    "loss": 2.899005174636841,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 461,
+    "loss": 3.0585739612579346,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 462,
+    "loss": 3.8206706047058105,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 463,
+    "loss": 3.2205991744995117,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 464,
+    "loss": 3.262441873550415,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 465,
+    "loss": 2.0786900520324707,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 466,
+    "loss": 2.6490790843963623,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 467,
+    "loss": 2.550787925720215,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 468,
+    "loss": 2.9816157817840576,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 469,
+    "loss": 1.9005334377288818,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 470,
+    "loss": 2.376664876937866,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 471,
+    "loss": 1.6701310873031616,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 472,
+    "loss": 3.2286105155944824,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 473,
+    "loss": 3.276233196258545,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 474,
+    "loss": 2.0221872329711914,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 475,
+    "loss": 4.24509334564209,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 476,
+    "loss": 2.8172709941864014,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 477,
+    "loss": 2.7598533630371094,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 478,
+    "loss": 3.504572868347168,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 479,
+    "loss": 3.134413242340088,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 480,
+    "loss": 2.3766191005706787,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 481,
+    "loss": 3.815782070159912,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 482,
+    "loss": 3.76664400100708,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 483,
+    "loss": 2.7371115684509277,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 484,
+    "loss": 2.634296417236328,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 485,
+    "loss": 3.668665647506714,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 486,
+    "loss": 2.7736573219299316,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 487,
+    "loss": 2.3279457092285156,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 488,
+    "loss": 2.9429309368133545,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 489,
+    "loss": 2.227412462234497,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 490,
+    "loss": 3.0720412731170654,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 491,
+    "loss": 2.8404009342193604,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 492,
+    "loss": 2.6901774406433105,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 493,
+    "loss": 2.6760005950927734,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 494,
+    "loss": 2.802855968475342,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 495,
+    "loss": 3.062411308288574,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 496,
+    "loss": 2.398059368133545,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 497,
+    "loss": 3.7510814666748047,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 498,
+    "loss": 2.927684783935547,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 499,
+    "loss": 2.88031268119812,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 500,
+    "loss": 2.349480390548706,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 501,
+    "loss": 2.626392364501953,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 502,
+    "loss": 3.7513017654418945,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 503,
+    "loss": 2.8499274253845215,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 504,
+    "loss": 2.123792886734009,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 505,
+    "loss": 2.824923276901245,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 506,
+    "loss": 2.3243346214294434,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 507,
+    "loss": 4.361828804016113,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 508,
+    "loss": 2.408745527267456,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 509,
+    "loss": 4.108152389526367,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 510,
+    "loss": 3.583889961242676,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 511,
+    "loss": 3.1179914474487305,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 512,
+    "loss": 2.264833450317383,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 513,
+    "loss": 3.1861259937286377,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 514,
+    "loss": 3.0054447650909424,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 515,
+    "loss": 2.721691370010376,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 516,
+    "loss": 2.8374366760253906,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 517,
+    "loss": 2.1589431762695312,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 518,
+    "loss": 2.244279146194458,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 519,
+    "loss": 2.439012289047241,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 520,
+    "loss": 2.4898524284362793,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 521,
+    "loss": 2.165005683898926,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 522,
+    "loss": 2.9121220111846924,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 523,
+    "loss": 2.6946523189544678,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 524,
+    "loss": 1.7821640968322754,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 525,
+    "loss": 2.2302706241607666,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 526,
+    "loss": 2.660733222961426,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 527,
+    "loss": 3.1501622200012207,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 528,
+    "loss": 2.124450206756592,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 529,
+    "loss": 2.181753635406494,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 530,
+    "loss": 2.619804859161377,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 531,
+    "loss": 2.765087366104126,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 532,
+    "loss": 2.6665430068969727,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 533,
+    "loss": 3.302551746368408,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 534,
+    "loss": 3.7212436199188232,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 535,
+    "loss": 2.5704987049102783,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 536,
+    "loss": 2.9662394523620605,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 537,
+    "loss": 3.0686967372894287,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 538,
+    "loss": 4.826040267944336,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 539,
+    "loss": 2.599342107772827,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 540,
+    "loss": 2.269566059112549,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 541,
+    "loss": 2.655628204345703,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 542,
+    "loss": 2.029132604598999,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 543,
+    "loss": 2.589052438735962,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 544,
+    "loss": 2.7853875160217285,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 545,
+    "loss": 2.854825735092163,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 546,
+    "loss": 2.1228160858154297,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 547,
+    "loss": 2.573068618774414,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 548,
+    "loss": 3.6543478965759277,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 549,
+    "loss": 3.165961265563965,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 550,
+    "loss": 2.9635767936706543,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 551,
+    "loss": 1.647739291191101,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 552,
+    "loss": 1.3094918727874756,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 553,
+    "loss": 2.6431665420532227,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 554,
+    "loss": 2.913125514984131,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 555,
+    "loss": 2.5461177825927734,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 556,
+    "loss": 2.9554877281188965,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 557,
+    "loss": 2.5637385845184326,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 558,
+    "loss": 3.2221460342407227,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 559,
+    "loss": 1.7673872709274292,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 560,
+    "loss": 2.7774009704589844,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 561,
+    "loss": 2.7340285778045654,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 562,
+    "loss": 2.2247066497802734,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 563,
+    "loss": 2.6433005332946777,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 564,
+    "loss": 2.6753878593444824,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 565,
+    "loss": 2.8023552894592285,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 566,
+    "loss": 2.4760072231292725,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 567,
+    "loss": 2.7189066410064697,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 568,
+    "loss": 3.1272737979888916,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 569,
+    "loss": 4.0056891441345215,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 570,
+    "loss": 2.562828779220581,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 571,
+    "loss": 3.6667637825012207,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 572,
+    "loss": 3.555833101272583,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 573,
+    "loss": 3.071721315383911,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 574,
+    "loss": 3.764946699142456,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 575,
+    "loss": 2.2660439014434814,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 576,
+    "loss": 3.2652366161346436,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 577,
+    "loss": 1.769932508468628,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 578,
+    "loss": 3.0309438705444336,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 579,
+    "loss": 2.835341215133667,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 580,
+    "loss": 3.6149706840515137,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 581,
+    "loss": 2.117450475692749,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 582,
+    "loss": 2.7055935859680176,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 583,
+    "loss": 3.2138102054595947,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 584,
+    "loss": 2.1587064266204834,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 585,
+    "loss": 2.704301118850708,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 586,
+    "loss": 2.8514323234558105,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 587,
+    "loss": 3.556760787963867,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 588,
+    "loss": 2.6834144592285156,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 589,
+    "loss": 2.729191303253174,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 590,
+    "loss": 2.3206684589385986,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 591,
+    "loss": 3.113805055618286,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 592,
+    "loss": 2.6117422580718994,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 593,
+    "loss": 2.5205395221710205,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 594,
+    "loss": 3.1581521034240723,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 595,
+    "loss": 2.317225933074951,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 596,
+    "loss": 3.4935553073883057,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 597,
+    "loss": 2.5423173904418945,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 598,
+    "loss": 2.5663681030273438,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 599,
+    "loss": 2.3596205711364746,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 600,
+    "loss": 3.717240333557129,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 601,
+    "loss": 3.3991494178771973,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 602,
+    "loss": 3.1015994548797607,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 603,
+    "loss": 2.4324629306793213,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 604,
+    "loss": 1.6363834142684937,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 605,
+    "loss": 2.129678726196289,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 606,
+    "loss": 2.430518388748169,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 607,
+    "loss": 2.8055834770202637,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 608,
+    "loss": 3.0153534412384033,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 609,
+    "loss": 2.9772298336029053,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 610,
+    "loss": 2.5805842876434326,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 611,
+    "loss": 3.944009780883789,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 612,
+    "loss": 2.4605672359466553,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 613,
+    "loss": 3.033205270767212,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 614,
+    "loss": 3.3764123916625977,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 615,
+    "loss": 2.9814648628234863,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 616,
+    "loss": 2.2732479572296143,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 617,
+    "loss": 2.5645599365234375,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 618,
+    "loss": 2.9317543506622314,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 619,
+    "loss": 2.7292423248291016,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 620,
+    "loss": 3.5730271339416504,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 621,
+    "loss": 2.719492197036743,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 622,
+    "loss": 2.366563081741333,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 623,
+    "loss": 3.3532800674438477,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 624,
+    "loss": 2.7467780113220215,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 625,
+    "loss": 2.451643705368042,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 626,
+    "loss": 2.7756381034851074,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 627,
+    "loss": 2.7273976802825928,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 628,
+    "loss": 3.228524684906006,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 629,
+    "loss": 2.894298553466797,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 630,
+    "loss": 2.1762797832489014,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 631,
+    "loss": 2.7273261547088623,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 632,
+    "loss": 2.6996207237243652,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 633,
+    "loss": 3.1534857749938965,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 634,
+    "loss": 2.9569196701049805,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 635,
+    "loss": 2.648026466369629,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 636,
+    "loss": 3.38482666015625,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 637,
+    "loss": 2.7951512336730957,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 638,
+    "loss": 3.9816107749938965,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 639,
+    "loss": 3.7690114974975586,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 640,
+    "loss": 2.6413180828094482,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 641,
+    "loss": 3.492697238922119,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 642,
+    "loss": 3.1731185913085938,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 643,
+    "loss": 2.5874102115631104,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 644,
+    "loss": 4.3246331214904785,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 645,
+    "loss": 3.20847749710083,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 646,
+    "loss": 2.7489013671875,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 647,
+    "loss": 4.510898590087891,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 648,
+    "loss": 2.1523990631103516,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 649,
+    "loss": 3.635502815246582,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 650,
+    "loss": 3.0152838230133057,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 651,
+    "loss": 3.3356034755706787,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 652,
+    "loss": 2.1365442276000977,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 653,
+    "loss": 2.941962718963623,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 654,
+    "loss": 2.5530877113342285,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 655,
+    "loss": 2.7577781677246094,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 656,
+    "loss": 2.067009687423706,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 657,
+    "loss": 2.542158365249634,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 658,
+    "loss": 2.0328073501586914,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 659,
+    "loss": 2.2658636569976807,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 660,
+    "loss": 2.8096964359283447,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 661,
+    "loss": 2.7394399642944336,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 662,
+    "loss": 2.926720380783081,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 663,
+    "loss": 3.4312844276428223,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 664,
+    "loss": 2.3029985427856445,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 665,
+    "loss": 3.6192080974578857,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 666,
+    "loss": 1.9529317617416382,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 667,
+    "loss": 2.0941731929779053,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 668,
+    "loss": 2.1125900745391846,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 669,
+    "loss": 4.255822658538818,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 670,
+    "loss": 2.7251248359680176,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 671,
+    "loss": 3.155160903930664,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 672,
+    "loss": 1.776696801185608,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 673,
+    "loss": 1.5677063465118408,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 674,
+    "loss": 2.4317734241485596,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 675,
+    "loss": 2.9059367179870605,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 676,
+    "loss": 3.109098196029663,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 677,
+    "loss": 2.6414217948913574,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 678,
+    "loss": 2.4085726737976074,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 679,
+    "loss": 2.691986560821533,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 680,
+    "loss": 2.3842811584472656,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 681,
+    "loss": 3.522402763366699,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 682,
+    "loss": 2.2299742698669434,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 683,
+    "loss": 3.8176109790802,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 684,
+    "loss": 2.7899293899536133,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 685,
+    "loss": 1.8797574043273926,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 686,
+    "loss": 3.278207540512085,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 687,
+    "loss": 2.4158477783203125,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 688,
+    "loss": 2.3841168880462646,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 689,
+    "loss": 3.099673271179199,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 690,
+    "loss": 3.8209099769592285,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 691,
+    "loss": 2.4209787845611572,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 692,
+    "loss": 3.3327479362487793,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 693,
+    "loss": 2.7791850566864014,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 694,
+    "loss": 2.993734836578369,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 695,
+    "loss": 2.4455184936523438,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 696,
+    "loss": 3.8492648601531982,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 697,
+    "loss": 2.662400484085083,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 698,
+    "loss": 3.2373976707458496,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 699,
+    "loss": 2.7539238929748535,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 700,
+    "loss": 3.577561616897583,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 701,
+    "loss": 3.002586603164673,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 702,
+    "loss": 3.636824369430542,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 703,
+    "loss": 2.985994338989258,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 704,
+    "loss": 2.0764639377593994,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 705,
+    "loss": 3.163715362548828,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 706,
+    "loss": 2.5089168548583984,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 707,
+    "loss": 1.5349836349487305,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 708,
+    "loss": 2.7520768642425537,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 709,
+    "loss": 3.1546471118927,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 710,
+    "loss": 2.742746353149414,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 711,
+    "loss": 2.8786284923553467,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 712,
+    "loss": 2.6986565589904785,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 713,
+    "loss": 2.871626615524292,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 714,
+    "loss": 4.573196887969971,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 715,
+    "loss": 2.542267084121704,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 716,
+    "loss": 2.4667177200317383,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 717,
+    "loss": 3.8975307941436768,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 718,
+    "loss": 3.678861618041992,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 719,
+    "loss": 3.9471564292907715,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 720,
+    "loss": 3.1491079330444336,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 721,
+    "loss": 3.246711015701294,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 722,
+    "loss": 3.045602560043335,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 723,
+    "loss": 2.933518648147583,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 724,
+    "loss": 2.369492292404175,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 725,
+    "loss": 2.2753708362579346,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 726,
+    "loss": 2.868757486343384,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 727,
+    "loss": 2.9276516437530518,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 728,
+    "loss": 2.192166328430176,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 729,
+    "loss": 2.197497844696045,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 730,
+    "loss": 3.1035819053649902,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 731,
+    "loss": 4.042261123657227,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 732,
+    "loss": 3.101030111312866,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 733,
+    "loss": 2.3597607612609863,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 734,
+    "loss": 2.6528239250183105,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 735,
+    "loss": 3.6306405067443848,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 736,
+    "loss": 3.406695604324341,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 737,
+    "loss": 4.4488701820373535,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 738,
+    "loss": 2.480391025543213,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 739,
+    "loss": 2.678287982940674,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 740,
+    "loss": 2.629237651824951,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 741,
+    "loss": 2.779956340789795,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 742,
+    "loss": 2.9697022438049316,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 743,
+    "loss": 2.3953914642333984,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 744,
+    "loss": 2.181785821914673,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 745,
+    "loss": 2.7779996395111084,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 746,
+    "loss": 3.206028938293457,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 747,
+    "loss": 2.935401678085327,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 748,
+    "loss": 2.271434783935547,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 749,
+    "loss": 3.2465548515319824,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 750,
+    "loss": 3.056276559829712,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 751,
+    "loss": 3.50605845451355,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 752,
+    "loss": 1.5731728076934814,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 753,
+    "loss": 2.490776777267456,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 754,
+    "loss": 1.9176994562149048,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 755,
+    "loss": 2.599003791809082,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 756,
+    "loss": 2.853895902633667,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 757,
+    "loss": 2.5664803981781006,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 758,
+    "loss": 3.024289608001709,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 759,
+    "loss": 3.0035207271575928,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 760,
+    "loss": 2.072542190551758,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 761,
+    "loss": 2.243823289871216,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 762,
+    "loss": 3.3421754837036133,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 763,
+    "loss": 2.9390006065368652,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 764,
+    "loss": 3.452986717224121,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 765,
+    "loss": 2.3452889919281006,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 766,
+    "loss": 2.803539752960205,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 767,
+    "loss": 2.5346481800079346,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 768,
+    "loss": 2.8833248615264893,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 769,
+    "loss": 2.430238962173462,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 770,
+    "loss": 2.602729320526123,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 771,
+    "loss": 2.3507637977600098,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 772,
+    "loss": 3.603713035583496,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 773,
+    "loss": 3.7965996265411377,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 774,
+    "loss": 3.097780466079712,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 775,
+    "loss": 3.094818353652954,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 776,
+    "loss": 3.308642864227295,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 777,
+    "loss": 3.1036126613616943,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 778,
+    "loss": 2.8398361206054688,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 779,
+    "loss": 2.150753974914551,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 780,
+    "loss": 3.427913188934326,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 781,
+    "loss": 2.6770076751708984,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 782,
+    "loss": 2.7818384170532227,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 783,
+    "loss": 2.6202924251556396,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 784,
+    "loss": 3.256688356399536,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 785,
+    "loss": 3.542762279510498,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 786,
+    "loss": 2.941080093383789,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 787,
+    "loss": 2.3464956283569336,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 788,
+    "loss": 2.1159074306488037,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 789,
+    "loss": 2.3989663124084473,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 790,
+    "loss": 3.5766372680664062,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 791,
+    "loss": 2.294262647628784,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 792,
+    "loss": 1.8306453227996826,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 793,
+    "loss": 2.2561874389648438,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 794,
+    "loss": 2.0827832221984863,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 795,
+    "loss": 2.3427135944366455,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 796,
+    "loss": 3.50051212310791,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 797,
+    "loss": 2.674564838409424,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 798,
+    "loss": 2.7842652797698975,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 799,
+    "loss": 2.384324312210083,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 800,
+    "loss": 3.01202392578125,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 800,
+    "eval": {
+      "loss": 2.757693213224411,
+      "lm_loss": 2.3334000158309935,
+      "emotion_loss": 1.2122662803344428,
+      "strategy_loss": null,
+      "relation_loss": null,
+      "emotion_acc": 0.575,
+      "relation_acc": null,
+      "strategy_acc": null
+    }
+  },
+  {
+    "step": 801,
+    "loss": 2.2109014987945557,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 802,
+    "loss": 3.082876443862915,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 803,
+    "loss": 1.8968961238861084,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 804,
+    "loss": 2.3100502490997314,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 805,
+    "loss": 2.462193250656128,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 806,
+    "loss": 2.6388373374938965,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 807,
+    "loss": 2.395982265472412,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 808,
+    "loss": 3.1970431804656982,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 809,
+    "loss": 2.3303771018981934,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 810,
+    "loss": 2.0742435455322266,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 811,
+    "loss": 2.6733598709106445,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 812,
+    "loss": 2.6960630416870117,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 813,
+    "loss": 2.5748679637908936,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 814,
+    "loss": 2.516420841217041,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 815,
+    "loss": 2.3838930130004883,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 816,
+    "loss": 3.606991767883301,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 817,
+    "loss": 2.2837412357330322,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 818,
+    "loss": 2.5172722339630127,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 819,
+    "loss": 1.8800297975540161,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 820,
+    "loss": 3.3196425437927246,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 821,
+    "loss": 2.6999671459198,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 822,
+    "loss": 2.080862283706665,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 823,
+    "loss": 2.6085002422332764,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 824,
+    "loss": 3.297024965286255,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 825,
+    "loss": 3.0232625007629395,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 826,
+    "loss": 3.022199869155884,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 827,
+    "loss": 3.0338051319122314,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 828,
+    "loss": 2.122724771499634,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 829,
+    "loss": 2.862337589263916,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 830,
+    "loss": 2.812561511993408,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 831,
+    "loss": 2.4537696838378906,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 832,
+    "loss": 1.433958649635315,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 833,
+    "loss": 3.0521767139434814,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 834,
+    "loss": 2.995285987854004,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 835,
+    "loss": 2.982414722442627,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 836,
+    "loss": 2.817246198654175,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 837,
+    "loss": 3.002204656600952,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 838,
+    "loss": 2.8619651794433594,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 839,
+    "loss": 3.1539816856384277,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 840,
+    "loss": 2.9976272583007812,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 841,
+    "loss": 2.6937203407287598,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 842,
+    "loss": 3.0642971992492676,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 843,
+    "loss": 3.81673526763916,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 844,
+    "loss": 3.4397969245910645,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 845,
+    "loss": 2.2307112216949463,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 846,
+    "loss": 1.5965553522109985,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 847,
+    "loss": 4.112032890319824,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 848,
+    "loss": 2.0190048217773438,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 849,
+    "loss": 2.838829517364502,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 850,
+    "loss": 4.258317947387695,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 851,
+    "loss": 3.0890443325042725,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 852,
+    "loss": 3.1118016242980957,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 853,
+    "loss": 2.12541127204895,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 854,
+    "loss": 3.00116229057312,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 855,
+    "loss": 2.773569107055664,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 856,
+    "loss": 2.7386281490325928,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 857,
+    "loss": 2.176492214202881,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 858,
+    "loss": 3.025998830795288,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 859,
+    "loss": 2.3729960918426514,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 860,
+    "loss": 2.9439520835876465,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 861,
+    "loss": 3.8359556198120117,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 862,
+    "loss": 2.6209828853607178,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 863,
+    "loss": 2.620393753051758,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 864,
+    "loss": 2.0975399017333984,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 865,
+    "loss": 2.4872193336486816,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 866,
+    "loss": 2.742863178253174,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 867,
+    "loss": 3.1055033206939697,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 868,
+    "loss": 3.752161741256714,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 869,
+    "loss": 2.7606449127197266,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 870,
+    "loss": 2.379422187805176,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 871,
+    "loss": 3.1039531230926514,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 872,
+    "loss": 3.1528921127319336,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 873,
+    "loss": 4.161243915557861,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 874,
+    "loss": 3.195773124694824,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 875,
+    "loss": 3.0324156284332275,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 876,
+    "loss": 2.9938910007476807,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 877,
+    "loss": 2.179705858230591,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 878,
+    "loss": 1.628614902496338,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 879,
+    "loss": 2.8960084915161133,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 880,
+    "loss": 3.558023452758789,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 881,
+    "loss": 2.2969021797180176,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 882,
+    "loss": 3.4246010780334473,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 883,
+    "loss": 1.8784581422805786,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 884,
+    "loss": 2.5603408813476562,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 885,
+    "loss": 3.755796194076538,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 886,
+    "loss": 2.68975567817688,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 887,
+    "loss": 2.5338215827941895,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 888,
+    "loss": 3.272258996963501,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 889,
+    "loss": 2.3780736923217773,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 890,
+    "loss": 2.9077768325805664,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 891,
+    "loss": 3.1146936416625977,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 892,
+    "loss": 3.318821430206299,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 893,
+    "loss": 2.3715763092041016,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 894,
+    "loss": 1.6693801879882812,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 895,
+    "loss": 2.5124013423919678,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 896,
+    "loss": 2.380531072616577,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 897,
+    "loss": 2.616913080215454,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 898,
+    "loss": 3.010667562484741,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 899,
+    "loss": 1.9758753776550293,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 900,
+    "loss": 2.550197124481201,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 901,
+    "loss": 2.292919874191284,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 902,
+    "loss": 2.6442904472351074,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 903,
+    "loss": 2.821185350418091,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 904,
+    "loss": 1.7690296173095703,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 905,
+    "loss": 2.9867615699768066,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 906,
+    "loss": 3.115527868270874,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 907,
+    "loss": 3.0034291744232178,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 908,
+    "loss": 2.860480308532715,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 909,
+    "loss": 2.4584224224090576,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 910,
+    "loss": 3.8403284549713135,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 911,
+    "loss": 3.9230263233184814,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 912,
+    "loss": 2.521179676055908,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 913,
+    "loss": 2.948906421661377,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 914,
+    "loss": 2.296880006790161,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 915,
+    "loss": 2.6664083003997803,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 916,
+    "loss": 3.109276533126831,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 917,
+    "loss": 2.414353609085083,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 918,
+    "loss": 2.597499370574951,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 919,
+    "loss": 3.2548673152923584,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 920,
+    "loss": 2.8751511573791504,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 921,
+    "loss": 4.312553405761719,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 922,
+    "loss": 2.91904354095459,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 923,
+    "loss": 2.530365228652954,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 924,
+    "loss": 2.780458450317383,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 925,
+    "loss": 2.0286266803741455,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 926,
+    "loss": 2.800631523132324,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 927,
+    "loss": 5.240999698638916,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 928,
+    "loss": 1.8995612859725952,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 929,
+    "loss": 2.404508590698242,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 930,
+    "loss": 2.448809862136841,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 931,
+    "loss": 3.2474846839904785,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 932,
+    "loss": 2.827805995941162,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 933,
+    "loss": 2.4560699462890625,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 934,
+    "loss": 3.341728448867798,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 935,
+    "loss": 2.7806196212768555,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 936,
+    "loss": 2.9784982204437256,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 937,
+    "loss": 3.1051583290100098,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 938,
+    "loss": 3.839292287826538,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 939,
+    "loss": 4.21858024597168,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 940,
+    "loss": 2.126220703125,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 941,
+    "loss": 2.9563934803009033,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 942,
+    "loss": 1.5560799837112427,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 943,
+    "loss": 3.867103099822998,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 944,
+    "loss": 2.914987087249756,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 945,
+    "loss": 3.042560577392578,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 946,
+    "loss": 2.5407066345214844,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 947,
+    "loss": 2.728121757507324,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 948,
+    "loss": 2.8135714530944824,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 949,
+    "loss": 2.3952319622039795,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 950,
+    "loss": 2.767625093460083,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 951,
+    "loss": 2.4702346324920654,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 952,
+    "loss": 2.7526097297668457,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 953,
+    "loss": 2.6855580806732178,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 954,
+    "loss": 2.356942892074585,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 955,
+    "loss": 2.624218702316284,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 956,
+    "loss": 2.156656503677368,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 957,
+    "loss": 3.226494073867798,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 958,
+    "loss": 2.608060836791992,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 959,
+    "loss": 3.7945828437805176,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 960,
+    "loss": 3.2343921661376953,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 961,
+    "loss": 3.096778631210327,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 962,
+    "loss": 1.8111114501953125,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 963,
+    "loss": 2.1458632946014404,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 964,
+    "loss": 2.638699769973755,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 965,
+    "loss": 3.140749454498291,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 966,
+    "loss": 2.3031837940216064,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 967,
+    "loss": 2.4495673179626465,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 968,
+    "loss": 1.6659252643585205,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 969,
+    "loss": 3.219545602798462,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 970,
+    "loss": 3.6931281089782715,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 971,
+    "loss": 2.0655858516693115,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 972,
+    "loss": 2.5928053855895996,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 973,
+    "loss": 3.085728168487549,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 974,
+    "loss": 2.560905694961548,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 975,
+    "loss": 1.8131089210510254,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 976,
+    "loss": 3.309298038482666,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 977,
+    "loss": 2.1131629943847656,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 978,
+    "loss": 1.9221304655075073,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 979,
+    "loss": 2.337737798690796,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 980,
+    "loss": 3.026726007461548,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 981,
+    "loss": 2.8101344108581543,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 982,
+    "loss": 3.9932026863098145,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 983,
+    "loss": 3.3978431224823,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 984,
+    "loss": 1.7605427503585815,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 985,
+    "loss": 2.69394850730896,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 986,
+    "loss": 1.615888237953186,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 987,
+    "loss": 2.9884426593780518,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 988,
+    "loss": 3.2520766258239746,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 989,
+    "loss": 2.4618821144104004,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 990,
+    "loss": 2.4748177528381348,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 991,
+    "loss": 2.344076633453369,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 992,
+    "loss": 3.324491500854492,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 993,
+    "loss": 2.983896255493164,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 994,
+    "loss": 2.3684298992156982,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 995,
+    "loss": 2.402594804763794,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 996,
+    "loss": 2.8951587677001953,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 997,
+    "loss": 2.715287208557129,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 998,
+    "loss": 3.25032901763916,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 999,
+    "loss": 2.5455756187438965,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1000,
+    "loss": 2.5446078777313232,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1001,
+    "loss": 3.2881696224212646,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1002,
+    "loss": 2.0920886993408203,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1003,
+    "loss": 3.015597343444824,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1004,
+    "loss": 3.2426576614379883,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1005,
+    "loss": 2.514817714691162,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1006,
+    "loss": 1.876185655593872,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1007,
+    "loss": 2.263988494873047,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1008,
+    "loss": 3.3529484272003174,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1009,
+    "loss": 2.5165512561798096,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1010,
+    "loss": 3.223475694656372,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1011,
+    "loss": 2.7498412132263184,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1012,
+    "loss": 2.011972665786743,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1013,
+    "loss": 4.150872707366943,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1014,
+    "loss": 2.863741159439087,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1015,
+    "loss": 2.4803783893585205,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1016,
+    "loss": 2.7670140266418457,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1017,
+    "loss": 2.1604840755462646,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1018,
+    "loss": 2.0692358016967773,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1019,
+    "loss": 3.2602696418762207,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1020,
+    "loss": 3.128384590148926,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1021,
+    "loss": 2.7431447505950928,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1022,
+    "loss": 2.8455209732055664,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1023,
+    "loss": 3.4031729698181152,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1024,
+    "loss": 2.273036241531372,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1025,
+    "loss": 2.014744520187378,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1026,
+    "loss": 2.6239566802978516,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1027,
+    "loss": 2.8896665573120117,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1028,
+    "loss": 2.833709239959717,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1029,
+    "loss": 2.908503532409668,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1030,
+    "loss": 2.5712385177612305,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1031,
+    "loss": 2.961372137069702,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1032,
+    "loss": 4.182340621948242,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1033,
+    "loss": 2.698509931564331,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1034,
+    "loss": 2.5686516761779785,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1035,
+    "loss": 2.2998344898223877,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1036,
+    "loss": 2.3668222427368164,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1037,
+    "loss": 2.1957428455352783,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1038,
+    "loss": 3.2319207191467285,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1039,
+    "loss": 3.085973024368286,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1040,
+    "loss": 2.2193045616149902,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1041,
+    "loss": 3.0807557106018066,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1042,
+    "loss": 1.808709979057312,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1043,
+    "loss": 2.1322693824768066,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1044,
+    "loss": 2.509023666381836,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1045,
+    "loss": 3.6781868934631348,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1046,
+    "loss": 2.578073263168335,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1047,
+    "loss": 2.818197250366211,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1048,
+    "loss": 2.745887041091919,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1049,
+    "loss": 2.7788281440734863,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1050,
+    "loss": 2.339264154434204,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1051,
+    "loss": 2.091414213180542,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1052,
+    "loss": 1.9679591655731201,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1053,
+    "loss": 1.818084716796875,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1054,
+    "loss": 2.255143404006958,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1055,
+    "loss": 2.3635928630828857,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1056,
+    "loss": 2.1611127853393555,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1057,
+    "loss": 2.529168128967285,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1058,
+    "loss": 3.7365939617156982,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1059,
+    "loss": 2.177046537399292,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1060,
+    "loss": 2.9847328662872314,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1061,
+    "loss": 2.4823505878448486,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1062,
+    "loss": 2.1871860027313232,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1063,
+    "loss": 3.2905051708221436,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1064,
+    "loss": 2.171908378601074,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1065,
+    "loss": 2.3627684116363525,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1066,
+    "loss": 2.2459497451782227,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1067,
+    "loss": 2.6603453159332275,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1068,
+    "loss": 3.7011773586273193,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1069,
+    "loss": 2.5430245399475098,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1070,
+    "loss": 3.5893259048461914,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1071,
+    "loss": 3.3843753337860107,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1072,
+    "loss": 2.5365545749664307,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1073,
+    "loss": 2.8950302600860596,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1074,
+    "loss": 2.5931437015533447,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1075,
+    "loss": 2.5485806465148926,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1076,
+    "loss": 3.1137804985046387,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1077,
+    "loss": 2.2475430965423584,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1078,
+    "loss": 2.912369966506958,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1079,
+    "loss": 2.531101703643799,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1080,
+    "loss": 2.9368367195129395,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1081,
+    "loss": 2.8037407398223877,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1082,
+    "loss": 3.431757926940918,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1083,
+    "loss": 2.126823902130127,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1084,
+    "loss": 3.2828209400177,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1085,
+    "loss": 2.311901569366455,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1086,
+    "loss": 3.0653953552246094,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1087,
+    "loss": 2.718689203262329,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1088,
+    "loss": 3.419308662414551,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1089,
+    "loss": 1.9591715335845947,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1090,
+    "loss": 2.2607014179229736,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1091,
+    "loss": 2.546231746673584,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1092,
+    "loss": 2.1912519931793213,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1093,
+    "loss": 2.502117156982422,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1094,
+    "loss": 2.767070770263672,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1095,
+    "loss": 2.18167781829834,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1096,
+    "loss": 2.2711169719696045,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1097,
+    "loss": 2.8416502475738525,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1098,
+    "loss": 2.40566349029541,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1099,
+    "loss": 2.6424808502197266,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1100,
+    "loss": 2.1376659870147705,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1101,
+    "loss": 2.969007968902588,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1102,
+    "loss": 2.164137601852417,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1103,
+    "loss": 3.068175792694092,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1104,
+    "loss": 1.892953872680664,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1105,
+    "loss": 1.7448623180389404,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1106,
+    "loss": 2.7106380462646484,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1107,
+    "loss": 1.6114461421966553,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1108,
+    "loss": 3.838003635406494,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1109,
+    "loss": 2.62827467918396,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1110,
+    "loss": 3.193800926208496,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1111,
+    "loss": 2.49082612991333,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1112,
+    "loss": 2.2863988876342773,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1113,
+    "loss": 2.2717456817626953,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1114,
+    "loss": 3.548346519470215,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1115,
+    "loss": 2.4634432792663574,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1116,
+    "loss": 2.956818103790283,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1117,
+    "loss": 2.8120851516723633,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1118,
+    "loss": 2.5821282863616943,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1119,
+    "loss": 2.8588998317718506,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1120,
+    "loss": 1.5631550550460815,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1121,
+    "loss": 3.0771145820617676,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1122,
+    "loss": 2.563366413116455,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1123,
+    "loss": 3.5984222888946533,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1124,
+    "loss": 2.8944172859191895,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1125,
+    "loss": 2.797750949859619,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1126,
+    "loss": 2.1894872188568115,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1127,
+    "loss": 2.6759629249572754,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1128,
+    "loss": 2.40240216255188,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1129,
+    "loss": 3.629274368286133,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1130,
+    "loss": 2.299264669418335,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1131,
+    "loss": 2.781409978866577,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1132,
+    "loss": 2.033975124359131,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1133,
+    "loss": 3.1547839641571045,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1134,
+    "loss": 3.596858263015747,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1135,
+    "loss": 2.031129837036133,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1136,
+    "loss": 3.2550511360168457,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1137,
+    "loss": 3.937796115875244,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1138,
+    "loss": 3.203369617462158,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1139,
+    "loss": 2.3700339794158936,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1140,
+    "loss": 2.3088903427124023,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1141,
+    "loss": 2.1935720443725586,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1142,
+    "loss": 3.468902826309204,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1143,
+    "loss": 2.2688488960266113,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1144,
+    "loss": 2.3776819705963135,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1145,
+    "loss": 2.9903173446655273,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1146,
+    "loss": 2.677732467651367,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1147,
+    "loss": 2.3315601348876953,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1148,
+    "loss": 1.9268057346343994,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1149,
+    "loss": 2.7297122478485107,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1150,
+    "loss": 1.9967209100723267,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1151,
+    "loss": 3.0108134746551514,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1152,
+    "loss": 3.0553455352783203,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1153,
+    "loss": 2.5633630752563477,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1154,
+    "loss": 3.04264235496521,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1155,
+    "loss": 3.277400493621826,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1156,
+    "loss": 2.0362443923950195,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1157,
+    "loss": 1.5706861019134521,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1158,
+    "loss": 2.6134538650512695,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1159,
+    "loss": 2.252732515335083,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1160,
+    "loss": 3.4380998611450195,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1161,
+    "loss": 2.202800989151001,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1162,
+    "loss": 2.4211554527282715,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1163,
+    "loss": 2.395232915878296,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1164,
+    "loss": 2.2245116233825684,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1165,
+    "loss": 3.1122562885284424,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1166,
+    "loss": 2.0126664638519287,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1167,
+    "loss": 2.157154083251953,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1168,
+    "loss": 3.8001840114593506,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1169,
+    "loss": 1.6436975002288818,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1170,
+    "loss": 2.9615156650543213,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1171,
+    "loss": 2.418797731399536,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1172,
+    "loss": 2.2166099548339844,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1173,
+    "loss": 2.7323780059814453,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1174,
+    "loss": 2.6790382862091064,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1175,
+    "loss": 2.879210948944092,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1176,
+    "loss": 2.248344898223877,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1177,
+    "loss": 2.488727331161499,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1178,
+    "loss": 3.0843334197998047,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1179,
+    "loss": 1.4501953125,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1180,
+    "loss": 2.9636263847351074,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1181,
+    "loss": 1.9814152717590332,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1182,
+    "loss": 2.5888922214508057,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1183,
+    "loss": 3.0045149326324463,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1184,
+    "loss": 2.595913887023926,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1185,
+    "loss": 2.6807780265808105,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1186,
+    "loss": 3.36075496673584,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1187,
+    "loss": 2.7693161964416504,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1188,
+    "loss": 3.0678136348724365,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1189,
+    "loss": 2.007617950439453,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1190,
+    "loss": 2.3723387718200684,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1191,
+    "loss": 1.8764950037002563,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1192,
+    "loss": 2.839728355407715,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1193,
+    "loss": 3.0114874839782715,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1194,
+    "loss": 3.0424387454986572,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1195,
+    "loss": 3.8392224311828613,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1196,
+    "loss": 2.3297665119171143,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1197,
+    "loss": 2.8965961933135986,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1198,
+    "loss": 2.060457944869995,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1199,
+    "loss": 3.2699451446533203,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1200,
+    "loss": 2.2243218421936035,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1200,
+    "eval": {
+      "loss": 2.6981250166893007,
+      "lm_loss": 2.308389130830765,
+      "emotion_loss": 1.1135311243776231,
+      "strategy_loss": null,
+      "relation_loss": null,
+      "emotion_acc": 0.655,
+      "relation_acc": null,
+      "strategy_acc": null
+    }
+  },
+  {
+    "step": 1201,
+    "loss": 2.2582156658172607,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1202,
+    "loss": 2.733590602874756,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1203,
+    "loss": 2.4394168853759766,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1204,
+    "loss": 2.9546289443969727,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1205,
+    "loss": 3.362537384033203,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1206,
+    "loss": 2.486642360687256,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1207,
+    "loss": 2.648948907852173,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1208,
+    "loss": 2.060962200164795,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1209,
+    "loss": 3.3085105419158936,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1210,
+    "loss": 3.1898560523986816,
+    "train_emotion_acc": 0.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1211,
+    "loss": 2.8168132305145264,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1212,
+    "loss": 3.5609657764434814,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1213,
+    "loss": 2.391022205352783,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1214,
+    "loss": 2.2711074352264404,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1215,
+    "loss": 2.8424694538116455,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1216,
+    "loss": 2.678452968597412,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1217,
+    "loss": 2.5912575721740723,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1218,
+    "loss": 1.4358389377593994,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1219,
+    "loss": 2.0776519775390625,
+    "train_emotion_acc": 1.0,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "step": 1220,
+    "loss": 2.7493679523468018,
+    "train_emotion_acc": 0.5,
+    "train_strategy_acc": null,
+    "train_relation_acc": null
+  },
+  {
+    "final_eval": {
+      "loss": 2.7161862659454346,
+      "lm_loss": 2.30241694688797,
+      "emotion_loss": 1.1821980739943683,
+      "strategy_loss": null,
+      "relation_loss": null,
+      "emotion_acc": 0.61,
+      "relation_acc": null,
+      "strategy_acc": null
+    }
+  }
+]

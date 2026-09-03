@@ -1,0 +1,72 @@
+{
+  "model_name": "Qwen/Qwen3.5-9B",
+  "dtype": "bf16",
+  "init_mode": "select_bank_en_merged_r16",
+  "gates": {
+    "affect": {
+      "score": 0.6198296640068293,
+      "decision": "share",
+      "note": "probe=0.6878 domain=0.0081 w=0.9"
+    },
+    "strategy": {
+      "score": 0.45975610613822937,
+      "decision": "relearn",
+      "prior": "en_missing_sr_labels"
+    },
+    "relation": {
+      "score": 0.23780487477779388,
+      "decision": "relearn",
+      "prior": "en_missing_sr_labels"
+    },
+    "culture": {
+      "score": 0.019626399502158165,
+      "decision": "suppress"
+    }
+  },
+  "lr": 7.5e-05,
+  "trainable_params": 20783121,
+  "final_eval": {
+    "loss": 4.711825041770935,
+    "lm_loss": 2.270055912733078,
+    "emotion_loss": 0.17647143022913953,
+    "strategy_loss": 0.7237131762504577,
+    "relation_loss": 0.15090421257656714,
+    "emotion_acc": 0.94,
+    "relation_acc": 0.975,
+    "strategy_acc": 0.6635182998819362,
+    "strategy_micro_f1": 0.6635182998819362,
+    "strategy_precision": 0.5311909262759924,
+    "strategy_recall": 0.8836477987421384,
+    "strategy_hamming_acc": 0.64375,
+    "strategy_exact_match": 0.11
+  },
+  "steps": 1591,
+  "upgrades": {
+    "strategy_multilabel": true,
+    "strategy_scope": "utterance",
+    "en_replay_every": 4,
+    "lora_anchor_weight": 0.04,
+    "deep_strategy_head": true,
+    "gate_conditioned_losses": true,
+    "select_curriculum": true,
+    "freeze_lora": false,
+    "two_pass_affect": false,
+    "select_bank": true,
+    "lora_r": 16,
+    "lora_include_mlp": false,
+    "loss_weights": {
+      "emotion": 0.24499999999999997,
+      "strategy": 3.15,
+      "relation": 0.7875
+    }
+  },
+  "device": "cuda",
+  "cuda_device_name": "NVIDIA L40S",
+  "vram": {
+    "allocated_gb": 18.175,
+    "reserved_gb": 37.717,
+    "peak_allocated_gb": 37.066
+  },
+  "git_commit": "9a55b734831f7008cce56d1d714daaa171e4fcc2",
+  "seed": 42
+}
