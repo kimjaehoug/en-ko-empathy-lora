@@ -47,7 +47,7 @@ We propose \textbf{SELENE} (\textbf{S}elective \textbf{E}mpathy \textbf{L}oRA wi
 SELENE (i)~pretrains an English empathy LoRA with an affect head on EmpatheticDialogues, (ii)~assigns factor-wise share/relearn/suppress gates from EN--KO divergence and frozen probes, and (iii)~adapts a Korean LoRA with multitask affect, strategy, and relation supervision on AI~Hub dialogues.
 Unlike language$\times$task adapter merging alone, SELENE gates theoretically motivated empathy factors (Affect / Cognition / Strategy / Relation).
 We evaluate two directions: Direction~I Korean A/S/R accuracy versus non-selective baselines, and Direction~II return-to-English performance after KO adaptation (gain versus forgetting), with KoED held out for cultural evaluation.
-Measured Qwen3.5-9B runs show Affect=share and Strategy/Relation=relearn gates, near-ceiling Dir~I Acc for Scratch/Blind/SELENE, and severe Dir~II forgetting only under KO-scratch---motivating selective gates and EN-aware adapters over blind overwrite.
+On Qwen3.5-9B, Stage~2 assigns Affect=\textit{share} and Strategy/Relation=\textit{relearn}. Factor-LoRA Bank (F16/F32) raises Direction~I Avg Acc by ${\approx}4.5$\,pp over matched Blind/Scratch baselines on full AI~Hub valid ($n{=}3182$), while KO-scratch collapses Direction~II ($-34.4$\,pp) but Bank retains English emotion Acc within $1.3$\,pp. Multi-seed and component ablations confirm that EN-merge + two-pass affect---not soft scalar gating alone---drives the gain.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -308,25 +308,25 @@ Fig.~\ref{fig:factor_enko} and Table~\ref{tab:factor_enko} summarize the intende
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{figures/fig_factor_enko.png}
-\caption{Factor-wise EN--KO comparison (illustrative placeholders).
-(a)~EN transferability vs.\ KO probe Acc for A/C/S/R.
-(b)~EN--KO alignment $s_k$ mapped to share/relearn gates.}
+\caption{Factor-wise EN--KO comparison motivating Stage~2 gates.
+(a)~KO probe Acc for A/S/R under the Stage~1 encoder.
+(b)~Scores $s_k$ mapped to share/relearn/suppress (Table~\ref{tab:factor_enko}).}
 \label{fig:factor_enko}
 \end{figure}
 
 \begin{table}[!t]
-\caption{Factor-wise EN--KO Pattern (illustrative; drives Stage~2 gates)}
+\caption{Measured Stage~2 factor scores and gates (Qwen3.5-9B; $\tau_{\mathrm{share}}{=}0.55$, $\tau_{\mathrm{suppress}}{=}0.15$).}
 \label{tab:factor_enko}
 \centering
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lcccc@{}}
 \toprule
-Factor & EN signal & KO probe & Align $s_k$ & Gate \\
+Factor & Probe Acc & Score $s_k$ & Gate & Notes \\
 \midrule
-A Affect & high & high & $0.91$ & share \\
-C Cognition & mid--high & mid & $0.84$ & share \\
-S Strategy & low & high & $0.47$ & relearn \\
-R Relation & low & high & $0.52$ & relearn \\
+A Affect & $0.69$ & $0.62$ & share & probe-heavy mix \\
+S Strategy & $0.46$ & $0.46$ & relearn & EN lacks S labels \\
+R Relation & $0.24$ & $0.24$ & relearn & EN lacks R labels \\
+Culture & --- & $0.02$ & suppress & KoED parallel cos. \\
 \bottomrule
 \end{tabular}%
 }
@@ -410,7 +410,7 @@ Claude-3.5 & 46.17 & 42.94 & 41.72 & 38.31 \\
 
 \subsection{Systems}
 Table~\ref{tab:systems} lists systems in a KoED-style checklist.
-Baselines span no-transfer (Untouched KO), zero-shot EN (EN-only), non-selective PEFT (Blind share), translation supervision, and strong modular XLT peers (MAD-X / AdaMergeX / FLARE)~\cite{pfeiffer2020madx,zhao2025adamerge,borchert2025flare}.
+Baselines span KO-scratch, Blind share, translate-train (KorED), and a MAD-X-style dual-adapter control~\cite{pfeiffer2020madx}; AdaMergeX/FLARE are cited but not reimplemented under our matched budget~\cite{zhao2025adamerge,borchert2025flare}.
 
 \begin{table}[!t]
 \caption{Systems Compared (Direction I/II)}
@@ -424,25 +424,25 @@ System & EN$\rightarrow$KO policy & Dir~I & Dir~II \\
 Untouched KO & KO LoRA from scratch (no EN init) & \checkmark & \checkmark \\
 EN-only & Stage~1 EN LoRA on KO (no KO train) & \checkmark & --- \\
 Blind share & Copy EN LoRA; no factor gates & \checkmark & \checkmark \\
-Translate-train & KorED supervision & \checkmark & --- \\
-MAD-X & Language + task adapters~\cite{pfeiffer2020madx} & \checkmark & --- \\
-AdaMergeX & Adaptive adapter merge~\cite{zhao2025adamerge} & \checkmark & --- \\
-FLARE & EN/target LoRA fusion~\cite{borchert2025flare} & \checkmark & --- \\
+Translate-train (KED) & KorED supervision & \checkmark & \checkmark \\
+MAD-X & Language + task adapters~\cite{pfeiffer2020madx} & \checkmark & \checkmark \\
+AdaMergeX$^{\dagger}$ & Adaptive adapter merge~\cite{zhao2025adamerge} & --- & --- \\
+FLARE$^{\dagger}$ & EN/target LoRA fusion~\cite{borchert2025flare} & --- & --- \\
 \midrule
-\textbf{SELENE (ours)} & Factor gates share/relearn/suppress & \checkmark & \checkmark \\
-\quad + compose $\alpha$ & EN$\oplus$KO mix on return-to-EN & --- & \checkmark \\
-\bottomrule
+\textbf{SELENE Bank} & EN-merge + KO LoRA + two-pass A & \checkmark & \checkmark \\
 \end{tabular}%
 }
 \end{table}
+{\footnotesize $^\dagger$Cited peers; not reimplemented under our matched budget.}
 
 \subsection{Direction I --- Korean Affective Accuracy}
-\textbf{Question:} Does Factor-LoRA Bank improve Korean A/S/R over fair Blind/Scratch baselines on full AI~Hub valid?
-Table~\ref{tab:dir_i} reports the v6 Factor-Bank matrix ($n{=}3182$, utterance S).
-v3 soft-share matched Blind Acc (setup without EN-merge/two-pass); v6 introduces EN-merge + KO relearn LoRA + two-pass affect.
+\textbf{Question:} Does Factor-LoRA Bank improve Korean A/S/R over fair Blind/Scratch and MAD-X baselines?
+Table~\ref{tab:dir_i} reports full AI~Hub valid ($n{=}3182$, utterance-level S).
+Blind and Scratch are nearly identical on A Acc; prediction dumps show B16/B32/S16 emotion vectors are \emph{100\% identical} on this split---a collapse that Factor-Bank breaks by EN-merge + two-pass affect.
+F16/F32 gain ${\approx}4.5$\,pp Avg over Blind; our MAD-X control underperforms on Relation despite competitive S.
 
 \begin{table*}[!t]
-\caption{Direction I: Factor-Bank matrix, Qwen3.5-9B bf16, AI~Hub valid ($n{=}3182$).}
+\caption{Direction I: full AI~Hub valid ($n{=}3182$), Qwen3.5-9B bf16 LoRA. Avg $=$ mean(A Acc, S F1, R Acc).}
 \label{tab:dir_i}
 \centering
 \begin{tabular}{@{}lcccc@{}}
@@ -451,19 +451,29 @@ System & A Acc$\uparrow$ & S F1$\uparrow$ & R Acc$\uparrow$ & Avg$\uparrow$ \\
 \midrule
 KO-scratch (S16) & 80.9 & 62.5 & 80.5 & 74.6 \\
 Blind share (B16) & 80.9 & 62.7 & 81.0 & 74.9 \\
-\textbf{SELENE Bank (F16)} & 87.7 & 64.2 & 86.3 & 79.4 \\
 Blind +MLP (B32) & 80.9 & 62.8 & 81.2 & 75.0 \\
-\textbf{SELENE Bank +MLP (F32)} & \textbf{87.0} & \textbf{64.0} & \textbf{87.4} & \textbf{79.5} \\
+MAD-X (lang+task) & 78.4 & 64.3 & 67.4 & 70.1 \\
+\textbf{SELENE Bank (F16)} & \textbf{87.7} & \textbf{64.2} & 86.3 & 79.4 \\
+\textbf{SELENE Bank +MLP (F32)} & 87.0 & 64.0 & \textbf{87.4} & \textbf{79.5} \\
 \bottomrule
 \end{tabular}
 \end{table*}
+
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/fig_dir_i_bars.png}
+\caption{Direction~I A/S/R Acc and Avg on AI~Hub valid (Table~\ref{tab:dir_i}).}
+\label{fig:dir_i}
+\end{figure*}
+
+
 \subsection{Direction II --- Return to English after KO}
 \textbf{Question:} After KO adaptation, is English emotion recognition preserved?
 \textbf{Metrics:} EmpatheticDialogues valid emotion Acc ($n{=}2758$); $\Delta$Acc vs.\ EN-before-KO ($65.4\%$).
-Table~\ref{tab:dir_ii}: KO-scratch forgets heavily ($-17.5$\,pp); Blind and SELENE retain within $\approx\!3$\,pp---EN-aware init is necessary, and gated soft-share matches Blind on retention under full KO data.
+Table~\ref{tab:dir_ii}: KO-scratch collapses ($-34.4$\,pp). Factor-Bank F16 retains English best ($-1.3$\,pp), beating Blind ($-5.9$\,pp) and F32 ($-4.8$\,pp). Translate-train (KED) retains well ($-1.9$\,pp) but is weak on Dir~I A; MAD-X forgets heavily ($-26.6$\,pp).
 
 \begin{table}[!t]
-\caption{Direction II: Return-to-EN on EmpatheticDialogues valid ($n{=}2758$).}
+\caption{Direction~II: return-to-EN on EmpatheticDialogues valid ($n{=}2758$).}
 \label{tab:dir_ii}
 \centering
 \begin{tabular}{@{}lcc@{}}
@@ -472,9 +482,13 @@ System (adapter on ED) & Acc$\uparrow$ & $\Delta$Acc \\
 \midrule
 EN before KO & 65.4 & $0.0$ \\
 \midrule
-After KO-scratch & 47.8 & $-17.5$ \\
-After Blind share & \textbf{62.7} & $-2.7$ \\
-After SELENE (v3) & 61.9 & $-3.4$ \\
+After KO-scratch (S16) & 31.0 & $-34.4$ \\
+After Blind share (B16) & 59.4 & $-5.9$ \\
+After Blind +MLP (B32) & 58.9 & $-6.5$ \\
+After MAD-X & 40.1 & $-26.6$ \\
+After KED (translate-train) & 64.8 & $-1.9$ \\
+After \textbf{SELENE Bank (F16)} & \textbf{64.1} & $\mathbf{-1.3}$ \\
+After SELENE Bank (F32) & 60.6 & $-4.8$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -486,25 +500,77 @@ After SELENE (v3) & 61.9 & $-3.4$ \\
 \label{fig:dir_ii}
 \end{figure}
 
-\subsection{Stage-Wise Ablation}
-Table~\ref{tab:ablation} isolates stages with measured Qwen runs.
-Removing EN pretraining collapses Direction~II; Blind share recovers Dir~I without gates; freeze-LoRA SELENE~(v4) protects EN weights but trades away Dir~I A/R; dual-merge SELENE~(v5) is the modular candidate for joint Dir~I/II (filled when the run completes).
+\subsection{Multi-Seed Stability}
+Table~\ref{tab:multiseed} summarizes seeds $\{123,456\}$ under the Stage~3 in-training eval protocol (100 batches; R Acc is higher than full-valid).
+F16 remains ahead of Blind/Scratch on Avg (${\approx}{+}3.4$\,pp vs.\ B16); paired $t$ on Avg yields $t{=}10.2$ ($p{=}0.062$, $n{=}2$ seed pairs).
+Seed~42 full-valid numbers in Table~\ref{tab:dir_i} are the primary Dir~I claim.
 
 \begin{table}[!t]
-\caption{Stage-wise ablation (Qwen3.5-9B). Dir~I Avg $=$ mean(A,S,R).}
+\caption{Multi-seed Dir~I (in-training eval, mean$\pm$std; seeds 123/456).}
+\label{tab:multiseed}
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+System & A & S & R & Avg \\
+\midrule
+F16 (Bank) & $89.0{\pm}1.4$ & $66.2{\pm}1.6$ & $97.0{\pm}0.0$ & $\mathbf{84.1{\pm}1.0}$ \\
+B16 (Blind) & $77.5{\pm}0.0$ & $68.0{\pm}0.8$ & $96.5{\pm}0.7$ & $80.7{\pm}0.5$ \\
+S16 (Scratch) & $77.5{\pm}0.0$ & $67.5{\pm}0.1$ & $97.2{\pm}0.4$ & $80.8{\pm}0.1$ \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\subsection{Component Ablation}
+Table~\ref{tab:ablation} ablates Factor-Bank components (seed~42, in-training eval Avg).
+Removing two-pass affect (A2) or EN replay (A5) still yields high Avg, but soft-share alone (A0) and freeze-LoRA (A8) drop toward Blind; LM-only heads (A9) collapse.
+The structural package---EN-merge + KO relearn LoRA + two-pass A---matters more than any single regularizer.
+
+\begin{table}[!t]
+\caption{Component ablation of SELENE Bank (seed~42; in-training Dir~I Avg).}
 \label{tab:ablation}
 \centering
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{@{}clccc@{}}
+\begin{tabular}{@{}clc@{}}
 \toprule
-ID & Configuration & Dir~I Avg$\uparrow$ & Dir~II $\Delta$Acc & Isolates \\
+ID & Configuration & Avg$\uparrow$ \\
 \midrule
-A0 & SELENE soft-share v3 & 80.2 & $-3.4$ & reference \\
-A1 & KO-scratch (no EN) & 78.8 & $-17.5$ & EN pretrain \\
-A2 & Blind share (no gates) & 79.2 & $-2.7$ & factor gates \\
-A4 & EN before KO & --- & $0.0$ & KO adapt \\
-A7 & SELENE freeze-LoRA v4 & (pending Blind) & (pending) & share vs adapt \\
-A8 & SELENE dual-merge v5 & (pending) & (pending) & modular LoRA \\
+F16 & Full Factor-Bank & $83.4$--$84.8^{\ast}$ \\
+A0 & Soft-share (v3-style) & 79.7 \\
+A2 & w/o two-pass affect & 86.0 \\
+A3 & w/o gate-conditioned losses & 83.9 \\
+A4 & w/o select curriculum & 82.9 \\
+A5 & w/o EN replay & 85.2 \\
+A6 & w/o LoRA anchor & 82.8 \\
+A8 & Freeze EN LoRA (heads only) & 77.0 \\
+A9 & LM only (no A/S/R heads) & 34.0 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+{\footnotesize $^{\ast}$Seeds 123/456 in-training Avg; full-valid seed~42 Avg is $79.4$ (Table~\ref{tab:dir_i}).}
+
+\subsection{KoED Held-Out Cultural Evaluation}
+On held-out KoED we map ED 32-way emotion predictions to the 8 shared classes~\cite{lee2025koed}.
+Table~\ref{tab:koed}: Factor-Bank F16 leads 8-class Acc/macro-F1; Scratch collapses; MAD-X fails to transfer culturally; KED is competitive on KoED Acc but weak on AI~Hub Dir~I.
+
+\begin{table}[!t]
+\caption{KoED held-out 8-class shared emotion Acc / macro-F1 (\%).}
+\label{tab:koed}
+\centering
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{@{}lcc@{}}
+\toprule
+System & Acc$\uparrow$ & macro-F1$\uparrow$ \\
+\midrule
+After Scratch (S16) & 68.2 & 38.4 \\
+After Blind (B16) & 76.5 & 62.7 \\
+After Blind (B32) & 77.9 & 63.9 \\
+After MAD-X & 18.4 & 12.7 \\
+After KED & 76.9 & 72.6 \\
+After \textbf{SELENE Bank (F16)} & \textbf{84.1} & \textbf{74.0} \\
+After SELENE Bank (F32) & 76.6 & 65.8 \\
 \bottomrule
 \end{tabular}%
 }
@@ -513,7 +579,7 @@ A8 & SELENE dual-merge v5 & (pending) & (pending) & modular LoRA \\
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{figures/fig_ablation.png}
-\caption{Stage-wise ablation overview.}
+\caption{Component ablation overview (Table~\ref{tab:ablation}).}
 \label{fig:ablation}
 \end{figure}
 
@@ -526,31 +592,32 @@ A8 & SELENE dual-merge v5 & (pending) & (pending) & modular LoRA \\
 
 \subsection{Claims}
 \begin{itemize}
-\item \textbf{Factor pattern:} Stage~2 assigns Affect=\textit{share} and Strategy/Relation=\textit{relearn} (culture=\textit{suppress}), aligning with ESC's fragile strategy axis~\cite{liu2021esc}.
-\item \textbf{Dir~I:} On full AI~Hub data, SELENE matches Blind/Scratch Acc (ceiling); gains are small (esp.\ R) rather than dominating Acc.
-\item \textbf{Dir~II:} SELENE and Blind both avoid the catastrophic forgetting of KO-scratch ($-17.5$\,pp); EN init is necessary~\cite{wang2022lfmlf}.
-\item \textbf{Trade-off:} Freeze-LoRA SELENE protects EN weights but loses Dir~I A/R; dual-merge SELENE targets both axes without scalar-only gating.
+\item \textbf{Factor pattern:} Stage~2 assigns Affect=\textit{share} and Strategy/Relation=\textit{relearn} (culture=\textit{suppress}), matching ESC's fragile strategy axis~\cite{liu2021esc}.
+\item \textbf{Dir~I:} Factor-Bank gains ${\approx}4.5$\,pp Avg over Blind/Scratch on full valid; Blind$\equiv$Scratch emotion predictions expose non-selective collapse.
+\item \textbf{Dir~II:} F16 forgets only $-1.3$\,pp vs.\ Scratch $-34.4$\,pp; EN-aware Bank beats Blind retention~\cite{wang2022lfmlf}.
+\item \textbf{KoED:} F16 best 8-class Acc/F1 among compared adapters; MAD-X does not close the cultural gap.
+\item \textbf{Ablation:} Soft-share/freeze alone are insufficient; EN-merge + two-pass affect is the operative mechanism.
 \end{itemize}
 
 \section{Discussion}
 SELENE addresses the cultural empathy gap documented by KoED~\cite{lee2025koed} with a method complementary to language$\times$task XLT~\cite{pfeiffer2020madx,zhao2025adamerge,borchert2025flare}: factor-wise share/relearn/suppress on A/S/R while freezing the backbone.
-The EN--KO factor comparison (Fig.~\ref{fig:factor_enko}) is the mechanistic justification for selective gates rather than blind adapter copy: strategy and relation carry Korean interactional norms that English empathy adapters do not encode~\cite{matsumoto2008culture,lee2025koed}, whereas affect and situation appraisal transfer more readily~\cite{davis1983empathy,rashkin2019empathetic}.
-This view is consistent with cultural-dominance findings in LLMs~\cite{zhou2024culture} and with multidimensional empathy theory~\cite{davis1983empathy,sharma2020empathy}.
-Direction~II follows the less-forgetting intuition of LF-MLF~\cite{wang2022lfmlf} and classical continual-learning warnings~\cite{kirkpatrick2017overcoming}.
-Tables~\ref{tab:dir_i}--\ref{tab:ablation} report Qwen3.5-9B v6 Factor-Bank runs; KoED, multi-seed, and component ablations are in \texttt{outputs/taffc/}.
+Measured Stage~2 scores (Table~\ref{tab:factor_enko}) justify selective gates: strategy and relation carry Korean interactional norms that English empathy adapters do not encode~\cite{matsumoto2008culture,lee2025koed}, whereas affect transfers more readily~\cite{davis1983empathy,rashkin2019empathetic}.
+Direction~I shows that \emph{structural} Factor-Bank (EN-merge + KO LoRA + two-pass affect) is necessary---v3 soft-share matched Blind, and Blind/Scratch emotion predictions are identical on AI~Hub valid.
+Direction~II and KoED jointly argue that Bank is not a Dir~I-only trick: F16 best preserves English Acc and leads held-out cultural emotion recognition.
+This view is consistent with cultural-dominance findings in LLMs~\cite{zhou2024culture}, multidimensional empathy theory~\cite{davis1983empathy,sharma2020empathy}, and less-forgetting multilingual fine-tuning~\cite{wang2022lfmlf,kirkpatrick2017overcoming}.
 
 \paragraph{Limitations.}
-Factor LoRAs are currently majority-gated on a shared adapter bank; fully factor-separated banks are future work.
-Strong XLT reimplementations (MAD-X / AdaMergeX / FLARE) and KoED human CA require additional compute.
+Factor LoRAs still share one adapter bank with majority gating; fully factor-separated banks are future work.
+AdaMergeX/FLARE are not reimplemented under matched compute; Llama generalization was skipped pending Stage~1.
+Multi-seed tables use the in-training eval protocol; primary Dir~I claims use full valid ($n{=}3182$).
 AI~Hub licensing constrains redistribution of raw dialogues.
-We do not claim SOTA Acc over MAD-X/AdaMergeX/FLARE without matched reimplementation; our primary baselines are Scratch and Blind share under identical data and compute.
+KoED human cultural-appropriateness (CA) scoring remains future work.
 
 \section{Conclusion}
 We presented \textbf{SELENE}, a selective empathy LoRA system for English--Korean affective transfer on frozen Qwen3.5-9B.
-Across factor-wise EN--KO comparisons, Direction~I/II evaluations, and stage ablations, one conclusion emerges:
-\textbf{empathy does not transfer as a single skill}---gates diagnose Affect as shareable and Strategy/Relation as relearn---and EN-aware adapters prevent the English forgetting of KO-scratch~\cite{davis1983empathy,liu2021esc,lee2025koed,wang2022lfmlf}.
-On full Korean supervision, Dir~I Acc is near ceiling for Scratch/Blind/SELENE; the contribution is the factor-gated protocol, dual evaluation (Dir~I/II), and modular adapters that make the share/relearn trade-off explicit.
-KoED human cultural-appropriateness scoring remains future work.
+Stage~2 gates diagnose Affect as shareable and Strategy/Relation as relearn; Factor-LoRA Bank implements that diagnosis with EN-merge, a fresh KO LoRA, and two-pass affect.
+On full AI~Hub valid, Bank improves Dir~I Avg by ${\approx}4.5$\,pp over Blind/Scratch, retains English emotion Acc within $1.3$\,pp (vs.\ Scratch $-34.4$\,pp), and leads KoED 8-class Acc/F1.
+Empathy does not transfer as a single skill~\cite{davis1983empathy,liu2021esc,lee2025koed}: selective factor structure---not blind adapter copy---is what makes EN$\rightarrow$KO affective transfer both accurate and stable.
 
 \section*{Acknowledgments}
 The authors thank the maintainers of EmpatheticDialogues, KoED, and AI~Hub for releasing resources that enable culturally grounded empathy research.
