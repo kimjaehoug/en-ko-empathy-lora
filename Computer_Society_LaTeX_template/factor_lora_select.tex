@@ -45,7 +45,7 @@ Backbone: \texttt{Qwen/Qwen3.5-9B}.}}
 Large language models that perform well on English empathetic dialogue often fail to transfer that competence to Korean, where empathy is shaped by relational stance, honorifics, and high-context support strategies.
 We propose \textbf{SELENE} (\textbf{S}elective \textbf{E}mpathy \textbf{L}oRA with \textbf{EN}--KO factor gat\textbf{E}s): a parameter-efficient EN$\rightarrow$KO affective transfer system on a frozen \texttt{Qwen/Qwen3.5-9B} backbone.
 SELENE (i)~pretrains an English empathy LoRA with an affect head on EmpatheticDialogues, (ii)~assigns factor-wise share/relearn/suppress gates from EN--KO divergence and frozen probes, and (iii)~adapts a Korean LoRA with multitask affect, strategy, and relation supervision on AI~Hub dialogues.
-Unlike language$\times$task adapter merging alone, SELENE gates theoretically motivated empathy factors (Affect / Cognition / Strategy / Relation).
+Unlike language$\times$task adapter merging alone, SELENE uses factor-wise gates to \emph{diagnose} which empathy axes (Affect / Strategy / Relation) should be shared versus relearned, then realizes a mixed gate pattern with a structural Factor-Bank (EN-merge + KO LoRA + two-pass affect) and gate-conditioned losses/LRs---not per-factor LoRA parameters.
 We evaluate two directions: Direction~I Korean A/S/R accuracy versus non-selective baselines, and Direction~II return-to-English performance after KO adaptation (gain versus forgetting), with KoED held out for cultural evaluation.
 On Qwen3.5-9B, Stage~2 assigns Affect=\textit{share} and Strategy/Relation=\textit{relearn}. Factor-LoRA Bank (F16/F32) raises Direction~I Avg Acc by ${\approx}4.5$\,pp over matched Blind/Scratch baselines on full AI~Hub valid ($n{=}3182$), while KO-scratch collapses Direction~II ($-34.4$\,pp) but Bank retains English emotion Acc within $1.3$\,pp. Multi-seed and component ablations confirm that EN-merge + two-pass affect---not soft scalar gating alone---drives the gain.
 \end{abstract}
@@ -74,7 +74,7 @@ This paper asks: can we transfer English empathy to Korean selectively at the le
 Our contributions are:
 \begin{enumerate}
 \item A theory-aligned A/C/S/R factor schema for empathetic dialogue (Affect, Cognition, Strategy, Relation), anchored in empathy theory, ESC strategies, and Korean relational norms~\cite{davis1983empathy,liu2021esc,matsumoto2008culture,lee2025koed}.
-\item \textbf{SELENE}, implementing Factor-LoRA SELECT: English LoRA pretraining, divergence/probe gating (share/relearn/suppress), and gated Korean multitask LoRA adaptation on frozen \texttt{Qwen/Qwen3.5-9B}.
+\item \textbf{SELENE} / Factor-Bank: English LoRA pretraining, factor-wise share/relearn/suppress \emph{diagnosis}, and a Korean adaptation that implements mixed gates via EN-merge + fresh KO LoRA, two-pass affect, and gate-conditioned head losses/LRs on frozen \texttt{Qwen/Qwen3.5-9B}.
 \item A dual evaluation protocol---Direction~I (EN$\rightarrow$KO affective accuracy) and Direction~II (return-to-EN after KO)---plus stage-wise ablations that isolate EN pretraining, gates, and multitask heads.
 \item A unified EN--KO data pipeline over EmpatheticDialogues, KoED, KorEmpatheticDialogues, and AI~Hub under one JSONL schema, with factor-wise EN--KO comparison figures that justify selective gates.
 \end{enumerate}
@@ -103,7 +103,7 @@ AdaMergeX merges task/language LoRAs with adaptive arithmetic and reports large 
 FLARE fuses EN/target representations inside LoRA bottlenecks and improves target-language accuracy over plain LoRA~\cite{borchert2025flare}.
 Strong multilingual encoders such as XLM-R underpin much of this transfer stack~\cite{conneau2020xlmr}.
 On the forgetting side, classical continual-learning results warn that sequential adaptation can erase prior skills~\cite{kirkpatrick2017overcoming}, and LF-MLF shows that reducing source-side forgetting improves retained multilingual transfer~\cite{wang2022lfmlf}---motivating our Direction~II return-to-EN protocol.
-These methods operate at language$\times$task granularity; SELENE instead gates empathy factors A/S/R with share/relearn/suppress decisions.
+These methods operate at language$\times$task granularity; SELENE instead \emph{diagnoses} empathy factors A/S/R with share/relearn/suppress gates and realizes mixed gates via Factor-Bank routing plus gate-conditioned optimization.
 
 \section{Problem Formulation}
 Let $x$ be a dialogue context and $y$ an empathetic listener response.
@@ -121,9 +121,9 @@ When $y_C$ is unavailable as a discrete label, $C$ is treated as a \emph{proxy} 
 
 \begin{definition}[Factor representation and head]
 \label{def:repr}
-Let $h_\theta(x)\in\mathbb{R}^{d}$ be the pooled hidden state of a frozen backbone (with optional EN LoRA).
-Define $z_k(x):=P_k h_\theta(x)$ with projection $P_k$ (identity in the current prototype; factor subspaces / LoRA banks in the full system).
-A factor head $f_k$ predicts $\hat{y}_k=f_k(z_k(x))$.
+Let $h_\theta(x)\in\mathbb{R}^{d}$ be the pooled hidden state of a frozen backbone under a chosen adapter state.
+In this paper $P_k{=}I$ (shared encoder; separate heads): $\hat{y}_k=f_k(h_\theta(x))$.
+When Factor-Bank uses two-pass affect, the affect head reads a \emph{share-path} encoding $h^{\mathrm{share}}$ while strategy/relation heads read a \emph{relearn-path} encoding $h^{\mathrm{KO}}$ (Definition~\ref{def:bank}).
 \end{definition}
 
 \begin{definition}[Transfer score and gate map]
@@ -159,13 +159,13 @@ $\mathrm{suppress}\prec\mathrm{relearn}\prec\mathrm{share}$
 (``more sharing'' is larger).
 \end{definition}
 
-\begin{definition}[Gate-conditioned LoRA init]
+\begin{definition}[Single-bank init operators]
 \label{def:init}
 Let $M_{\mathrm{EN}}$ be the Stage~1 English LoRA and $\mathrm{Rand}$ a matched-rank random init.
-The init operator $\mathcal{I}$ maps a gate to a KO LoRA seed:
+Legacy single-bank modes use one shared adapter $M_{\mathrm{KO}}$ with a global seed
 \begin{equation}
 \label{eq:init}
-\mathcal{I}(g)
+\mathcal{I}_{\mathrm{global}}(g)
 =
 \begin{cases}
 M_{\mathrm{EN}}, & g=\mathrm{share},\\
@@ -173,13 +173,32 @@ M_{\mathrm{EN}}, & g=\mathrm{share},\\
 \rho\,M_{\mathrm{EN}}, & g=\mathrm{suppress},
 \end{cases}
 \end{equation}
-with scale $\rho\in[0,1)$ (soft attenuation of EN directions).
-For factor set $\mathcal{K}$, Stage~3 seeds are
-$M_{\mathrm{KO}}^{(0)}=\{\mathcal{I}(\Gamma(s_k))\}_{k\in\mathcal{K}}$.
+($\rho\in[0,1)$). Soft-share always takes $M_{\mathrm{EN}}$; \texttt{auto} uses majority vote over $\{g_k\}$.
+These modes do \emph{not} allocate a separate LoRA per factor.
 \end{definition}
 
-We write $z=(z_A,z_C,z_S,z_R)$ as shorthand for Definition~\ref{def:repr}.
-English pretraining yields transferable components of $z_A$ (and proxy $z_C$); Korean requires culture-specific realization especially for $z_S$ and $z_R$~\cite{lee2025koed}.
+\begin{definition}[Factor-Bank realization of mixed gates]
+\label{def:bank}
+When Stage~2 yields the mixed pattern $g_A{=}\mathrm{share}$ and $g_S,g_R{=}\mathrm{relearn}$ (Proposition~\ref{prop:order}), Factor-Bank implements it with \emph{one} trainable KO LoRA plus a share path---not $\{M_k\}$:
+\begin{align}
+\label{eq:bank}
+\theta^{\leftarrow} &\leftarrow \mathrm{Merge}(\theta, M_{\mathrm{EN}}),\\
+M_{\mathrm{KO}} &\leftarrow \mathrm{Rand},\\
+h^{\mathrm{share}}(x) &= h_{\theta^{\leftarrow}}(x)\quad\text{(adapters off)},\\
+h^{\mathrm{KO}}(x) &= h_{\theta^{\leftarrow}+M_{\mathrm{KO}}}(x).
+\end{align}
+Affect uses $f_A(h^{\mathrm{share}})$; LM / Strategy / Relation use $h^{\mathrm{KO}}$.
+Factor gates further scale head losses and learning rates
+\begin{equation}
+\label{eq:gate_scale}
+\lambda_k \leftarrow \lambda_k\cdot \sigma(g_k),\qquad
+\eta_k \leftarrow \eta_{\mathrm{head}}\cdot \varsigma(g_k),
+\end{equation}
+with $\sigma(\mathrm{share}){<}1{<}\sigma(\mathrm{relearn})$ (and likewise for $\varsigma$), plus an optional early curriculum that amplifies relearn heads.
+Thus $g_k$ acts on \textbf{forward routing} (A vs.\ S/R path), \textbf{loss weights}, and \textbf{head LRs}---not on separate LoRA tensors per factor.
+\end{definition}
+
+English pretraining yields a transferable affect direction; Korean requires culture-specific realization especially for $z_S$ and $z_R$~\cite{lee2025koed}.
 The learning objective maximizes Korean A/S/R accuracy (Direction~I) subject to limited degradation of English emotion recognition after KO adaptation (Direction~II).
 
 \subsection{Propositions and Gate Lemmas}
@@ -226,32 +245,32 @@ Monotonicity follows because crossing a threshold can only move a score into a w
 For stability, the open $\varepsilon$-ball about $s$ cannot reach either threshold, hence lies in the same partition cell as $s$, so $\Gamma$ is unchanged.
 \end{proof}
 
-\begin{lemma}[Induced init is score-determined]
+\begin{lemma}[Gate stability implies Bank stability]
 \label{lem:init}
-The Stage~3 seed map $s\mapsto\mathcal{I}(\Gamma(s))$ is uniquely determined by Definitions~\ref{def:score}--\ref{def:init}.
-If $\mathrm{dist}(s_k,\{\tau_{\mathrm{suppress}},\tau_{\mathrm{share}}\})\ge\varepsilon$ and $|\hat{s}_k-s_k|<\varepsilon$, then
-$\mathcal{I}(\Gamma(\hat{s}_k))=\mathcal{I}(\Gamma(s_k))$:
-bootstrap/probe noise that stays off the threshold boundaries does not flip the KO LoRA seed.
+Under Definition~\ref{def:score}, if each $s_k$ stays $\varepsilon$-away from $\{\tau_{\mathrm{suppress}},\tau_{\mathrm{share}}\}$, then $\{g_k\}$ is unchanged (Lemma~\ref{lem:gate}).
+For Factor-Bank, the structural recipe in~\eqref{eq:bank} depends only on the qualitative pattern $(g_A{=}\mathrm{share},\,g_S{=}g_R{=}\mathrm{relearn})$; off-threshold probe noise therefore does not flip EN-merge / KO-LoRA / two-pass routing.
+Gate-conditioned scales~\eqref{eq:gate_scale} are likewise constant within each gate cell.
 \end{lemma}
 \begin{proof}
-Immediate from uniqueness of $\Gamma$ on the partition and Lemma~\ref{lem:gate}(ii), composed with the deterministic map $\mathcal{I}$ in~\eqref{eq:init}.
+Immediate from Lemma~\ref{lem:gate}(ii) and the deterministic map from $\{g_k\}$ to~\eqref{eq:bank}--\eqref{eq:gate_scale}.
 \end{proof}
 
 \subsection{Validation Protocol}
 Propositions~\ref{prop:sep}--\ref{prop:intervene} are \emph{empirical claims}, not existence theorems.
-We verify them by: (i)~KO held-out probes for~\eqref{eq:sk}; (ii)~cross-factor Acc / Cram\'{e}r's $V$; (iii)~bootstrap tests of the ordering in Proposition~\ref{prop:order}; (iv)~gated vs.\ blind / all-relearn interventions for Proposition~\ref{prop:intervene}; (v)~seed/fold stability of $\{g_k\}$ and of $M_{\mathrm{KO}}^{(0)}$ under Lemma~\ref{lem:init}.
-Lemmas~\ref{lem:gate}--\ref{lem:init} are analytic consequences of the definitions; they do \emph{not} prove that A/C/S/R is the unique empathy factorization.
-Only after~(iii)--(iv) hold do we apply $\{g_k\}$ via $\mathcal{I}\circ\Gamma$ in Stage~3.
+We verify them by: (i)~KO held-out probes for~\eqref{eq:sk}; (ii)~cross-factor Acc / Cram\'{e}r's $V$; (iii)~the ordering in Proposition~\ref{prop:order}; (iv)~Factor-Bank vs.\ Blind / Scratch / soft-share interventions for Proposition~\ref{prop:intervene}; (v)~stability of $\{g_k\}$ and of the Bank recipe under Lemma~\ref{lem:init}.
+Lemmas~\ref{lem:gate}--\ref{lem:init} are analytic consequences of the definitions; they do \emph{not} prove that A/C/S/R is the unique empathy factorization, nor that per-factor LoRA tensors are required.
+Only after~(iii)--(iv) hold do we apply Factor-Bank~\eqref{eq:bank} with gate scales~\eqref{eq:gate_scale}.
 
 \section{Method: SELENE (Factor-LoRA SELECT)}
-SELENE is the system name; Factor-LoRA SELECT is the three-stage algorithm.
-Unless noted, we freeze \texttt{Qwen/Qwen3.5-9B}---size-matched to KoED open peers ($\sim$7--8B)~\cite{lee2025koed}---and train only LoRA adapters plus lightweight A/S/R heads.
+SELENE is the system name; Factor-Bank is the Stage~3 realization used in our main results.
+Unless noted, we freeze \texttt{Qwen/Qwen3.5-9B}---size-matched to KoED open peers ($\sim$7--8B)~\cite{lee2025koed}---and train only a \emph{single} KO LoRA bank plus lightweight A/S/R heads.
 Fig.~\ref{fig:overview} shows the pipeline; Fig.~\ref{fig:directions} shows the two evaluation directions; Fig.~\ref{fig:gates} summarizes the gate rule.
+We emphasize: factor gates are a \emph{diagnosis}; Factor-Bank is the \emph{implementation} of mixed share/relearn without per-factor LoRA parameters.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=\columnwidth]{figures/fig_overview.png}
-\caption{SELENE overview: English empathy LoRA, factor-wise gates, then gated Korean multitask adaptation.}
+\caption{SELENE overview: English empathy LoRA, factor-wise gate diagnosis, then Factor-Bank KO adaptation (EN-merge + KO LoRA + two-pass A).}
 \label{fig:overview}
 \end{figure}
 
@@ -301,9 +320,10 @@ On EmpatheticDialogues we train a causal LM with LoRA and an affect classificati
 This yields a reusable English empathy adapter $M_{\mathrm{EN}}$ while leaving $\theta$ intact, consistent with PEFT practice~\cite{hu2022lora}.
 
 \subsection{Stage 2: Divergence / Probe Gates}
-Stage~2 instantiates Definitions~\ref{def:score}--\ref{def:init}: with the frozen Stage-1 encoder we (i)~fit KO linear probes for A/S/R to obtain $s_k$ in~\eqref{eq:sk}, (ii)~optionally measure EN--KO / KoED alignment~\cite{lee2025koed}, and (iii)~apply $\Gamma$ in~\eqref{eq:gates} (Lemmas~\ref{lem:gate}--\ref{lem:init}).
+Stage~2 instantiates Definitions~\ref{def:score}: with the frozen Stage-1 encoder we (i)~fit KO linear probes for A/S/R to obtain $s_k$ in~\eqref{eq:sk}, (ii)~optionally measure EN--KO / KoED alignment~\cite{lee2025koed}, and (iii)~apply $\Gamma$ in~\eqref{eq:gates}.
 When English lacks explicit S/R supervision, we prefer \textbf{relearn} unless probe evidence is strong.
-Fig.~\ref{fig:factor_enko} and Table~\ref{tab:factor_enko} summarize the intended EN--KO pattern corresponding to Proposition~\ref{prop:order}: Affect/Cognition tend to align (share), while Strategy/Relation diverge and require relearning.
+Fig.~\ref{fig:factor_enko} and Table~\ref{tab:factor_enko} report the measured pattern corresponding to Proposition~\ref{prop:order}: Affect shares; Strategy/Relation relearn; culture suppresses.
+These $\{g_k\}$ later drive Factor-Bank routing and gate-conditioned scales (Definition~\ref{def:bank}), not separate LoRA inits per $k$.
 
 \begin{figure}[!t]
 \centering
@@ -332,27 +352,30 @@ Culture & --- & $0.02$ & suppress & KoED parallel cos. \\
 }
 \end{table}
 
-\subsection{Stage 3: Gated Korean Adaptation}
-On AI~Hub dialogues we set $M_{\mathrm{KO}}^{(0)}=\mathcal{I}(\Gamma(s_k))$ per factor (Definition~\ref{def:init}):
-share copies $M_{\mathrm{EN}}$ (smaller LR to refine), relearn draws $\mathrm{Rand}$, and suppress applies $\rho M_{\mathrm{EN}}$.
-We then train multitask objectives
+\subsection{Stage 3: Factor-Bank Korean Adaptation}
+Given mixed gates $g_A{=}\mathrm{share}$, $g_S{=}g_R{=}\mathrm{relearn}$, we apply Definition~\ref{def:bank}:
+merge $M_{\mathrm{EN}}$ into the frozen backbone, attach a fresh KO LoRA $M_{\mathrm{KO}}$, and compute affect from the adapter-disabled share path while LM/S/R use the KO path (\emph{two-pass affect}).
+We train
 \begin{equation}
 \label{eq:ko_loss}
-\mathcal{L}_{\mathrm{KO}}=\mathcal{L}_{\mathrm{LM}}+\lambda_A\mathcal{L}_A+\lambda_S\mathcal{L}_S+\lambda_R\mathcal{L}_R,
+\mathcal{L}_{\mathrm{KO}}=\mathcal{L}_{\mathrm{LM}}+\lambda_A(g_A)\mathcal{L}_A+\lambda_S(g_S)\mathcal{L}_S+\lambda_R(g_R)\mathcal{L}_R,
 \end{equation}
-so Korean adaptation is supervised not only for fluency but for A/S/R analysis heads, following the multi-axis empathy view in ESC and support-text evaluation~\cite{liu2021esc,sharma2020empathy}.
-A composer weight $\alpha$ mixes EN$\oplus$KO adapters for Direction~II, preserving plug-in modularity~\cite{pfeiffer2020madx,zhao2025adamerge}.
+with gate-conditioned $\lambda_k$ and head LRs~\eqref{eq:gate_scale}, plus an early curriculum that further upweights relearn heads~\cite{liu2021esc,sharma2020empathy}.
+Dir~II evaluates the KO LoRA (and heads) on English ED after KO training; we do not claim a separate per-factor composer $\alpha$ in the reported runs.
+Soft-share / freeze-LoRA ablations keep a single EN-initialized bank and apply gates only through~\eqref{eq:gate_scale}---explaining why soft-share matched Blind until Factor-Bank introduced structural share/relearn routing.
 
 \begin{algorithm}[t]
-\caption{SELENE / Factor-LoRA SELECT}
+\caption{SELENE Factor-Bank (implemented)}
 \label{alg:select}
 \begin{algorithmic}
 \STATE Freeze backbone \texttt{Qwen/Qwen3.5-9B}
-\STATE Stage~1: train EN LoRA + affect head on ED
-\STATE Stage~2: encode EN/KO; assign gates $g_k$
-\STATE \hspace{0.3cm} $g_k\in\{\mathrm{share},\mathrm{relearn},\mathrm{suppress}\}$
-\STATE Stage~3: init KO LoRA from gates; train A/S/R
-\STATE \textbf{return} EN LoRA, KO LoRA, $\{g_k\}$
+\STATE Stage~1: train EN LoRA $M_{\mathrm{EN}}$ + affect head on ED
+\STATE Stage~2: probe KO; set $g_k\!\leftarrow\!\Gamma(s_k)$ for $k\in\{A,S,R\}$
+\STATE Stage~3 (Factor-Bank):
+\STATE \hspace{0.25cm} merge $M_{\mathrm{EN}}$ into backbone; init fresh $M_{\mathrm{KO}}$
+\STATE \hspace{0.25cm} set $\lambda_k,\eta_k$ from $g_k$~\eqref{eq:gate_scale}
+\STATE \hspace{0.25cm} train with two-pass A: $f_A(h^{\mathrm{share}})$, $f_{S/R}(h^{\mathrm{KO}})$
+\STATE \textbf{return} $M_{\mathrm{EN}}$, $M_{\mathrm{KO}}$, $\{g_k\}$
 \end{algorithmic}
 \end{algorithm}
 
@@ -596,18 +619,19 @@ After SELENE Bank (F32) & 76.6 & 65.8 \\
 \item \textbf{Dir~I:} Factor-Bank gains ${\approx}4.5$\,pp Avg over Blind/Scratch on full valid; Blind$\equiv$Scratch emotion predictions expose non-selective collapse.
 \item \textbf{Dir~II:} F16 forgets only $-1.3$\,pp vs.\ Scratch $-34.4$\,pp; EN-aware Bank beats Blind retention~\cite{wang2022lfmlf}.
 \item \textbf{KoED:} F16 best 8-class Acc/F1 among compared adapters; MAD-X does not close the cultural gap.
-\item \textbf{Ablation:} Soft-share/freeze alone are insufficient; EN-merge + two-pass affect is the operative mechanism.
+\item \textbf{Ablation:} Soft-share/freeze (gates on loss/LR only) are insufficient; EN-merge + two-pass routing is the operative mechanism.
 \end{itemize}
 
 \section{Discussion}
-SELENE addresses the cultural empathy gap documented by KoED~\cite{lee2025koed} with a method complementary to language$\times$task XLT~\cite{pfeiffer2020madx,zhao2025adamerge,borchert2025flare}: factor-wise share/relearn/suppress on A/S/R while freezing the backbone.
-Measured Stage~2 scores (Table~\ref{tab:factor_enko}) justify selective gates: strategy and relation carry Korean interactional norms that English empathy adapters do not encode~\cite{matsumoto2008culture,lee2025koed}, whereas affect transfers more readily~\cite{davis1983empathy,rashkin2019empathetic}.
-Direction~I shows that \emph{structural} Factor-Bank (EN-merge + KO LoRA + two-pass affect) is necessary---v3 soft-share matched Blind, and Blind/Scratch emotion predictions are identical on AI~Hub valid.
+SELENE addresses the cultural empathy gap documented by KoED~\cite{lee2025koed} with a method complementary to language$\times$task XLT~\cite{pfeiffer2020madx,zhao2025adamerge,borchert2025flare}: factor-wise gate \emph{diagnosis} plus a Factor-Bank that implements mixed share/relearn without per-factor LoRA tensors.
+Measured Stage~2 scores (Table~\ref{tab:factor_enko}) justify selective treatment: strategy and relation carry Korean interactional norms that English empathy adapters do not encode~\cite{matsumoto2008culture,lee2025koed}, whereas affect transfers more readily~\cite{davis1983empathy,rashkin2019empathetic}.
+Direction~I shows that \emph{structural} routing (EN-merge + KO LoRA + two-pass affect) is necessary---soft-share matched Blind when gates scaled only losses/LRs on one shared bank, and Blind/Scratch emotion predictions are identical on AI~Hub valid.
 Direction~II and KoED jointly argue that Bank is not a Dir~I-only trick: F16 best preserves English Acc and leads held-out cultural emotion recognition.
 This view is consistent with cultural-dominance findings in LLMs~\cite{zhou2024culture}, multidimensional empathy theory~\cite{davis1983empathy,sharma2020empathy}, and less-forgetting multilingual fine-tuning~\cite{wang2022lfmlf,kirkpatrick2017overcoming}.
 
 \paragraph{Limitations.}
-Factor LoRAs still share one adapter bank with majority gating; fully factor-separated banks are future work.
+We do \emph{not} train separate LoRA modules $\{M_k\}_{k\in\mathcal{K}}$; Factor-Bank uses one KO adapter with two-pass routing and gate-conditioned $\lambda_k/\eta_k$.
+Fully factor-separated LoRA banks (literal $M_{\mathrm{KO}}{=}\{M_k\}$) remain future work and would be needed to claim parameter-level factor gating.
 AdaMergeX/FLARE are not reimplemented under matched compute; Llama generalization was skipped pending Stage~1.
 Multi-seed tables use the in-training eval protocol; primary Dir~I claims use full valid ($n{=}3182$).
 AI~Hub licensing constrains redistribution of raw dialogues.
@@ -615,9 +639,9 @@ KoED human cultural-appropriateness (CA) scoring remains future work.
 
 \section{Conclusion}
 We presented \textbf{SELENE}, a selective empathy LoRA system for English--Korean affective transfer on frozen Qwen3.5-9B.
-Stage~2 gates diagnose Affect as shareable and Strategy/Relation as relearn; Factor-LoRA Bank implements that diagnosis with EN-merge, a fresh KO LoRA, and two-pass affect.
+Stage~2 gates diagnose Affect as shareable and Strategy/Relation as relearn; Factor-Bank implements that \emph{mixed} diagnosis with EN-merge, one KO LoRA, two-pass affect, and gate-conditioned losses/LRs---not per-factor LoRA tensors.
 On full AI~Hub valid, Bank improves Dir~I Avg by ${\approx}4.5$\,pp over Blind/Scratch, retains English emotion Acc within $1.3$\,pp (vs.\ Scratch $-34.4$\,pp), and leads KoED 8-class Acc/F1.
-Empathy does not transfer as a single skill~\cite{davis1983empathy,liu2021esc,lee2025koed}: selective factor structure---not blind adapter copy---is what makes EN$\rightarrow$KO affective transfer both accurate and stable.
+Empathy does not transfer as a single skill~\cite{davis1983empathy,liu2021esc,lee2025koed}: factor-aware routing and optimization---not blind adapter copy---make EN$\rightarrow$KO affective transfer both accurate and stable.
 
 \section*{Acknowledgments}
 The authors thank the maintainers of EmpatheticDialogues, KoED, and AI~Hub for releasing resources that enable culturally grounded empathy research.
